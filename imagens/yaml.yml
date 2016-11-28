@@ -1,0 +1,17 @@
+
+---
+title: Título da obra aqui
+author:
+- name: Author One
+  affiliation: University of Somewhere
+date: 2016
+abstract: "This document provides an introduction to R Markdown, argues for its..."
+keywords: "pandoc, r markdown, knitr"
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+bibliography: ~/Dropbox/master.bib
+biblio-style: apsr
+---
+
+
