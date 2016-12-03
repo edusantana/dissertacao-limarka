@@ -10,31 +10,36 @@ As linguagens de marcação de texto (*lightweight markup language*) surgiram, e
 
 A motivação desse trabalho consiste em ofertar uma nova alternativa para elaboração de trabalhos acadêmicos (monografia, dissertação ou tese) utilizando uma linguagem de marcação de texto, elaborada com o propósito de redigirem e formatarem seus trabalhos em conformidade com as Normas da ABNT.
 
+
+
 ## Objetivos
+
+Nessa seção são apresentados o objetivo geral e os específicos da pesquisa.
 
 ### Objetivo Geral
 
-Esse trabalho objetiva *propor* e *avaliar* um sistema que utiliza uma linguagem de marcação de texto especializada para a produção de trabalhos acadêmicos em conformidades com as normas da ABNT.
 
-O objetivo dessa pesquisa é o desenvolvimento de uma ferramenta para possibilitar usuários escreverem os trabalhos de conclusão de curso utilizando uma _lightweight markup language_, .  Como prova de conceito da arquitetura foi desenvolvida a ferramenta Arthron.
+O objetivo geral desse trabalho é *analisar* a utilização da linguagem Markdown na escrita de trabalhos de conclusão de curso em conformidade com as Normas da ABNT.
 
 ### Objetivos Específicos
 
-- Implementar um sistema com utilização de uma linguagem de marcação
-  de texto na produção de monografias;
+- Especificar e implementar um sistema que possibilite usuários escrever seus trabalhos de conclusão de curso em Markdown;
   
-- Avaliar a usabilidade da linguagem através de experimentos de
-  elaboração de trabalhos acadêmicos em contextos realístico e não realístico.
+- Analisar a utilização da linguagem através de experimentos com usuários do sistema elaborando propostas de trabalhos de conclusão de curso.
 
 
-O objetivos deste trabalho são:
-- Estudo de ambientes multimídia, aplicações e tecnologias relacionadas;
-• Análise de ferramentas semelhantes;
-• Definição de uma arquitetura distribuída da ferramenta;
-• Especificar, modelar e implementar a ferramenta;
-• Integrar com outros sistemas existentes de forma transparente; e
-• Realizar um experimento para demonstrar viabilidade e avaliar os resultados
-alcançados com ferramenta.
+## Metodologia
+
+A pesquisa adotou o método de *análise qualitativa*. De acordo com \cite{hazzan2006qualitative}, o método qualitativo deve ser empregado quando o objeto de estudo envolve analisar processos mentais de indivíduos ou quando o estudo é um dos pioneiros na área e não existem dados suficientes que sugestionem elaborações de hipóteses *a priori*. Devido a não ter encontrado pesquisas da utilização da linguagem Markdown para produção de trabalhos acadêmicos nacionais, e o objeto de estudo envolve processos metais sobre a utilização da ferramenta, o método escolhido para análise foi o qualitativo.
+
+O instrumento de coleta de dados utilizado foram entrevistas não estruturadas.
+
+O método qualitativo é recomendado quando o estudo realizado 
+foi escolhido porque não foram levantadas hipóteses *a priori*, devido a ausência de estudos sobre utilização de Markdown na produção de TCCs nacionais. 
+
+A avaliação da utilização do sistema será realizada através de experimentos com usuários e entrevistas não estruturadas 
+
+Não temos conhecimentos de 
 
 
 ## Método
@@ -56,6 +61,16 @@ O método de avaliação da usabilidade empregado será o mesmo de \cite{green19
 O contexto da pesquisa contempla apenas usuários com nível superior
 *incompleto* ou *completo*, que tiveram contato com as normas da ABNT
 durante sua formação.
+
+
+Fazer perguntas sobre motivação, percepção e experiência.\cite[p. 36]{guide2008}
+
+<!-- The  principal  advantage  of  using  qualitative  methods  is  that  they  force  the 
+researcher to delve into the complexity of the problem rather than abstract it away. 
+Thus the results are richer and more informative. They help to answer questions 
+that involve variables that are difficult to quantify (particularly human characteristics such as motivation, perception, and experience).
+
+-->
 
 ## Estrutura da Dissertação
 
@@ -1146,6 +1161,117 @@ mesmo formulário do experimento anterior.
   \fonte{Autor}%
   }
 \end{table}
+
+# Desenvolvimento do sistema
+
+<!-- 
+
+Neste capítulo do trabalho está descrito o desenvolvimento de um sistema que utiliza o Ki-
+nect como dispositivo de interface natural para a captura de movimentos.
+
+xdg-open /home/eduardo/Downloads/dissertacoes/6116-2013.pdf_unencrypted.pdf
+
+-->
+
+## Descrição do sistema
+
+fig:modulos do sistema
+
+
+### Módulo X
+
+### Módulo Y
+
+
+## Arquitetura
+
+fig diagrama de classes
+
+exemplo de código fonte
+
+Código de interação com o pandoc
+
+## Discussão
+
+# Processo de desenvolvimento
+
+## Mapeamento de requisitos
+
+## Projetos no github
+
+## Issues 
+
+## Changelog
+
+## Documentação
+
+## Vídeos
+
+## Discussão
+
+
+# Avaliação experimental
+
+## Experimento
+
+P:localidade do experimento, quantidade de alunos, cursos e instituições. Critérios para seleção dos participantes.
+
+Estrutura do experimento.
+
+## cuidados tomandos
+
+The observer must take measures to ensure that those being observed are not constantly thinking 
+about being observed. \cite[p. 38]{guide2008}
+Ideally,  all  those  being 
+observed should know beforehand that the observer will be observing and why. 
+
+
+Entrevista não estruturada \cite[p. 44]{guide2008}: as opposed to an unstructured interview in which the interviewee is the source of both questions and answers. In an unstructured interview, the object is to elicit as much information as possible on a broadly defined topic. The interviewer does not know the form of this information ahead of time, so the questions asked must be as open-ended as possible. In the extreme, the interviewer doesn’t even ask questions, but just mentions the topic to be discussed and allows the interviewee to expound.
+
+
+[p. 45] It is also important to make it clear that there are no “right” answers. 
+
+
+[p. 45] Interview guides are purely for the use of the interviewer; they are never shown to the interviewee.
+
+Criar um guida para entrevista.
+
+
+
+[p. 46] However, many of these questions were open-ended and were intended for (and successful in) 
+soliciting other information not foreseen by the interviewer. For example, one ques-
+tion on the COTS Study interview guide was:
+What are the disadvantages of [COTS integration] in comparison with tradi-
+tional development?
+
+## Plano e execução do experimento
+
+Criação de um grupo no whatsapp?
+
+Imagem de aluno executando o experimento
+
+## Análise do experimento
+
+percentual que já utilizaram antes
+
+- Facilidade de utilização de ferramenta?
+- Desafios da ferramenta?
+- O produto final do documento?
+- O que poderia ser melhorado?
+- Módulos do sistema
+- Figuras e tabelas
+- Análise de conformidade com as normas
+- Benefícios do sistema
+
+## Discussão
+
+# Considerações finais
+
+## Sugestões para trabalhos futuros
+
+- Utilização para produção de artigos do SBC
+- Utilização para produção de trabalhos escolares
+
 
 <!-- pdftk A=xxx-Monografia.pdf B=configuracao.pdf cat A1-47 B A68-END output proposta-qualificacao-eduardo.pdf
 -->
