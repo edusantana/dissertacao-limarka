@@ -1,16 +1,19 @@
 # Introdução
 
-Durante o período de formação superior no Brasil, muitos alunos *sofrem* para elaborar e entregar uma monografia, como requisito para conclusão dos estudos. Uma parte desse sofrimento está associada à formatação da monografia (no software de editoração) em conformidade com as normas da Associação Brasileira de Normas Técnicas (ABNT).
+Durante o período de formação superior no Brasil muitos estudantes necessitam escrever um trabalho de conclusão de curso (TCC), como requisito para conclusão dos estudos. Neste momento eles são convocados a realizarem uma pesquisa científica e reportarem o trabalho através de uma monografia, dissertação ou tese -- geralmente em conformidade com as Normas da Associação Brasileira de Normas Técnicas (ABNT).
 
-O público nacional atualmente possui, de modo geral, duas alternativas para formatação de trabalhos acadêmicos: (1) Utilização de um editor de texto rico (como o Microsoft Word ou Libre Office) ou (2) Utilização do Latex. Embora o Latex possua uma *curva de aprendizado maior*, a produção de trabalhos acadêmicos com um editor de texto rico exige conhecimentos avançados da ferramenta (tais como utilização de estilos, geração de sumário e gerência de referências), ou caso o usuário não domine essas técnicas terá um esforço de edição muito grande para formatações manuais de todas as seções do trabalho.
+De modo geral, o público nacional dispõe de duas alternativas para elaboração dos TCCs: (a) utilização de um editor de texto rico (como o Microsoft Word ou Libre Office) ou (b) utilização do Latex. 
+A primeira alternativa demanda do usuário conhecimentos de uso avançados da ferramenta para produzir um documeto de acordo com as normas da ABNT, até mesmo quando utiliza-se um modelo previamente disponibilizado. Sem esses conhecimentos técnicos e desconhecendo as Normas, alguns desses usuários são compelidos a pagarem para outros implementarem as mudanças necessárias em seu documento. 
 
-As linguagens de marcação de texto (*lightweight markup language*) surgiram, em diferentes contextos, como alternativas para elaboração e formatação de textos. Essas linguagens possibilitam os usuários redigirem em arquivos somente texto (*plain text*), com uma curva de aprendizado menor do que o Latex.
+Embora o Latex possua uma *curva de aprendizado maior*, os editores on-line de Latex como o Overleaf \cite{overleaf} ou ShareLatex \cite{sharelatex} oferecem ambientes com interfaces gráficas que possibilitam uma experiência de edição similar aos editores de texto rico, tornando o processo mais fácil. Esta alternativa, em conjunto com a utilização de modelos disponibilizados pelas instituições, possibilita seus usuários abstraírem as regras de formatação (codificadas nos modelos) e se concentrarem na elaboração do texto. No entanto, o arquivo fonte do texto, onde a edição ocorre, permanece repleto de códigos (geralmente com nomenclaturas provenientes do inglês) ofuscando um pouco a legibilidade do arquivo em edição.
+
+As linguagens de marcação de leve (*lightweight markup language*) surgiram, em diferentes contextos, como alternativas para elaboração de textos ou mensagens de comunicação. Essas linguagens possibilitam os usuários redigirem utilizando uma sintaxe de marcação simples, compatível com arquivos somente texto (*plain text*), e produzindo conteúdos fáceis de serem reconhecidos por humanos.
+
+Este trabalho investiga a utilização de Markdown, uma linguagem de marcação leve, como outra alternativa para produção de TCCs em conformidade com as Normas da ABNT.
 
 ## Motivação
 
-A motivação desse trabalho consiste em ofertar uma nova alternativa para elaboração de trabalhos acadêmicos (monografia, dissertação ou tese) utilizando uma linguagem de marcação de texto, elaborada com o propósito de redigirem e formatarem seus trabalhos em conformidade com as Normas da ABNT.
-
-
+A motivação desse trabalho consiste em ofertar uma ferramenta para elaboração de trabalhos de conclusão de curso (monografia, dissertação ou tese) em conformidade com as Normas da ABNT, que seja fácil e agradável de utilizar, e minimizando os conhecimentos exigidos sobre as Normas.
 
 ## Objetivos
 
@@ -18,33 +21,43 @@ Nessa seção são apresentados o objetivo geral e os específicos da pesquisa.
 
 ### Objetivo Geral
 
-
-O objetivo geral desse trabalho é *analisar* a utilização da linguagem Markdown na escrita de trabalhos de conclusão de curso em conformidade com as Normas da ABNT.
+O objetivo geral desse trabalho é *avaliar* o uso de uma linguagem de marcação leve para escritas de TCCs em conformidade com as Normas da ABNT.
 
 ### Objetivos Específicos
 
-- Especificar e implementar um sistema que possibilite usuários escrever seus trabalhos de conclusão de curso em Markdown;
+- *Especificar* e *implementar* um sistema que possibilite usuários escrever TCCs em Markdown em conformidade com as Normas da ABNT;
   
-- Analisar a utilização da linguagem através de experimentos com usuários do sistema elaborando propostas de trabalhos de conclusão de curso.
+- *Avaliar* o uso da linguagem Markdown para a escrita de TCCs por estudantes.
 
 
 ## Metodologia
 
-A pesquisa adotou o método de *análise qualitativa*. De acordo com \cite{hazzan2006qualitative}, o método qualitativo deve ser empregado quando o objeto de estudo envolve analisar processos mentais de indivíduos ou quando o estudo é um dos pioneiros na área e não existem dados suficientes que sugestionem elaborações de hipóteses *a priori*. Devido a não ter encontrado pesquisas da utilização da linguagem Markdown para produção de trabalhos acadêmicos nacionais, e o objeto de estudo envolve processos metais sobre a utilização da ferramenta, o método escolhido para análise foi o qualitativo.
+A pesquisa adotou o método de *análise qualitativa*. De acordo com \cite{hazzan2006qualitative}, o método qualitativo deve ser empregado quando o objeto de estudo envolve analisar processos mentais de indivíduos ou quando o estudo é um dos pioneiros na área e não existem dados suficientes que sugestionem elaborações de hipóteses *a priori*. 
+Portanto a escolha do método qualitativo nessa pesquisa é justificada devido a ausência de pesquisas sobre utilização da linguagem Markdown para produção de TCCs nacionais.
 
-O instrumento de coleta de dados utilizado foram entrevistas não estruturadas.
+Os instrumentos adotados para coleta de dados foram observação e entrevistas semiestruturadas . <!-- Pq esse instrumento foi escolhido?--> 
 
-O método qualitativo é recomendado quando o estudo realizado 
-foi escolhido porque não foram levantadas hipóteses *a priori*, devido a ausência de estudos sobre utilização de Markdown na produção de TCCs nacionais. 
+<!--
+Casos diferentes:
+- Testes no laboratório. Tempo limitado.
+- Testes individuais. Tempo limitado vs ilimitado. Cansaço?
+-->
 
-A avaliação da utilização do sistema será realizada através de experimentos com usuários e entrevistas não estruturadas 
 
-Não temos conhecimentos de 
+<!-- Experimento não realístico, Observação, Entrevista.
+Estudo de Caso? Utilização, Entrevista.
 
+A avaliação da utilização do sistema foi realizada através de experimentos com usuários e a entrevista semiestruturada foi 
 
 ## Método
 
 Um método de avaliação de um sistema pode ocorrer em três dimensões: a) com ou sem o envolvimento ativo dos usuários, b) com ou sem o sistema em execução e c) com ou sem um contexto realístico de utilização. Além disso, seus os requisitos de avaliação mais comuns são: validade analítica, escopo, confiança, produtividade, usabilidade e capacidade de aprendê-lo \cite{blandfordann}.
+
+<!--
+Tentando extrair o doi:
+https://www.google.com.br/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=0ahUKEwjRtIflodvRAhVKPJAKHSq-C7YQFggfMAA&url=http%3A%2F%2Fciteseerx.ist.psu.edu%2Fviewdoc%2Fdownload%3Fdoi%3D10.1.1.383.9034%26rep%3Drep1%26type%3Dpdf&usg=AFQjCNEgsF0c4sH72ZBhOzYXU8o5F0ddnA&sig2=FdJTwF_IajY6CnFAnsWq6g&cad=rja
+
+-->
 
 <!-- Tese: elaborar uma metodologia para avaliar sistemas para produção de trabalhos acadêmicos.
 
@@ -54,16 +67,14 @@ Essa pesquisa utilizará avaliação *com* envolvimento ativo dos usuários e *c
 *com* e *sem* um contexto realístico. Os experimentos estão descritos
 no Capítulo \ref{experimentos}.
 
-O método de avaliação da usabilidade empregado será o mesmo de \cite{green1996usability} do trabalho relacionado (Seção \ref{referenciadeavaliacao}) que utiliza o *framework* de Dimensões Cognitivas (descrito mais adiante na Seção \ref{frameworkcd}).
-
 <!-- Essa pesquisa utiliza filosofia Pragmática \cite[easterbrook2008selecting], ao escolher o método de pesquisa que melhor convém ao pesquisador para solucionar o problema em que se depara. -->
 
-O contexto da pesquisa contempla apenas usuários com nível superior
-*incompleto* ou *completo*, que tiveram contato com as normas da ABNT
-durante sua formação.
+O contexto da pesquisa contempla apenas estudantes com nível superior *incompleto* ou *completo*, que tiveram contato com as normas da ABNT durante sua formação.
 
 
 Fazer perguntas sobre motivação, percepção e experiência.\cite[p. 36]{guide2008}
+
+Ver: \cite{Seaman2008QualitativeMethods}
 
 <!-- The  principal  advantage  of  using  qualitative  methods  is  that  they  force  the 
 researcher to delve into the complexity of the problem rather than abstract it away. 
@@ -394,6 +405,16 @@ especificações exigidas pelas Normas da ABNT, pois *não proveem a
 notação para a Fonte* da Figura ou Tabela. E as tabelas *não possuem
 sintaxe para mesclagem de células*.
 
+#### Editores
+
+A Ferramenta Authorea 
+
+<!-- 
+https://www.authorea.com/featured_templates
+
+Working on a research paper, thesis or a scientific project? To simplify your research submission process, we give you over 8000 templates to choose from. The templates follow guidelines set by the journals including the correct citation format. How does it work? Just pick the journal template and start writing. Don’t worry if you decide to submit your work to a different journal, you can switch templates at any time. All your data, text, images, and citations will be reformatted automatically.
+-->
+
 ### Docbook
 
 Nessa seção é apresentado o formato DocBook, uma linguagem complexa
@@ -453,93 +474,21 @@ exige que o usário conheça uma sintaxe maior de símbolos, os
 significados e grafias de alguns termos em inglês (tais como: 
 *image, table, witdh, footnote e preface*).
 	
-### ABNTFÁCIL: formatação de trabalhos acadêmicos ###
 
-A elaboração de uma linguagem para produção de trabalhos acadêmicos
-em conformidade com as normas da ABNT não é algo inédito, existe
-um software nacional que implementa uma linguagem de marcação própria,
-concebida com esse propósito.
+
+### Comparação de linguagens de marcação de texto
 
 \begin{figure}[htbp]
-\caption{\label{fig_abntfacil_apresentacao}Apresentação do Software ABNTFÁCIL}
+\caption{\label{fig:comparacao-popularidade-de-linguagens}Comparação de consultas de linguagens de marcação de texto}
 \begin{center}
-\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-apresentacao.jpg}
+\includegraphics[width=1.0\textwidth]{/home/eduardo/w/dissertacao-limarka/imagens/comparacao-popularidade-de-linguagens.png}
 \end{center}
-\legend{Fonte: \citeonline{abntfacil}}.
+\legend{Fonte: Google trends}
 \end{figure}
 
-O software ABNTFÁCIL (Figura \ref{fig_abntfacil_apresentacao}) possui
-duas notações: a linguagem de edição e formulários para configuração
-de diversos elementos \cite{abntfacil}. O processo de compilação
-utiliza macros do MS-Word, que geram os documentos com a formatação
-apropriada. 
+<!--Para referenciar a figura acima no texto utilize: Figura \ref{fig:comparacao-popularidade-de-linguagens} 
+-->
 
-A linguagem do ABNTFÁCIL utiliza *tags*, todas em português (Figuras
-\ref{fig:abntfacil:tags} e
-\ref{fig:abntfacil:tags:independentes}). Percebemos que algumas delas
-foram inspiradas nas normas da ABNT: **QDR** (Quadro), **TAB**
-(Tabela), **int** (Introdução), **NRP** (Nota de rodapé), **ctd**
-(Citação direta) e **img** (Imagem). Outras foram inspiradas na
-nomenclatura que o MS-Word utilizada para os recursos: **mci**
-(marcadores de itens – lista não ordenada), **mcl** (marcadores com
-letras – lista ordenada com letras), **mcn** (marcador de número – lista
-ordenada por números).
-
-\begin{figure}[htbp]
-\caption{\label{fig:abntfacil:tags}Tags com abertura e fechamento do ABNTFÁCIL}
-\begin{center}
-\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-tags-com-fechamento.png}
-\end{center}
-\legend{Fonte: \citeonline{abntfacil}}.
-\end{figure}
-
-\begin{figure}[htbp]
-\caption{\label{fig:abntfacil:tags:independentes}Tags independentes do ABNTFÁCIL}
-\begin{center}
-\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-tags-independentes.png}
-\end{center}
-\legend{Fonte: \citeonline{abntfacil}}.
-\end{figure}
-
-Através de formulários é possível configurar vários elementos, tais
-como Folha de Rosto (Figura \ref{fig:abntfacil:folha-de-rosto}),
-Quadros (Figura \ref{fig:abntfacil-quadro} e \ref{fig:abntfacil-quadro-tag}).
-
-\begin{figure}[htbp]
-\caption{\label{fig:abntfacil:folha-de-rosto}Configuração da folha de rosto através de formulário}
-\begin{center}
-\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-formulario-folha-de-rosto.png}
-\end{center}
-\legend{Fonte: \citeonline{abntfacil}}.
-\end{figure}
-
-\begin{figure}[htbp]
-\caption{\label{fig:abntfacil-quadro}Configuração para inserção de Quadro através de formulário}
-\begin{center}
-\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-quadro.png}
-\end{center}
-\legend{Fonte: \citeonline{abntfacil}}.
-\end{figure}
-
-\begin{figure}[htbp]
-\caption{\label{fig:abntfacil-quadro-tag}Apresentação da {\em tag} de Quadro no documento}
-\begin{center}
-\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-quadro-tag.png}
-\end{center}
-\legend{Fonte: \citeonline{abntfacil}}.
-\end{figure}
-
-Através  de formulários  o ABNTFÁCIL  também implementa  um gestor  de
-referências (Figura \ref{fig:abntfacil:referencias}) e mecanismos para
-referenciá-las.
-
-\begin{figure}[htbp]
-\caption{\label{fig:abntfacil:referencias}Formulário de cadastro de uma referência de Artigo}
-\begin{center}
-\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-referencias.png}
-\end{center}
-\legend{Fonte: \citeonline{abntfacil}}.
-\end{figure}
 
 
 ## Formulários em PDF ##
@@ -903,6 +852,12 @@ sobre o *design* de *linguagens de marcação de texto*.
 
 -->
 
+## Fluxo de escrita científica
+
+<!-- http://blog.kdheepak.com/writing-papers-with-markdown.html 
+
+-->
+
 ## Considerações Finais ##
 
 Na fundamentação teórica apresentamos as normas da ABNT, as regras
@@ -952,24 +907,21 @@ de sistemas através de experiências de usuários que não conhecem o
 
 ## R Markdown: linguagem para reprodutibilidade de pesquisas científicas
 
-A linguagem R Markdown, suportada pela ferramenta RStudio, apresenta uma
-variação da linguagem Markdown com o propósito de facilitar a 
-*reprodutibilidade* de pesquisas científicas.
+\index{R Markdown}
+Uma das iniciativas de utilização de Markdown na escrita científica é o R Markdown, diponibilizado na ferramenta R Studio \cite{rmarkdown}. O RStudio é uma IDE que facilita a criação, execução e depuração de *scripts* R, utilizado principalemnte para análises estatísticas.
 
-A *replicação* de uma pesquisa consiste em executar toda a
-análise estatística novamente, gerar gráficos ou tabelas e incorporá-los
-no documento final, no mesmo ambiente de trabalho. A
-*reprodução* da pesquisa consiste em outro pesquisador ser
-capaz de reproduzir os mesmos resultados em um ambiente de trabalho
-diferente \cite{Gandrud2015}.
+O R Markdown é essencialmente Markdown, mas possibilita a inserção de blocos de instruções na linguagem R para realização de tratamentos estatísticos (como geração de gráficos, tabelas etc.). Durante a compilação de um documento os gráficos ou tabelas são gerados dinamicamente através da execução dos *scripts* R e inseridos no documento.
 
-O R Markdown é essencialmente Markdown, mas possibilita a inserção de
-blocos de instruções na linguagem R para realização de tratamentos
-estatísticos (geração de gráficos, tabelas etc.), que são executadas
-em uma etapa anterior a compilação do documento.  Os pesquisadores que
-desejam reproduzir uma pesquisa podem inspecionar as instruções
-estatísticas e reproduzir os resultados, geralmente com acesso aos
-mesmos dados da pesquisa.
+
+### Discussão
+
+\index{reprodutibilidade}
+A linguagem R Markdown tem o propósito de facilitar a *reprodutibilidade* de pesquisas científicas. A *replicação* de uma pesquisa consiste em executar toda a análise estatística novamente, gerar gráficos ou tabelas e incorporá-los no documento final, no mesmo ambiente de trabalho. A *reprodução* da pesquisa consiste em outro pesquisador ser capaz de reproduzir os mesmos resultados em um ambiente de trabalho diferente \cite{Gandrud2015}.
+
+Supondo um artigo científico que contenha um gráfico proveniente de um análise de dados, como esse gráfico foi gerado? Quais os dados utilizados? Qual método de análise foi empregado? Quais parâmetros foram utilizados?  Através dos *scripts* R é possível especificar todas essas informações. O autor da pesquisa é o primeiro beneficiado, pois consegue facilmente replicar a análise mesmo quando os dados mudam.
+
+Se os dados da pesquisa esteveremm disponibilizados publicamente outros pesquisadores podem reproduzir o mesmo ambiente de execução e chegar aos mesmos resultados, promovendo a *reprodutibilidade* de pesquisas científicas.
+
 
 ### Discussão
 
@@ -982,44 +934,121 @@ expressiva o suficiente para atender as exigências das normas da ABNT
 para elaboração de trabalhos acadêmicos, conforme explicado na Seção
 \ref{inclusao-imagens-e-tabelas}.
 
-<!-- A utilização da ferramenta Pandoc para formatação de um trabalho
-acadêmico com as normas da ABNT requer a criação de um novo modelo (no
-formato Latex, com estilos apropriados) que possa ser configurado
-através das variáveis, especificadas nos blocos YAML pelo usuário final.
+## ABNTFÁCIL: formatação de trabalhos acadêmicos ##
+
+\index{ABNTFÁCIL}
+A elaboração de uma linguagem para produção de trabalhos acadêmicos em conformidade com as normas da ABNT não é algo inédito, existe um software nacional que implementa uma linguagem de marcação própria, concebida com esse propósito.
+
+O software ABNTFÁCIL (Figura \ref{fig_abntfacil_apresentacao}) possui duas notações: a linguagem de edição e formulários para configuração de diversos elementos \cite{abntfacil}. O processo de compilação utiliza macros do MS-Word, que geram os documentos com a formatação apropriada.
+
+\begin{figure}[htbp]
+\caption{\label{fig_abntfacil_apresentacao}Apresentação do Software ABNTFÁCIL}
+\begin{center}
+\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-apresentacao.jpg}
+\end{center}
+\legend{Fonte: \citeonline{abntfacil}.}
+\end{figure}
+
+A linguagem do ABNTFÁCIL utiliza *tags*, com formato parecido com xml. Todas as *tags* são em português (ver Figuras \ref{fig:abntfacil:tags} e \ref{fig:abntfacil:tags:independentes}) e curtas, sendo fáceis de serem memorizadas e digitadas.
+
+\begin{figure}[htbp]
+\caption{\label{fig:abntfacil:tags}Tags com abertura e fechamento do ABNTFÁCIL}
+\begin{center}
+\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-tags-com-fechamento.png}
+\end{center}
+\legend{Fonte: \citeonline{abntfacil}.}
+\end{figure}
+
+\begin{figure}[htbp]
+\caption{\label{fig:abntfacil:tags:independentes}Tags independentes do ABNTFÁCIL}
+\begin{center}
+\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-tags-independentes.png}
+\end{center}
+\legend{Fonte: \citeonline{abntfacil}.}
+\end{figure}
+
+O ABNTFÁCIL utiliza formulários para configurar vários elementos, tais
+como Folha de Rosto (Figura \ref{fig:abntfacil:folha-de-rosto}),
+Quadros (Figura \ref{fig:abntfacil-quadro} e \ref{fig:abntfacil-quadro-tag}).
+
+\begin{figure}[htbp]
+\caption{\label{fig:abntfacil:folha-de-rosto}Configuração da folha de rosto através de formulário}
+\begin{center}
+\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-formulario-folha-de-rosto.png}
+\end{center}
+\legend{Fonte: \citeonline{abntfacil}.}
+\end{figure}
+
+\begin{figure}[htbp]
+\caption{\label{fig:abntfacil-quadro}Configuração para inserção de Quadro através de formulário}
+\begin{center}
+\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-quadro.png}
+\end{center}
+\legend{Fonte: \citeonline{abntfacil}.}
+\end{figure}
+
+\begin{figure}[htbp]
+\caption{\label{fig:abntfacil-quadro-tag}Apresentação da {\em tag} de Quadro no documento}
+\begin{center}
+\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-quadro-tag.png}
+\end{center}
+\legend{Fonte: \citeonline{abntfacil}.}
+\end{figure}
+
+O ABNTFÁCIL implementa um gestor de referências próprio (Figura \ref{fig:abntfacil:referencias}) e mecanismos para
+referenciá-las, através de formulários.
+
+\begin{figure}[htbp]
+\caption{\label{fig:abntfacil:referencias}Formulário de cadastro de uma referência de Artigo}
+\begin{center}
+\includegraphics[width=0.85000\textwidth]{imagens/abntfacil-referencias.png}
+\end{center}
+\legend{Fonte: \citeonline{abntfacil}.}
+\end{figure}
+
+### Discussão
+
+As *tags* possuem do ABNTFÁCIL possuem origem mista, baseadas nas normas da ABNT e nos recursos do Word. Percebemos que algumas *tags* criadas foram inspiradas nas normas da ABNT: **QDR** (Quadro), **TAB** (Tabela), **int** (Introdução), **NRP** (Nota de rodapé), **ctd** (Citação direta) e **img** (Imagem). E outras foram inspiradas na nomenclatura que o MS-Word utilizada para os recursos: **mci** (marcadores de itens – *lista não ordenada*), **mcl** (marcadores com letras – *lista ordenada com letras*), **mcn** (*marcador de número – lista ordenada por números*).
+
+Não há meios para customizar a geração do documento além dos já previstos pela ferramenta. Por exemplo, não seria possível adicionar o nome do departamento na capa do trabalho. A única alternativa seria editar o arquivo final do Word gerado.
+
+As soluções adotadas pelo ABNTFÁCIL, além de serem proprietárias, não possuem interoperabilidade com outros formatos internacionais. O sistema de referências não importa referências salvas no *formato bibtex*, o único meio de inserir uma nova referência é através do preenchimento de formulários. A sintaxe da linguagem não é utilizada por nenhum outro aplicativo.
+
+## Proposta para utilização de Markua em dissertações no Departamento de Minas da FEUP
+
+\index{Markua}
+Existe uma proposta \cite{minas} de produção de dissertações para o Departamento de Minas da Faculdade de Engenharia da Universidade do Porto com utilização de Markua, uma linguagem de marcação leve baseada em Markdown e especializada para produção de livros \cite{markua}.
+
+O Markua contém a sintaxe base do Markdown e implementa diversas extensões para contemplar as necessidades de autores de livros. Dentre as funcionalidades adicionadas estão: sintaxe própria de tabelas, que permite mesclagem de células; inclusão de vídeo e áudio; inclusão de código fonte a partir de arquivos; inclusão de quadros ao lado e formatação de parágrafo.
+
+A proposta requer a utilização do fluxo de trabalho disponibilizado pelo site <https://leanpub.com>. O autor da dissertação deveria baixar um modelo de dissertação e editá-lo localmente utilizando a sintaxe de Markua. Os conteúdos são submetidos ou sincronizados com o site através de serviços como o Dropbox, Github ou Bitbucket. Em seguida o site iria gerar um PDF que deveria ser aceito pelo curso.
+
+### Discussão
+
+Essa proposta pode ser considerada uma tentativa local para agilizar as produções de Dissertações. Esse fluxo de trabalho apresenta uma tentativa para diminuir o esforço empreendido pelos estudantes para produzir e formatar uma Dissertação. Ao utilizar Markua e Leanpub os estudantes seriam capazes de produzir um livro facilmente, que deveria ser aceito pelo departamento como uma dissertação.
+
+O modelo disponibilizado tenta contemplar as normas da ABNT, fornecendo uma estrutura de pré-textual, textual e pós-textual que se assemelha às Normas. Mas o sistema não permite a parametrização dos *layouts* e estilos. Por exemplo, embora seja possível formatar um parágrafo para ser utilizado como uma citação longa, não é possível alterar sua formatação para adequar-se as normas da ABNT. O sistema também não prevê a inclusão de PDFs, um recurso desejado para apresentar artigos publicados ou Anexos nos TCCs. O sistema do Leanpub foi projetado para produção de livros em diversos formatos, incluindo PDFs e formatos específicos para leitores de livros digitais, e por isso disponibiliza recursos disponíveis em ambientes específicos.
+
+<!-- https://leanpub.com/lean
+Lean Publishing
+Peter Armstrong
+Peter Armstrong
+
+This book explains the philosophy behind Leanpub, from its origin in "a book is a startup" to the present form. Lean Publishing is the act of publishing an in-progress book using lightweight tools and many iterations to get reader feedback, pivot until you have the right book and build traction once you do.
+
+
+http://shop.oreilly.com/category/early-release.do
+
+Get Early Access to O'Reilly Titles
+Ebooks and videos you can only buy at shop.oreilly.com
+
+With Early Release ebooks and video training, you get access to titles while they are being written so you can take advantage of these technologies right now. You'll receive updates when content is added, as well as the completed ebooks and videos when they're done.
+
+Video training and ebooks from shop.oreilly.com are DRM-free. You get free lifetime access, multiple file formats, and free updates. Sync with Dropbox and Drive—your files, anywhere.
+
 -->
 
-## Análise de interfaces de softwares para composição de músicas e efeitos sonoros
 
-Uma análise de interfaces utilizando o *framework* de Dimensões
-Cognitivas foi realizada por \citeonline{Bellingham2014}. Nesse trabalho o
-alvo da pesquisa eram interfaces de softwares de composição musical,
-utilizando algoritmos parametrizados. O trabalho analisa diversas
-interfaces, que incluem linguagens de programação visual, linguagens
-de programação orientadas a textos, e softwares que solicitam dados do
-usuário.
-
-As análises das interfaces foram realizadas sem o envolvimento ativo
-de usuários (utiliza opinião de um *expert*), com execução dos sistemas e
-em contextos não realísticos. A análise contemplou todas as dimensões
-do *framework* de Dimensões Cognitivas.
-
-## Análise de usabilidade de ambientes de programação visual {#referenciadeavaliacao}
-
-O *framework* de Dimensões Cognitivas também foi utilizado para
-avaliar dois ambientes de programação visual
-\cite{green1996usability}. Esse trabalho apresenta uma avaliação
-bastante detalhada com todas as dimensões do *framework*.
-
-## Avaliação da usabilidade através de usuários que não conhecem o *framework*
-
-O *framework* de Dimensões Cognitivas foi elaborado para ser utilizado
-por alguém que conheça bem o *framework* e também conheça bem o
-sistema \cite{CDquestionario}.
-
-\citeonline{CDquestionario} elaborou um questionário para ser
-empregado em usuários sem conhecimento do *framework*, ele encontra-se
-disponível no Anexo \ref{anexoquestionario}. O questionário foi
-utilizado com 18 usuários na análise de 13 sistemas.
 
 # Proposta de dissertação #
 
@@ -1287,11 +1316,20 @@ percentual que já utilizaram antes
 
 # Considerações finais
 
+## Extrapolação
+
+- Experimento realizado em contexto não realístico
+
 ## Sugestões para trabalhos futuros
 
 - Utilização para produção de artigos do SBC
 - Utilização para produção de trabalhos escolares
 
+<!-- 
+- Avaliação do software
+SOFTWARE EVALUATION : TUTORIAL - BASED:
+https://www.software.ac.uk/sites/default/files/SSI-SoftwareEvaluationTutorial.pdf?_ga=1.60258478.2094067149.1483721180
+-->
 
 <!-- pdftk A=xxx-Monografia.pdf B=configuracao.pdf cat A1-47 B A68-END output proposta-qualificacao-eduardo.pdf
 -->
