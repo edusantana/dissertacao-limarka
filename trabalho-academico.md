@@ -30,7 +30,7 @@ O objetivo geral desse trabalho é *avaliar* o uso de uma linguagem de marcaçã
 - *Avaliar* o uso da linguagem Markdown para a escrita de TCCs por estudantes.
 
 
-## Metodologia
+# Metodologia
 
 A pesquisa adotou o método de *análise qualitativa*. De acordo com \cite{hazzan2006qualitative}, o método qualitativo deve ser empregado quando o objeto de estudo envolve analisar processos mentais de indivíduos ou quando o estudo é um dos pioneiros na área e não existem dados suficientes que sugestionem elaborações de hipóteses *a priori*. 
 Portanto a escolha do método qualitativo nessa pesquisa é justificada devido a ausência de pesquisas sobre utilização da linguagem Markdown para produção de TCCs nacionais.
@@ -108,12 +108,6 @@ Os formulários em PDFs são apresentados como alternativas para aquisição de 
 
 Argumentos de que uma linguagem não pode ser avaliada independente do seu ambiente são apresentados (sistema = notação + ambiente).
 
-Por fim o *framework* de Dimensões Cognitivas de Notações é apresentado com a descrição de suas dimensões e como ele pode ser utilizado para avaliar a usabilidade um sistema.
-
-## Lightweight markup language
-
-<!-- A lightweight markup language (LML), also termed a simple or humane markup language, is a markup language with simple, unobtrusive syntax. -->
-
 ## Normas da ABNT para trabalhos acadêmicos ##
 
 As normas da ABNT que normatizam como cada elemento dos trabalhos acadêmcios trabalhos são as seguintes:
@@ -172,7 +166,233 @@ Também é possível encontrar manuais tais como \cite{joelma_marques_da_silva_n
 >
 > A fonte de onde foram extraídas as informações deve ser colocada *abaixo do título da figura*, precedida dos seguintes itens \[...\]
 	
-## abnTeX2 #
+## Fluxo de escrita científica ##
+
+<!-- http://blog.kdheepak.com/writing-papers-with-markdown.html 
+
+-->
+
+### Considerações Finais ###
+
+Na fundamentação teórica apresentamos as normas da ABNT, as regras
+para utilizar ilustrações e como o projeto abnTeX popularizou o uso do
+Latex em trabalhos acadêmicos nacionais.
+
+Em seguida apresentamos duas linguagens de marcação de texto: Markdown e
+Asciidoc, com seus contextos de criação e suas limitações.
+
+A ferramenta Pandoc, que implementa a linguagem Markdown, pode ser
+configurada para utilizar modelos Latex para geração de arquivos
+PDFs. Muitas configurações são inseridas pelo usuário através de
+arquivos ou blocos no formato YAML, que possui uma sintaxe bastante
+expressiva, mas um pouco complexa. A sintaxe de inserção de imagens e
+tabelas utilizada pelo Markdown não permite incluir a notas
+explicativas ou informar a fonte da imagem, requisitos para produção
+de textos em conformidade com as Normas da ABNT.
+
+O formato de arquivo PDF, bastante utilizado para publicação de
+textos, também permite a inserção e extração de dados através do
+recurso de formulários, fornecendo uma interface potencialmente mais
+amigável que o YAML.
+
+O sistema comercial ABNTFácil implementou uma linguagem de marcação
+especializada para o público nacional, em que mesclou conceitos das
+normas da ABNT com recursos do Word.
+
+O Design de uma linguagem necessita de reflexões cognitivas de como
+usuário irá interagir com ela através de um sistema. O ideal é que as
+decisões da criação da linguagem estejam associadas a estudos
+empíricos.
+
+## Linguagem de marcação ##
+
+<!-- Falar sobre Linguagem de marcação sem ser leve -->
+
+
+### Docbook ###
+
+\index{DocBook}
+Nessa seção é apresentado o formato DocBook, uma linguagem de marcação com o propósito original de possibilitar publicação de de livros técnicos, que posteriormente motivou a origem do Asciidoc (\autoref{Asciidoc}).
+
+O Docbook é um formato XML de produção de livros criado pela editora O’Reilly, especializada na produção e comercialização de livros técnicos. O formato possui diversas versões que determinam todos os elementos de um livro \cite{docbook-guide}. Foram produzidas várias ferramentas para converter um DocBook para apresentação em diversos formatos.
+
+Na versão 5.0, o formato possui mais de 350 *tags* para contemplar a escrita dos livros e todos seus elementos: prefácio, preambulo, resumo, dedicatória, capítulo, glossário, sinopse, índice remissivo, exemplos, quadros (notas, informações, atenção), códigos fontes etc. Com o DocBook é possível separar a formatação da apresentação e configurá-la para cada formato de saída desejado.
+
+A complexidade dessas *tags* motivou a criação de uma linguagem mais simples, mas que fosse capaz de aproveitar todas as ferramentas compatíveis com formato DocBook: a Asciidoc.
+
+#### Discussão
+
+## Linguagens de marcação leve ##
+
+<!-- A lightweight markup language (LML), also termed a simple or humane markup language, is a markup language with simple, unobtrusive syntax. -->
+
+<!--
+https://techwhirl.com/series/structured-writing/
+https://techwhirl.com/what-is-structured-writing/
+
+-->
+
+As linguagens de marcação de leves (*lightweight markup languages*) são linguagens que realizaram marcações simples em textos, de fácil leitura/escrita para os usuários. Elas costumam serem utilizadas para escrita de textos e composição de mensagens na Internet.
+
+Nessa seção são apresentadas três linguagens de marcação: Markdown que teve como objetivo original geração de código HTML, DocBook uma linguagem XML para produção de livros e Asciidoc uma linguagem no formato de texto para geração de documentos no formato DocBook.
+
+
+### Asciidoc {#Asciidoc} ###
+
+\index{Asciidoc}
+Nessa seção é apresentado o formato Asciidoc, uma linguagem de marcação simples com o propósito original agilizar a produção de livros e manter compatibilidade as ferramentas que processam DocBook.
+
+A linguagem Asciidoc foi concebida para agilizar a produção de livros técnicos no formato DocBook.[^6] Em vez de escrever o livro em XML, o autor poderia utilizar a sintaxe do Asciidoc e exportar um arquivo em conformidade com o padrão DocBook \cite{asciidoc}.
+
+[^6]: Formato XML, criado pela editora O’Reilly Media para editoração de
+    livros técnicos: <http://www.docbook.org>.
+
+A Asciidoc possui sintaxe mais simples para criar vários elementos de um livro compatível, com mapeamentos com o padrão Docbook (aceitando inclusive a inserção de código DocBook puro). Ela suporta modularização através da inclusão de arquivos externos. Permite incluir códigos fontes de arquivos externos e invocar um comando do sistema e para incluir seu resultado.
+
+Ela é expansível através da instalações de filtros. Existem filtros para geração de QRCode, de diagramas UML, de partitura etc. O usuário pode escrever novos filtros.
+
+A sintaxe de criação de tabelas permite mesclar células, configurar o alingamento de colunas (ou de células individualmente), cabeçalho e rodapé. É possível inclusão de dados externos, como um arquivo de texto separado por vírgulas.
+
+Por ter sua origem na produção de livros, é possível referenciar automaticamente quase todos os elementos, tais como: images, tabelas, capítulos, seções, códigos, quadros etc.
+
+
+### Markdown ###
+
+\index{Markdown}
+Markdown é uma linguagem de marcação de texto simples que dispensa o uso de palavras chaves \cite{pandoc}. Sua origem foi inspirada na escrita de e-mails e seu propósito original era exclusivamente *escrever para Web* (geração de código HTML). Sua filosofia é que *o formato do texto escrito possua uma formatação visual similar à apresentação do documento final* (página HTML) \cite{markdown}.
+
+A Figura \ref{fig:rmarkdown} apresenta um subconjunto da linguagem Markdown. Na coluna esquerda (*syntax*) é apresentada a sintaxe da linguagem, na coluna do lado direito (*becomes*) temos a apresentação em HTML gerado a partir do código da esquerda. É possível ver a sintaxe para itálico, negrito, capítulos e seções (*headers*), listas, tabelas etc.
+
+\begin{figure}[htb]
+\caption{\label{fig:rmarkdown}Subconjunto da sintaxe de Markdown}
+\begin{center}
+\includegraphics[width=0.70000\textwidth]{imagens/Rmarkdown.png}
+\end{center}
+\legend{Fonte: \url{https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf}}
+\end{figure}
+
+
+Várias ferramentas possuem implementações próprias do Markdown, expandindo o formato original para contemplar novos contextos e funcionalidaes, uma dessas ferramentas bastante utilizada é a Pandoc. 
+
+## Ferramentas ##
+### Pandoc ###
+
+\index{Pandoc}
+A arquitetura da ferramenta Pandoc permite converter arquivos em diferentes formatos.[^2] Ela difere de ferramentas usuais por possibilitar o usuário escolher quais extensões do Markdown deseja utilizar, em outras palavras, ela possibilita configurar a sintaxe da linguagem.
+
+
+Na geração do código ela utiliza modelos internamente e configuração
+de parâmetros em arquivos no formato YAML, que será apresentado adiante.
+
+[^2]: Atualmente possibilita ler os formatos Markdown, CommonMark, PHP
+    Markdown Extra, GitHub-Flavored Markdown, reStructuredText, HTML,
+    LaTeX, MediaWiki markup, TWiki markup, Haddock markup, OPML, Emacs
+    Org mode, DocBook, txt2tags, EPUB, ODT e Word docx. Além desses
+    formatos, a ferramenta também permite mais formatos de saída.
+
+### YAML ###
+
+\index{YAML}
+
+Nessa seção é apresentado o formato YAML, como ele agiliza a inserção de dados pelo usuário mas exige conhecimentos de estrutura de dados para sua utilização. Por essa razão foi optado por substituí-lo por um formulário PDF no Limarka.
+
+As configurações dos modelos na ferramenta Pandoc são realizadas através de uma *linguagem de template*. O usuário deve atribuir os valores das variáveis no formato YAML, seja em um arquivo separado ou dentro do próprio texto através da criação de um bloco de configuração YAML, como mostrado em \ref{fig:yaml}. Os templates do Pandoc processam esses valores para gerar o documento final.
+
+\begin{figure}[htb]
+\caption{\label{fig:yaml}Exemplo de um bloco configuração no formato YAML}
+\begin{center}
+\includegraphics[width=0.80000\textwidth]{imagens/yaml.png}
+\end{center}
+\legend{Fonte: Autor}
+\end{figure}
+
+O formato YAML é *tipado* e *razoavelmente permissivo* \cite{yamlv12}. O fato de ser tipado facilita o desenvolvimento de aplicações, pois as variáveis retornam com o tipo apropriado, sem necessidade do desenvolvedor realizar conversões manualmente. No código na Figura \ref{fig:yaml} as variáveis `title`, `abstract` e `date` retornariam valores do tipo *String*, *String* e *Inteiro* respectivamente. O tipo da variável `author` é um pouco mais complexo, ele é *Hash* de *Lista* de *Hash* -- isso é necessário para possibilitar informar múltiplos autores.
+
+A permissividade agiliza a inserção de dados pelo o usuário, pois permite inserir valores *String* sem aspas, como nas variáveis `title` e `fontsize`. No entanto, caso deseje-se preencher um *String* com o caracter “:”, será necessário inserir todo o valor entre aspas, como na variável `abstract`.
+
+A *indentação* também é obrigatória para definir hierarquia. Na Figura \ref{fig:yaml}, a variável `affiliation` não estaria relacionada a `author` se não houvesse indentação.
+
+#### Notações de imagens e tabelas do Markdown não são expressivas para atender requisitos da ABNT {#inclusao-imagens-e-tabelas} ####
+
+Nessa seção é apresentada a notação de inclusão de imagens e tabelas
+no Markdown do Pandoc *e como ela são insuficientes para atender as
+especificações das Normas da ABNT*.
+
+A notação para inserir imagens no Markdown é simples, sendo de fácil
+memorização e utilização:
+
+~~~~~~~
+![Título da figura](/caminho/da/imagem.png)
+~~~~~~~
+
+A notação original foi estendida para possibilitar referenciar a
+imagem e redimensionar sua apresentação:
+
+~~~~~~~
+![Título da figura](/caminho/da/imagem.png){#id width=30 height=20px}
+~~~~~~~
+
+O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para elaboração de tabelas, a seguir é apresentado uma delas:
+
+	: Título da tabela
+	
+    +---------------+---------------+--------------------+
+    | Fruit         | Price         | Advantages         |
+    +===============+===============+====================+
+    | Bananas       | $1.34         | - built-in wrapper |
+    |               |               | - bright color     |
+    +---------------+---------------+--------------------+
+    | Oranges       | $2.10         | - cures scurvy     |
+    |               |               | - tasty            |
+    +---------------+---------------+--------------------+
+
+
+Essa notação não permite configurar alinhamento, e nenhuma das demais notações permite a mesclagem de células.
+
+É válido mencionar que a edição de uma tabela no formato apresentado através de um editor de texto simples pode ser bastante tediosa. Na tabela a seguir é apresentado um possível problema de edição quando o editor não provém suporte a edição de tabelas com essa notação:
+
+
+    +---------------+---------------+--------------------+
+    | Fruit         | Price         | Advantages         |
+    +===============+===============+====================+
+    | Bananas       | $1.34         | Indicativo da dificuldade de edição |
+    +---------------+---------------+--------------------+
+    | Oranges       | $2.10         | - cures scurvy     |
+    |               |               | - tasty            |
+    +---------------+---------------+--------------------+
+
+Para que essa sintaxe seja utilizada facilmente é recomendado que o editor de texto implemente funcionalidades para auxiliar na edição.
+
+Mas nenhuma das sintaxes de Figura e Tabela possibilitam atender as especificações exigidas pelas Normas da ABNT, pois *não proveem a notação para a Fonte* da Figura ou Tabela. E as tabelas *não possuem sintaxe para mesclagem de células*.
+
+### Editores ###
+
+A Ferramenta Authorea 
+
+<!-- 
+https://www.authorea.com/featured_templates
+
+Working on a research paper, thesis or a scientific project? To simplify your research submission process, we give you over 8000 templates to choose from. The templates follow guidelines set by the journals including the correct citation format. How does it work? Just pick the journal template and start writing. Don’t worry if you decide to submit your work to a different journal, you can switch templates at any time. All your data, text, images, and citations will be reformatted automatically.
+-->
+
+#### Discussão ####
+
+Embora Asciidoc seja uma linguagem mais expressiva que Markdown, ela exige que o usário conheça uma sintaxe maior de símbolos e, os significados e grafias de alguns termos em inglês (tais como: *image, table, witdh, footnote e preface*).
+	
+
+\begin{figure}[htbp]
+\caption{\label{fig:comparacao-popularidade-de-linguagens}Comparação de consultas de linguagens de marcação de texto}
+\begin{center}
+\includegraphics[width=1.0\textwidth]{/home/eduardo/w/dissertacao-limarka/imagens/comparacao-popularidade-de-linguagens.png}
+\end{center}
+\legend{Fonte: Google trends.}
+\end{figure}
+
+<!--Para referenciar a figura acima no texto utilize: Figura \ref{fig:comparacao-popularidade-de-linguagens} 
+-->
+
+
+### abnTeX2 ###
 
 O abnTeX (*ABsurd Norms for TeX*) é uma iniciativa da comunidade da comunidade de software livre que teve início em 2001 para produção de documentos Latex em conformidade com as Normas da ABNT. A versão atual, abnTeX2, foi oficialmente lançada em 2012 \cite{abntex2manual}. Ele oferece modelos de documentos (artigo, trabalho acadêmico, relatório técnico e projeto de pesquisa), manuais e um conjunto de comandos para contemplar as Normas da ABNT.
 
@@ -212,286 +432,7 @@ delas é impossibilitar adicionar, simultaneamente, as legendas e
 fontes das Figuras ou Tabelas, exigência das normas da ABNT.
 -->
 
-## Linguagens de marcação de texto ##
-
-As linguagens de marcação de texto (*Lightweight markup language*) são
-linguagens que realizaram marcações no texto de forma simples, de
-fácil leitura/escrita para o usuário. Elas costumam serem utilizadas
-para composição de mensagens na internet, ou geração de textos.
-
-Nessa seção são apresentadas quatro linguagens: Markdown que teve como
-objetivo original geração de código HTML, DocBook uma linguagem XML
-para produção de livros e Asciidoc uma linguagem no formato de texto
-para geração de documentos no formato DocBook e o ABNTFÁCIL linguagem
-criada para produção de trabalhos acadêmicos em conformidade com
-Normas da ABNT.
-
-### Markdown
-
-Markdown é uma linguagem de marcação de texto simples que dispensa o uso
-de palavras chaves \cite{pandoc}. Sua origem foi inspirada na escrita de
-e-mails e seu propósito original era exclusivamente *escrever para
-Web* (geração de código HTML). Sua filosofia é que o formato do
-texto escrito possua uma formatação visual similar à apresentação do
-documento final (página HTML).
-
-Várias ferramentas possuem implementações próprias do Markdown,
-expandindo o formato original para contemplar novos recursos e
-contextos, uma dessas ferramenta é a Pandoc.
-
-#### Pandoc
-
-A arquitetura da ferramenta Pandoc permite converter arquivos em
-diferentes formatos.[^2] Ela difere de linguagens normais por
-possibilitar o usuário escolher quais extensões do Markdown deseja
-utilizar, em outras palavras, ela possibilita configurar a sintaxe da
-linguagem. 
-
-A Figura \ref{fig:rmarkdown} apresenta um subconjunto da linguagem. Na
-coluna esquerda (*syntax*) é apresentada a sintaxe da linguagem, na
-coluna do lado direito (*becomes*) temos a apresentação em HTML gerado
-a partir do código da esquerda. É possível ver a sintaxe para itálico,
-negrito, capítulos e seções (*headers*), listas, tabelas etc.
-
-\begin{figure}[htb]
-\caption{\label{fig:rmarkdown}Subconjunto da sintaxe do Markdown}
-\begin{center}
-\includegraphics[width=0.70000\textwidth]{imagens/Rmarkdown.png}
-\end{center}
-\legend{Fonte: \url{https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf}}
-\end{figure}
-
-Na geração do código ela utiliza modelos internamente e configuração
-de parâmetros em arquivos no formato YAML, que será apresentado adiante.
-
-[^2]: Atualmente possibilita ler os formatos Markdown, CommonMark, PHP
-    Markdown Extra, GitHub-Flavored Markdown, reStructuredText, HTML,
-    LaTeX, MediaWiki markup, TWiki markup, Haddock markup, OPML, Emacs
-    Org mode, DocBook, txt2tags, EPUB, ODT e Word docx. Além desses
-    formatos, a ferramenta também permite mais formatos de saída.
-
-#### YAML
-
-Nessa seção é apresentado o formato YAML, como ele agiliza a inserção
-de dados pelo usuário mas requer conhecimentos de tipagem de dados e
-indentação para sua utilização.
-
-As configurações dos modelos na ferramenta Pandoc são realizadas
-através de uma sintaxe de configuração de modelos. O usuário deve
-atribuir os valores das variáveis no formato YAML, em um arquivo
-separado ou dentro do próprio texto através da criação de um bloco de
-configuração YAML, como mostrado em \ref{fig:yaml}.
-
-\begin{figure}[htb]
-\caption{\label{fig:yaml}Exemplo de um bloco configuração no formato YAML}
-\begin{center}
-\includegraphics[width=0.70000\textwidth]{imagens/yaml.png}
-\end{center}
-\legend{Fonte: Autor}
-\end{figure}
-
-\begin{figure}[htb]
-\caption{\label{fig:yaml}Exemplo de um bloco configuração no formato YAML}
-\begin{center}
-\includegraphics[width=0.80000\textwidth]{imagens/yaml.png}
-\end{center}
-\legend{Fonte: Autor}
-\end{figure}
-
-\begin{figure}[htb]
-\caption{\label{fig:yaml}Exemplo de um bloco configuração no formato YAML}
-\begin{center}
-\includegraphics[width=0.30000\textwidth]{imagens/yaml.png}
-\end{center}
-\legend{Fonte: Autor}
-\end{figure}
-
-
-<!--Texto para referenciá-la:-->
-(Figura \ref{fig:yaml})
-
-<!--Códigos latex para inserir a Figura-->
-\begin{figure}[htbp]
-\caption{\label{fig:yaml}Legenda da figura.}
-\begin{center}
-\includegraphics[width=1.0\textwidth]{imagens/yaml.jpg}
-\end{center}
-\legend{Fonte: Autor.}
-\end{figure}
-
-
-
-
-O formato YAML é *tipado* e *razoavelmente permissivo*
-\cite{yamlv12}. O fato de ser tipado facilita o desenvolvimento de
-aplicações, pois as variáveis retornam com o tipo apropriado, sem
-necessidade do desenvolvedor realizar um *parse* manual. No código na
-Figura \ref{fig:yaml} as variáveis *title*, *abstract* e *date*
-retornariam valores do tipo *String*, *String* e *Inteiro*
-respectivamente. O tipo da variável *author* é um pouco mais complexo,
-ele é *Hash* de *Lista* de *Hash* - no modelo padrão de Pandoc isso é
-necessário para possibilitar informar o nome e a filiação de mais de
-um autor.
-
-A permissividade agiliza a inserção de dados pelo o usuário, pois
-permite inserir valores *String* sem aspas, como nas variáveis *title*
-e *fontsize*. No entanto, caso deseje-se preencher um *String* com o
-caracter “:”, será necessário inserir todo o valor entre aspas, como
-na variável *abstract*.
-
-A *indentação* também é obrigatória para definir hierarquia. Na Figura
-\ref{fig:yaml}, a variável *affiliation* não estaria relacionada a
-*author* se não houvesse indentação.
-
-#### Notações de imagens e tabelas do Markdown não são expressivas para atender requisitos da ABNT {#inclusao-imagens-e-tabelas}
-
-Nessa seção é apresentada a notação de inclusão de imagens e tabelas
-no Markdown do Pandoc *e como ela são insuficientes para atender as
-especificações das Normas da ABNT*.
-
-A notação para inserir imagens no Markdown é simples, sendo de fácil
-memorização e utilização:
-
-~~~~~~~
-![Título da figura](/caminho/da/imagem.png)
-~~~~~~~
-
-A notação original foi estendida para possibilitar referenciar a
-imagem e redimensionar sua apresentação:
-
-~~~~~~~
-![Título da figura](/caminho/da/imagem.png){#id width=30 height=20px}
-~~~~~~~
-
-O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para
-elaboração de tabelas, a seguir é apresentado uma delas:
-
-	: Título da tabela
-	
-    +---------------+---------------+--------------------+
-    | Fruit         | Price         | Advantages         |
-    +===============+===============+====================+
-    | Bananas       | $1.34         | - built-in wrapper |
-    |               |               | - bright color     |
-    +---------------+---------------+--------------------+
-    | Oranges       | $2.10         | - cures scurvy     |
-    |               |               | - tasty            |
-    +---------------+---------------+--------------------+
-
-
-Essa notação não permite configurar alinhamento, e nenhuma das demais
-notações permite a mesclagem de células.
-
-É válido mencionar que a edição de uma tabela no formato apresentado
-através de um editor de texto simples pode ser bastante tediosa. Na tabela
-a seguir é apresentada um possível problema de edição quando o editor
-não provém suporte a edição de tabelas com essa notação:
-
-
-    +---------------+---------------+--------------------+
-    | Fruit         | Price         | Advantages         |
-    +===============+===============+====================+
-    | Bananas       | $1.34         | Indicativo da dificuldade de edição |
-    +---------------+---------------+--------------------+
-    | Oranges       | $2.10         | - cures scurvy     |
-    |               |               | - tasty            |
-    +---------------+---------------+--------------------+
-
-Para que essa sintaxe seja utilizada facilmente é recomendado que o
-editor de texto implemente funcionalidades para auxiliar na edição.
-
-Mas nenhuma das sintaxes de Figura e Tabela possibilitam atender as
-especificações exigidas pelas Normas da ABNT, pois *não proveem a
-notação para a Fonte* da Figura ou Tabela. E as tabelas *não possuem
-sintaxe para mesclagem de células*.
-
-#### Editores
-
-A Ferramenta Authorea 
-
-<!-- 
-https://www.authorea.com/featured_templates
-
-Working on a research paper, thesis or a scientific project? To simplify your research submission process, we give you over 8000 templates to choose from. The templates follow guidelines set by the journals including the correct citation format. How does it work? Just pick the journal template and start writing. Don’t worry if you decide to submit your work to a different journal, you can switch templates at any time. All your data, text, images, and citations will be reformatted automatically.
--->
-
-### Docbook
-
-Nessa seção é apresentado o formato DocBook, uma linguagem complexa
-com o propósito original de possibilitar escrita de livros.
-
-O Docbook é um formato XML de produção de livros, criado pela editora
-O’Reilly, especializada na produção e comercialização de livros
-técnicos. O formato possui diversas versões que determinam todos os
-aspectos do livro \cite{docbook-guide}. Foram produzidas várias
-ferramentas para converter o documento para apresentação em outros
-formatos.
-
-Na versão 5.0, o formato possui mais de 350 *tags* para contemplar
-escrita dos livros e todos seus elementos: prefácio, preambulo,
-resumo, dedicatória, capítulo, glossário, sinopse, índice remissivo,
-exemplos, quadros (notas, informações, atenção), códigos fontes
-etc. Com ele é possível separar a formatação da apresentação e
-configurá-la para cada formato de saída desejado.
-
-A complexidade dessas *tags* motivou a criação de uma
-linguagem mais simples, mas que fosse capaz de aproveitar todas as
-ferramentas compatíveis com formato DocBook: a Asciidoc.
-
-### Asciidoc
-
-Nessa seção é apresentado o formato Asciidoc, uma linguagem simples
-com o propósito original agilizar a produção de livros e exportar
-código compatível com o DocBook.
-
-A linguagem Asciidoc foi concebida para agilizar a produção de livros
-técnicos no formato DocBook.[^6] Em vez de escrever o livro em XML, o
-autor poderia utilizar a sintaxe do Asciidoc e exportar um arquivo em
-conformidade com o padrão DocBook \cite{asciidoc}.
-
-[^6]: Formato XML, criado pela editora O’Reilly Media para editoração de
-    livros técnicos: <http://www.docbook.org>.
-
-A Asciidoc possui sintaxe para criar vários elementos de um livro
-compatível com o padrão Docbook (aceita inclusive a inserção de código
-DocBook puro). Ela suporta modularização através da inclusão de
-arquivos externos. É possível incluir um código fonte de um arquivo ou
-invocar um comando do sistema e incluir seu resultado.
-
-Ela é expansível através da instalações de filtros. Existem filtros para
-geração de QRCode, de diagramas UML, de partitura etc.
-
-A sintaxe de criação de tabelas permite mesclar células, configurar o
-alingamento de colunas (ou de células individualmente), cabeçalho e
-rodapé. É possível inclusão de dados externos, como um arquivo de texto
-separado por vírgulas.
-
-É possível referenciar automaticamente quase todos os elementos, tais
-como: images, tabelas, capítulos, seções, códigos, quadros etc.
-
-Embora Asciidoc seja uma linguagem mais expressiva que Markdown, ela
-exige que o usário conheça uma sintaxe maior de símbolos, os
-significados e grafias de alguns termos em inglês (tais como: 
-*image, table, witdh, footnote e preface*).
-	
-
-
-### Comparação de linguagens de marcação de texto
-
-\begin{figure}[htbp]
-\caption{\label{fig:comparacao-popularidade-de-linguagens}Comparação de consultas de linguagens de marcação de texto}
-\begin{center}
-\includegraphics[width=1.0\textwidth]{/home/eduardo/w/dissertacao-limarka/imagens/comparacao-popularidade-de-linguagens.png}
-\end{center}
-\legend{Fonte: Google trends}
-\end{figure}
-
-<!--Para referenciar a figura acima no texto utilize: Figura \ref{fig:comparacao-popularidade-de-linguagens} 
--->
-
-
-
-## Formulários em PDF ##
+### Formulários em PDF ###
 
 Nessa seção apresentamos os formulários PDF como uma alternativa
 amigável para obtenção de dados do usuário para processamento
@@ -506,12 +447,13 @@ Através do software leitor de PDF e um documento com formulário é
 possível solicitar ao usuário dados que podem salvos e posteriormente
 processados.
 
-## Sistema = Notação + Ambiente
+### Sistema = Notação + Ambiente ###
 
 Um sistema é formado pelo conjunto Notação (linguagem) e o Ambiente de
 utilização. Não podemos avaliar uma linguagem separadamente do seu
 ambiente de utilização \cite{green1989}.
 
+<!--
 A seguir são fornecidos dois exemplos que ilustram essa afirmação.
 
 Em Java nós atribuímos *um tipo* a uma coleção (*Generics*), e o
@@ -528,6 +470,7 @@ instruções sequencialmente e sem nenhum erro de sintaxe. Uma decisão
 do design do sistema causou uma limitação na utilização da linguagem,
 pois exigia um esforço cognitivo enorme do usuário para programar
 nesse ambiente.
+-->
 
 <!--
 
@@ -538,357 +481,7 @@ desginer deverá ponderar sobre diversos aspectos da linguagem, entre
 eles:
 
 -->
-	
-## Framework de Dimensões Cognitivas de Notações {#frameworkcd}
 
-Essa seção apresenta um *framework* para descrever a usabilidade de
-um sistema.
-
-O *framework* de Dimensões Cognitivas de Notações (*Cognitive
-Dimensions of Notations framework*), foi desenvolvido para assistir
-designers de sistemas de notações para avaliar o impacto que o *design*
-terá sobre os usuários desses sistemas \cite{Blackwell2001}.
-
-O objetivo do *framework* é proporcionar discussões para que o
-*Designer* possa compreender as consequências cognitivas de suas
-decisões. Ele descreve a usabilidade de sistemas ou artefatos
-informacionais. O *framework* não tem o propósito de guiar o
-desenvolvimento de novas notações, e também não oferece critérios de
-*design* que devem ser seguidos \cite{green1996usability}, limita-se a
-descrever as consequências das decisões do design.
-
-Nas seções seguintes são descritas as Dimensões Cognitivas presentes
-nesse *framework* \cite{Blackwell2001}.
-
-### Viscosidade ###
-
-<!--
-- When you need to make changes to previous work, how easy is it to make the change? Why?
-Quando você precisa realizar alterações em trabalhos anteriores, quão fácil é realizar a alteração? Por que?
-
-- Are there particular changes that are more difficult or especially difficult to make? Which ones?
-Existem mudanças específicas que são mais difíceis/trabalhosas de serem realizadas? Quais são elas? 
-
--->
-
-A visocidade (*Viscosity*) está relacionada a resistência a
-mudanças. Um sistema com alto nível de viscosidade precisa de várias
-ações do usuário para atingir um objetivo. É possível distinguir
-*viscosidade de repetição* de *viscosidade knock-up*.
-
-Um exemplo de viscosidade de repetição ocorre na manutenção de um
-Sumário com numeração de páginas das seções manualmente. A adição ou
-remoção de parágrafos pode gerar a necessidade de atualizar todas as
-referências de páginas do Sumário, as atualizações são todas do mesmo
-tipo: alterar o número da página.
-
-Um exemplo de viscosidade *knock-up* poderia ser a exclusão de um
-personagem de um livro. Essa atividade requer que várias ações sejam
-realizadas para manter a consistência do livro (como se o personagem
-nunca houvesse existido): bantante diálogos e situações do texto devem
-ser revistas, repensadas e reescritas.
-
-<!--
-
-Viscosity: resistance to change. A viscous system needs many user
-actions to accomplish one goal. Changing all headings to upper-case may
-need one action per heading. (Environments containing suitable
-abstractions can reduce viscosity.) We distinguish repetition viscosity,
-many actions of the same type, from knock-on viscosity, where further
-actions are required to restore consistency.
--->
-
-### Visibilidade  ###
-
-<!--
-
- ability to view components easily. Systems that bury
-information in encapsulations reduce visibility. Since examples are
-important for problem-solving, such systems are to be deprecated for
-exploratory activities; likewise, if consistency of transcription is to
-be maintained, high visibility may be needed.
--->
-
-A Visibilidade (*Visibility*) é a habilidade de ver componentes
-facilmente. O encapsulamento de informações reduz a visibilidade
-\cite{green1989}.
-
-
-### Compromisso Prematuro ###
-
-<!--
-: constraints on the order of doing things.
-Self-explanatory. Examples: being forced to declare identifiers too
-soon; choosing a search path down a decision tree; having to select your
-cutlery before you choose your food.
--->
-
-<!--
-**Compromisso prematuro**: O sistema pode proporcionar que o usuário
-realize ações de acordo com fluxo natural de instruções que a mente (do
-usuário) produz. O extremo contra exemplo seria a necessidade de
-informar o texto numa ordem específica, como no caso do sistema de
-reconhecimento de voz de Pascal apresentado anteriormente.
--->
-
-O compromisso prematuro (*Premature commitment*) consiste em impor
-restrições na ordem de realizar as ações. O sistema pode proporcionar
-que o usuário realize ações de acordo com fluxo natural de instruções
-que a mente (do usuário) produz ou impor que ele tenha que configurar
-vários detalhes antes de utilizar o sistema \cite{green1989}. 
-
-### Dependências ocultas ###
-
-<!--
-
-important links between entities are not visible.
-
-If one entity cites another entity, which in turn cites a third,
-changing the value of the third entity may have unexpected
-repercussions. Examples: cells of spreadsheets; style definitions in
-Word; complex class hierarchies; HTML links. There are sometimes actions
-that cause dependencies to get frozen – e.g. soft figure numbering can
-be frozen when changing platforms; these interactions with changes over
-time are still problematic in the framework.
--->
-
-As Dependências ocultas (*Hidden dependencies*) consistem em propagar
-as alterações para outras entidades.  A configuração de estilos em
-cascata (CSS) propaga as configurações do pais para os seus
-descendentes, gerando uma dependência. Alterações em estilos pais
-podem causar drásticas consequências no documento inteiro
-\cite{green1989}.
-
-### Expressividade de papeis ###
-
-<!--
-
-: the purpose of an entity is readily inferred.
-Role-expressive notations make it easy to discover why the programmer or
-composer has built the structure in a particular way; in other notations
-each entity looks much the same and discovering their relationships is
-difficult. Assessing role-expressiveness requires a reasonable
-conjecture about cognitive representations (see the Prolog analysis
-below) but does not require the analyst to develop his/her own cognitive
-model or analysis.
-
--->
-
-Expressividade de papeis (*Role-expressiveness*) consiste em como as
-entidades são facilmente inferidas ao observá-las \cite{green1989}.
-
-<!-- Expressivos: listas e tabelas Itálico: // Sublinhado: __ ----  -->
-
-### Tendência a erros ###
-
-<!--
-
-: the notation invites mistakes and the system gives
-little protection. Enough is known about the cognitive psychology of
-slips and errors to predict that certain notations will invite them.
-Prevention (e.g. check digits, declarations of identifiers etc) can
-redeem the problem.
-
--->
-
-A Tendência a erros (*Error-proneness*) é quanto a notação facilita o
-usuário a errar \cite{blackwell2003notational}. *Generics* em Java é
-um recurso para diminuir os erros de execução. O usuário especifica
-qual o tipo esperado da coleção, e caso haja uma tentativa de
-adicionar um objeto de outro tipo haverá um erro de compilação.
-
-
-### Abstração ###
-
-<!--
-
-: types and availability of abstraction mechanisms.
-Abstractions (redefinitions) change the underlying notation. Macros,
-data structures, global find-and-replace commands, quick-dial telephone
-codes, and word-processor styles are all abstractions. Some are
-persistent, some are transient. Abstractions, if the user is allowed to
-modify them, always require an abstraction manager – a redefinition
-sub-device. It will sometimes have its own notation and environment
-(e.g. the Word style sheet manager) but not always (for example, a class
-hierarchy can be built in a conventional text editor). Systems that
-allow many abstractions are potentially difficult to learn.
--->
-
-Abstrações (*Abstraction*) são tipos ou disponibilidade de mecanismos
-de abstrações \cite{blackwell2003notational}. Exemplos de abstrações
-são controles de *playback* (interface para controlar a execução de
-mídias), modelos de documentos e utilização de ícones que trazem
-significados \cite{Bellingham2014}.
-
-### Notação secundária ###
-
-<!-- 
-: extra information in means other than formal syntax.
-Users often need to record things that have not been anticipated by the
-notation designer. Rather than anticipating every possible user
-requirement, many systems support secondary notations that can be used
-however the user likes. One example is comments in a programming
-language, another is the use of colours or format choices to indicate
-information additional to the content of text.
--->
-
-Notação secundária (*Secondary notation*) consiste em informações
-extras apresentadas ao usuário com sintaxe diferente da formal. Cores,
-fontes e comentários fazem parte dessa
-categoria \cite{Bellingham2014}.
-
-### Proximidade do mapeamento  ###
-
-<!--
-: closeness of representation to domain. How closely
-related is the notation to the result it is describing?
--->
-
-Proximidade do mapeamento (*Closeness of mapping*) refere-se a uma
-correlação entre a interface e a tarefa sendo realizada ou seu
-resultado experado \cite{Bellingham2014}\cite{Blackwell2001}.
-
-### Consistência ###
-
-<!--
-: similar semantics are expressed in similar syntactic forms.
-Users often infer the structure of information artefacts from patterns
-in notation. If similar information is obscured by presenting it in
-different ways, usability is compromised.
--->
-
-A Consistência (*Consistency*) referê-se a como informações similares
-possuem semântica semelhante \cite{Blackwell2001}. Um sistema que
-possui alto nível de consistência é mais fácil de ser apreendido.
-
-
-### Prolixidade ###
-
-<!--
-: verbosity of language. Some notations can be annoyingly
-long-winded, or occupy too much valuable “real-estate” within a display
-area. Big icons and long words reduce the available working area.
--->
-
-Prolixidade (*Diffuseness*) refere-se a verbosidade da linguagem. A
-notação permite que o usuário realize o que deseja de forma breve ou
-requer tediosas intervenções? Algumas notações necessitam mais espaço
-para serem descritas?
-
-### Processos mentais potencialmente explosivos ###
-
-<!--
-: high demand on cognitive resources. A notation
-can make things complex or difficult to work out in your head, by making
-inordinate demands on working memory, or requiring deeply nested goal
-structures.
--->
-
-Processos mentais potencialmente explosivos (*Hard mental operations*)
-refere-se a notações que exigem uma sobrecarga de processamento
-cognitivo \cite{green2006cognitive}.  Um exemplo clássico é a
-utilização de ponteiros em C.
-
-
-### Exploração ###
-
-<!-- degree of commitment to actions or marks. Premature
-commitment refers to hard constraints on the order of doing things, but
-whether ot not hard constraints exist, it can be useful to make
-provisional actions – recording potential design options, sketching, or
-playing “what-if” games.
--->
-
-A Exploração (*Provisionality*) refere-se ao grau de liberdade para
-testar ou explorar novas ideias. É possível planejar novas coisas sem
-configuração excessiva ou informar detalhes do resultado esperado?
-
-<!-- Provisionamento se refere à adaptação ou implantação de um
-serviço de telecomunicações para um cliente em particular. As empresas
-carriers ou operadoras provisionam (configuram ou instalam) circuitos
-para conectar uma linha telefônica ou de dados dos clientes na rede de
-telecomunicações pública 
-
-A origem do termo provisionamento é antiga, relacionado à
-logística. Nas viagens de navios da Europa para o novo mundo estes
-necessitavam de suprimentos diversos, portanto eram provisionados com
-comida, armas, instrumentos, entre outras coisas.
-
-Guarnecer-se de provisões (abastecimento ou fornecimento);
-abastecer-se ou aprovisionar.
-
--->
-
-### Avaliação progressiva ###
-
-<!--
-work-to-date can be checked at any time.
-Evaluation is an important part of the design process, and notational
-systems can facilitate evaluation by allowing users to stop in the
-middle to check work so far, find out how much progress has been made,
-or check what stage in the work they are up to. A major advantage of
-interpreted programming environments such as BASIC is that users can try
-out partially-completed versions of the product program, perhaps leaving
-type information or declarations incomplete.
--->
-
-A Avaliação progressiva (*Progressive evaluation*) refere-se a
-habilidade de checar o resultado a qualquer dado momento
-\cite{Blackwell2001}.
-
-<!--
-Metodologia de desenvolvimento de linguagens baseadas em Estudos Empíricos
-
-Os estudos sobre usabilidades de linguagens avançaram no área de
-Linguagens de Programação. \citeonline{kaijanaho2015evidence} propõe
-uma metodologia de design de linguagens baseada em evidências, através
-da utilização de *pesquisas secundárias* (consolidação de pesquisas
-primárias) e avaliação das análises \cite{kaijanaho2015evidence}.
-
-Embora seja boa a ideia de implementar um *design* baseado em
-pesquisas que apresentem as consequências de utilização de certas
-notações, não temos conhecimento sobre estudos empíricos primários
-sobre o *design* de *linguagens de marcação de texto*.
-
--->
-
-## Fluxo de escrita científica
-
-<!-- http://blog.kdheepak.com/writing-papers-with-markdown.html 
-
--->
-
-## Considerações Finais ##
-
-Na fundamentação teórica apresentamos as normas da ABNT, as regras
-para utilizar ilustrações e como o projeto abnTeX popularizou o uso do
-Latex em trabalhos acadêmicos nacionais.
-
-Em seguida apresentamos duas linguagens de marcação de texto: Markdown e
-Asciidoc, com seus contextos de criação e suas limitações.
-
-A ferramenta Pandoc, que implementa a linguagem Markdown, pode ser
-configurada para utilizar modelos Latex para geração de arquivos
-PDFs. Muitas configurações são inseridas pelo usuário através de
-arquivos ou blocos no formato YAML, que possui uma sintaxe bastante
-expressiva, mas um pouco complexa. A sintaxe de inserção de imagens e
-tabelas utilizada pelo Markdown não permite incluir a notas
-explicativas ou informar a fonte da imagem, requisitos para produção
-de textos em conformidade com as Normas da ABNT.
-
-O formato de arquivo PDF, bastante utilizado para publicação de
-textos, também permite a inserção e extração de dados através do
-recurso de formulários, fornecendo uma interface potencialmente mais
-amigável que o YAML.
-
-O sistema comercial ABNTFácil implementou uma linguagem de marcação
-especializada para o público nacional, em que mesclou conceitos das
-normas da ABNT com recursos do Word.
-
-O Design de uma linguagem necessita de reflexões cognitivas de como
-usuário irá interagir com ela através de um sistema. O ideal é que as
-decisões da criação da linguagem estejam associadas a estudos
-empíricos.
 
 # Trabalhos relacionados
 
@@ -922,17 +515,53 @@ Supondo um artigo científico que contenha um gráfico proveniente de um anális
 
 Se os dados da pesquisa esteveremm disponibilizados publicamente outros pesquisadores podem reproduzir o mesmo ambiente de execução e chegar aos mesmos resultados, promovendo a *reprodutibilidade* de pesquisas científicas.
 
-
-### Discussão
-
+<!--
 O surgumento de R Markdown mostra que a linguagem Markdown já foi
-estendida para proporcionar produção de documentos acadêmicos
-e reprodutibilidade de pesquisa.
+estendida para proporcionar produção de documentos acadêmicos e
+reprodutibilidade de pesquisa.
 
 No entanto, a linguagem de marcação de texto R Markdown não é
 expressiva o suficiente para atender as exigências das normas da ABNT
 para elaboração de trabalhos acadêmicos, conforme explicado na Seção
 \ref{inclusao-imagens-e-tabelas}.
+
+-->
+
+## Proposta para utilização de Markua em dissertações no Departamento de Minas da FEUP
+
+\index{Markua}
+Existe uma proposta \cite{minas} de produção de dissertações para o Departamento de Minas da Faculdade de Engenharia da Universidade do Porto com utilização de Markua, uma linguagem de marcação leve baseada em Markdown e especializada para produção de livros \cite{markua}.
+
+O Markua contém a sintaxe base do Markdown e implementa diversas extensões para contemplar as necessidades de autores de livros. Dentre as funcionalidades adicionadas estão: sintaxe própria de tabelas, que permite mesclagem de células; inclusão de vídeo e áudio; inclusão de código fonte a partir de arquivos; inclusão de quadros ao lado e formatação de parágrafo.
+
+A proposta requer a utilização do fluxo de trabalho disponibilizado pelo site <https://leanpub.com>. O autor da dissertação deveria baixar um modelo de dissertação e editá-lo localmente utilizando a sintaxe de Markua. Os conteúdos são submetidos ou sincronizados com o site através de serviços como o Dropbox, Github ou Bitbucket. Em seguida o site iria gerar um PDF que deveria ser aceito pelo curso.
+
+### Discussão
+
+Essa proposta pode ser considerada uma tentativa local para agilizar as produções de Dissertações. Esse fluxo de trabalho apresenta uma tentativa para diminuir o esforço empreendido pelos estudantes para produzir e formatar uma Dissertação. Ao utilizar Markua e Leanpub os estudantes seriam capazes de produzir um livro facilmente, que deveria ser aceito pelo departamento como uma dissertação.
+
+O modelo disponibilizado tenta contemplar as normas da ABNT, fornecendo uma estrutura de pré-textual, textual e pós-textual que se assemelha às Normas. Mas o sistema não permite a parametrização dos *layouts* e estilos. Por exemplo, embora seja possível formatar um parágrafo para ser utilizado como uma citação longa, não é possível alterar sua formatação para adequar-se as normas da ABNT. O sistema também não prevê a inclusão de PDFs, um recurso desejado para apresentar artigos publicados ou Anexos nos TCCs. O sistema do Leanpub foi projetado para produção de livros em diversos formatos, incluindo PDFs e formatos específicos para leitores de livros digitais, e por isso disponibiliza recursos disponíveis em ambientes específicos.
+
+<!-- https://leanpub.com/lean
+Lean Publishing
+Peter Armstrong
+Peter Armstrong
+
+This book explains the philosophy behind Leanpub, from its origin in "a book is a startup" to the present form. Lean Publishing is the act of publishing an in-progress book using lightweight tools and many iterations to get reader feedback, pivot until you have the right book and build traction once you do.
+
+
+http://shop.oreilly.com/category/early-release.do
+
+Get Early Access to O'Reilly Titles
+Ebooks and videos you can only buy at shop.oreilly.com
+
+With Early Release ebooks and video training, you get access to titles while they are being written so you can take advantage of these technologies right now. You'll receive updates when content is added, as well as the completed ebooks and videos when they're done.
+
+Video training and ebooks from shop.oreilly.com are DRM-free. You get free lifetime access, multiple file formats, and free updates. Sync with Dropbox and Drive—your files, anywhere.
+
+-->
+
+
 
 ## ABNTFÁCIL: formatação de trabalhos acadêmicos ##
 
@@ -1008,49 +637,20 @@ referenciá-las, através de formulários.
 
 ### Discussão
 
-As *tags* possuem do ABNTFÁCIL possuem origem mista, baseadas nas normas da ABNT e nos recursos do Word. Percebemos que algumas *tags* criadas foram inspiradas nas normas da ABNT: **QDR** (Quadro), **TAB** (Tabela), **int** (Introdução), **NRP** (Nota de rodapé), **ctd** (Citação direta) e **img** (Imagem). E outras foram inspiradas na nomenclatura que o MS-Word utilizada para os recursos: **mci** (marcadores de itens – *lista não ordenada*), **mcl** (marcadores com letras – *lista ordenada com letras*), **mcn** (*marcador de número – lista ordenada por números*).
+Apesar do ABNTFÁCIL ser um solução especializada nas Normas da ABNT ela falha em implementar a Norma, expõe conceitos originados no MS  Word, não permite personalização e interoperabilidade, e impossibilita utilizar alguns recursos como Fórmulas e Códigos.
 
-Não há meios para customizar a geração do documento além dos já previstos pela ferramenta. Por exemplo, não seria possível adicionar o nome do departamento na capa do trabalho. A única alternativa seria editar o arquivo final do Word gerado.
+Percebemos que algumas *tags* foram inspiradas nas normas da ABNT: **QDR** (Quadro), **TAB** (Tabela), **int** (Introdução), **NRP** (Nota de rodapé), **ctd** (Citação direta) e **img** (Imagem). E outras foram inspiradas na nomenclatura que o MS-Word utilizada para os recursos: **mci** (marcadores de itens – *lista não ordenada*), **mcl** (marcadores com letras – *lista ordenada com letras*), **mcn** (*marcador de número – lista ordenada por números*).
 
-As soluções adotadas pelo ABNTFÁCIL, além de serem proprietárias, não possuem interoperabilidade com outros formatos internacionais. O sistema de referências não importa referências salvas no *formato bibtex*, o único meio de inserir uma nova referência é através do preenchimento de formulários. A sintaxe da linguagem não é utilizada por nenhum outro aplicativo.
+Inexiste meios para customizar a geração do documento, além dos já previstos pela ferramenta. Por exemplo, não seria possível personalizar a capa do trabalho, embora a alteração possa ser realizada manualmente no arquivo do Word após geração.
 
-## Proposta para utilização de Markua em dissertações no Departamento de Minas da FEUP
+Não existe suporte a equações, lista de tabelas, inserção de códigos, fontes de imagens e tabelas e referenciação de conteúdos no texto.
+O suporte a Anexos e Apêndices é realizado através da geração de páginas em branco, que devem ser substituídas por páginas impressas externamente, mas mantendo a numeração exigida pela ABNT.
 
-\index{Markua}
-Existe uma proposta \cite{minas} de produção de dissertações para o Departamento de Minas da Faculdade de Engenharia da Universidade do Porto com utilização de Markua, uma linguagem de marcação leve baseada em Markdown e especializada para produção de livros \cite{markua}.
+As soluções adotadas pelo ABNTFÁCIL, além de serem proprietárias, não possuem interoperabilidade com outros formatos internacionais. A sintaxe da linguagem é proprietária e não é utilizada por outros aplicativos. O sistema de referências não importa entradas salvas no *formato bibtex*, o único meio de inserir uma nova referência é através do preenchimento de formulários.
 
-O Markua contém a sintaxe base do Markdown e implementa diversas extensões para contemplar as necessidades de autores de livros. Dentre as funcionalidades adicionadas estão: sintaxe própria de tabelas, que permite mesclagem de células; inclusão de vídeo e áudio; inclusão de código fonte a partir de arquivos; inclusão de quadros ao lado e formatação de parágrafo.
+A solução provavelmente tem como público alvo usuários da área de Humanas, que desconhecem as normas da ABNT, estão dispostos a pagarem pelo aplicativo, e que não precisam inserir equações ou códigos. 
 
-A proposta requer a utilização do fluxo de trabalho disponibilizado pelo site <https://leanpub.com>. O autor da dissertação deveria baixar um modelo de dissertação e editá-lo localmente utilizando a sintaxe de Markua. Os conteúdos são submetidos ou sincronizados com o site através de serviços como o Dropbox, Github ou Bitbucket. Em seguida o site iria gerar um PDF que deveria ser aceito pelo curso.
-
-### Discussão
-
-Essa proposta pode ser considerada uma tentativa local para agilizar as produções de Dissertações. Esse fluxo de trabalho apresenta uma tentativa para diminuir o esforço empreendido pelos estudantes para produzir e formatar uma Dissertação. Ao utilizar Markua e Leanpub os estudantes seriam capazes de produzir um livro facilmente, que deveria ser aceito pelo departamento como uma dissertação.
-
-O modelo disponibilizado tenta contemplar as normas da ABNT, fornecendo uma estrutura de pré-textual, textual e pós-textual que se assemelha às Normas. Mas o sistema não permite a parametrização dos *layouts* e estilos. Por exemplo, embora seja possível formatar um parágrafo para ser utilizado como uma citação longa, não é possível alterar sua formatação para adequar-se as normas da ABNT. O sistema também não prevê a inclusão de PDFs, um recurso desejado para apresentar artigos publicados ou Anexos nos TCCs. O sistema do Leanpub foi projetado para produção de livros em diversos formatos, incluindo PDFs e formatos específicos para leitores de livros digitais, e por isso disponibiliza recursos disponíveis em ambientes específicos.
-
-<!-- https://leanpub.com/lean
-Lean Publishing
-Peter Armstrong
-Peter Armstrong
-
-This book explains the philosophy behind Leanpub, from its origin in "a book is a startup" to the present form. Lean Publishing is the act of publishing an in-progress book using lightweight tools and many iterations to get reader feedback, pivot until you have the right book and build traction once you do.
-
-
-http://shop.oreilly.com/category/early-release.do
-
-Get Early Access to O'Reilly Titles
-Ebooks and videos you can only buy at shop.oreilly.com
-
-With Early Release ebooks and video training, you get access to titles while they are being written so you can take advantage of these technologies right now. You'll receive updates when content is added, as well as the completed ebooks and videos when they're done.
-
-Video training and ebooks from shop.oreilly.com are DRM-free. You get free lifetime access, multiple file formats, and free updates. Sync with Dropbox and Drive—your files, anywhere.
-
--->
-
-
-
-# Proposta de dissertação #
+# Proposta de dissertação
 
 A motivação dessa pesquisa é ofertar uma linguagem especializada para
 produção de trabalhos acadêmicos em conformidade com as Normas da
@@ -1158,38 +758,6 @@ Com a publicação de uma *release* oficial da ferramenta, usuários
 serão convidados através de fóruns e redes sociais para experimentação
 da ferramenta e realização de *feedbacks* através do preenchimento do
 mesmo formulário do experimento anterior.
-
-# Cronograma #
-
-\begin{table}[htb]
-\IBGEtab{%
-  \caption{Cronograma da pesquisa}%
-  \label{tabela-ibge}
-}{%
-  \begin{tabular}{ccccc}
-  \toprule
-   Etapa & Set & Out & Nov & Dez \\
-  \midrule \midrule
-   Conclusão da implementação da ferramenta & X \\
-  \midrule 
-	Publicação da Ferramenta e convite para experimentos on-line &  & X \\
-  \midrule 
-	Condução de experimentos controlados &  & X \\
-  \midrule 
-	Análise dos resultados dos experimentos &  & X & X \\
-  \midrule 
-	Escrita da dissertação & X & X & X \\
-  \midrule 
-	Experimento realístico & X & X  \\
-  \midrule 
-	Defesa da dissertação &  &  & X \\
-
-\bottomrule
-\end{tabular}%
-}{%
-  \fonte{Autor}%
-  }
-\end{table}
 
 # Desenvolvimento do sistema
 

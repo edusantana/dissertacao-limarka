@@ -30,12 +30,12 @@ Nesta seção é apresentado o roteiro das entrevistas realizadas com usuários 
 
 - Qual sua Formação Acadêmica?
 - Qual sua experiência profissional?
-- Qual sua experiência em Escrita Científica?
+- Qual sua experiência na Escrita Científica?
 - Em que pretende trabalhar quando se formar?
 - Como você se relaciona com Informática e tecnologias?
 - Qual sua afinidade para executar comandos de linha e instalar programas?
-- Quais editores de arquivo somente texto utilizou? Quais são de sua preferência?
-- Você utilizar alguma IDE no seu trabalho/estudos?
+- Quais editores de arquivo somente texto já utilizou? Quais são de sua preferência?
+- Você utilizar alguma IDE no seu trabalho/estudo?
 - Descreve sua(s) experiência(s) prévia(s) com Latex.
 - Descreve sua(s) experiência(s) prévia(s) com Markdown e/ou outras linguagens de marcação leve. Você sabe decorado quais sintaxes?
 - Descreve sua(s) experiência(s) prévia(s) com Github.
@@ -52,8 +52,10 @@ Nesta seção é apresentado o roteiro das entrevistas realizadas com usuários 
 ## Sobre utilização do limarka na elaboração do TCC
 
 * Qual a temática do seu TCC?
+* Como você encontrou o limarka? 
+* O que despertou o seu interesse pelo limarka?
 * Qual ambiente utilizado? Sistema operacional, Editor de texto, Leitor de PDF e Editor de Referência.
-* Como você se sentiu ao utilizar a ferramenta para escrita do seu trabalho?
+* Como você se sentiu ao utilizar a limarka para elaboração do seu trabalho?
 * Como foi para você a utilização de formulário PDF para configurar o trabalho?
 * Como foi para você execução da ferramenta? 
 * Prefere executar através de linha de comando ou menu interativo?
