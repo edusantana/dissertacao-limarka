@@ -30,7 +30,7 @@ O objetivo geral desse trabalho é *avaliar* o uso de uma linguagem de marcaçã
 - *Avaliar* o uso da linguagem Markdown para a escrita de TCCs por estudantes.
 
 
-# Metodologia
+## Metodologia ##
 
 A pesquisa adotou o método de *análise qualitativa*. De acordo com \cite{hazzan2006qualitative}, o método qualitativo deve ser empregado quando o objeto de estudo envolve analisar processos mentais de indivíduos ou quando o estudo é um dos pioneiros na área e não existem dados suficientes que sugestionem elaborações de hipóteses *a priori*. 
 Portanto a escolha do método qualitativo nessa pesquisa é justificada devido a ausência de pesquisas sobre utilização da linguagem Markdown para produção de TCCs nacionais.
@@ -48,18 +48,6 @@ Casos diferentes:
 Estudo de Caso? Utilização, Entrevista.
 
 A avaliação da utilização do sistema foi realizada através de experimentos com usuários e a entrevista semiestruturada foi 
-
-## Método
-
-Um método de avaliação de um sistema pode ocorrer em três dimensões: a) com ou sem o envolvimento ativo dos usuários, b) com ou sem o sistema em execução e c) com ou sem um contexto realístico de utilização. Além disso, seus os requisitos de avaliação mais comuns são: validade analítica, escopo, confiança, produtividade, usabilidade e capacidade de aprendê-lo \cite{blandfordann}.
-
-<!--
-Tentando extrair o doi:
-https://www.google.com.br/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=0ahUKEwjRtIflodvRAhVKPJAKHSq-C7YQFggfMAA&url=http%3A%2F%2Fciteseerx.ist.psu.edu%2Fviewdoc%2Fdownload%3Fdoi%3D10.1.1.383.9034%26rep%3Drep1%26type%3Dpdf&usg=AFQjCNEgsF0c4sH72ZBhOzYXU8o5F0ddnA&sig2=FdJTwF_IajY6CnFAnsWq6g&cad=rja
-
--->
-
-<!-- Tese: elaborar uma metodologia para avaliar sistemas para produção de trabalhos acadêmicos.
 
 Ver: Chapter 4 Ann Blandford and Thomas Green Methodological Development -->
 
@@ -83,7 +71,15 @@ that involve variables that are difficult to quantify (particularly human charac
 
 -->
 
-## Estrutura da Dissertação
+## Publicações Relacionadas
+
+O artigo \cite{limarka_paper} publicado no *Journal of Open Source Software* é um reconhecimento público que o software Limarka desenvolvido contempla os requisitos do *journal* \cite{joss}, que contemplam a licença, documentação, API e testes do *software*.
+
+<!-- 
+- pbcib
+-->
+
+## Estrutura da Dissertação ##
 
 Esta proposta está dividida da seguinte forma:
 
@@ -110,15 +106,13 @@ Argumentos de que uma linguagem não pode ser avaliada independente do seu ambie
 
 ## Normas da ABNT para trabalhos acadêmicos ##
 
-As normas da ABNT que normatizam como cada elemento dos trabalhos acadêmcios trabalhos são as seguintes:
+As normas da ABNT que normatizam os elemento dos trabalhos acadêmicos são apresentadas a seguir:
 
-- ABNT NBR 14724, Informação e documentação - Trabalhos acadêmicos -
-    Apresentação;
+- ABNT NBR 14724, Informação e documentação - Trabalhos acadêmicos - Apresentação;
 
 - ABNT NBR 6023, Informação e documentação - Referências - Elaboração;
 
-- ABNT NBR 6024, Informação e documentação - Numeração progressiva das
-    seções de um documento escrito - Apresentação;
+- ABNT NBR 6024, Informação e documentação - Numeração progressiva das seções de um documento escrito - Apresentação;
 
 - ABNT NBR 6027, Informação e documentação - Sumário - Apresentação;
 
@@ -126,46 +120,56 @@ As normas da ABNT que normatizam como cada elemento dos trabalhos acadêmcios tr
 
 - ABNT NBR 6034, Informação e documentação - Índice - Apresentação;
 
-- ABNT NBR 10520, Informação e documentação - Citações em documentos -
-    Apresentação;
+- ABNT NBR 10520, Informação e documentação - Citações em documentos - Apresentação;
 
 - ABNT NBR 12225, Informação e documentação - Lombada - Apresentação;
 
-- Código de Catalogação Anglo-Americano. 2. ed. rev. 2002. São Paulo:
-    FEBAB, 2004.
+- Código de Catalogação Anglo-Americano. 2. ed. rev. 2002. São Paulo: FEBAB, 2004.
 
 - IBGE. Normas de apresentação tabular. 3. ed. Rio de Janeiro, 1993.
 
-A seguir serão destacadas as regras a elementos relevantes a essa pesquisa.
+A seguir são destacadas regras dea elementos relevantes a essa pesquisa: Ilustrações e tabelas.
 
-### Ilustrações e tabelas
+### Regras da ABNT para Ilustrações e tabelas
 
 Segundo a ABNT NBR 14724:2011, ao inserir uma ilustração no texto, deveremos:
 
-- Obrigatoriamente, adicionar na *parte superior* (a) o tipo da
-    ilustração (Figura, Quadro, Tabela etc.), (b) um travessão como separador, e (c) um título para a ilustração. (Regra de apresentação);
+- Obrigatoriamente, adicionar na *parte superior* (a) o tipo da ilustração (Figura, Quadro, Tabela etc.), (b) um travessão como separador, e (c) um título para a ilustração. (Regra de apresentação);
 
-- Obrigatoriamente adicionar na *parte inferior*, a fonte da imagem,
-    mesmo que seja do próprio autor. (Regra de apresentação);
+- Obrigatoriamente adicionar na *parte inferior*, a fonte da imagem, mesmo que seja do próprio autor. (Regra de apresentação);
 
-- Opicionalmente notas explicativas e legendas também podem ser
-    adicionadas na *parte inferior*. (Regra de apresentação);
+- Opicionalmente notas explicativas e legendas também podem ser adicionadas na *parte inferior*. (Regra de apresentação);
 
-- Obrigatoriamente, referenciar a ilustração no texto, o mais
-    próximo possível. (Regra de utilização).
+- Obrigatoriamente, referenciar a ilustração no texto, o mais próximo possível. (Regra de utilização).
 
 As tabelas também possui regras de apresentações adicionais, que são normatizadas pelo IBGE, através do documento "Normas de apresentação tabular".
-
+	
 ### Guias ou manuais conflitantes com as Normas da ABNT
 
-Muitos guias de formatação disponibilizados por instituições de ensino superior possuem erros. Provavelmente devido as normas da ABNT não serem distribuídas livremente, muitas instituições produzem guias próprios para auxiliarem os alunos na formatação dos trabalhos. Percebemos que os guias apresentam informações adicionais (tais como tamanho ou tipo da fonte de determinados elementos) que direcionam os alunos a uma implementação das normas, mas que não são exigências delas.
+Alguns guias de formatação disponibilizados por instituições de ensino superior estão em conflito com as Normas da ABNT. Os guias são documentos que apresentam informações adicionais (tais como tamanho ou tipo da fonte de determinados elementos) que direcionam os alunos a uma implementação das Normas, mas que não são exigências delas. 
 
-Também é possível encontrar manuais tais como \cite{joelma_marques_da_silva_normas_2012} e \cite{conselheiro_lafaiete_manual_2016} que apresentam instruções conflitantes com as normas, os grifos a seguir ilustram isso:
+Segue exemplos de trechos de guias que estão em conflito com as Normas da ABNT:
 
-> A identificação da figura deve estar localizada em sua *parte inferior*, em letras maiúsculas, em tamanho 10, alinhada à margem lateral esquerda do texto, contendo \[...\]
+> o título [da figura] *na parte inferior*, sem ponto final, precedido da palavra FIGURA (ou GRÁFICO) e do número de ordem em algarismos arábicos, deve ser digitado em espaço simples e fonte tamanho 12 , sem negrito; 
 >
-> A fonte de onde foram extraídas as informações deve ser colocada *abaixo do título da figura*, precedida dos seguintes itens \[...\]
-	
+> na parte inferior da Figura deve constar *também* a fonte de onde foram obtidas as informações e a legenda (se houver), deve ser digitado em espaçamento simples e fonte tamanho 10, minúscula e sem negrito.  Faz-se necessária a indicação completa da fonte na seção “Referências”. \[...\] \cite[p. 7, grifo nosso]{conselheiro_lafaiete_manual_2016}
+
+> A identificação da figura deve estar localizada em sua *parte inferior*, em letras maiúsculas, em tamanho 10, alinhada à margem lateral esquerda do texto, contendo: 
+>
+> \[...\] 
+> 
+> 3\) título, precedido por *um hífen*, sem ponto final. \cite[p. 6, grifo nosso]{joelma_marques_da_silva_normas_2012}
+
+### Discussão
+
+Os guias das Normas da ABNT tem o propósito de auxiliar os alunos a realizarem uma implementação das Normas, mas o surgimento de inconsistências de informações entre Guias e Normas provavelmente é decorrência das Normas não serem públicas.
+
+As instituições não são obrigadas a seguirem as Normas da ABNT para trabalhos acadêmicos e podem elaborar suas regras próprias. Mas ao realizarem isso fazerem isso os estudantes entram em um dilema, *aonde obter informações 
+passam a serem exigidos do alunos 
+passam a serem *obrigados* a aprenderem 
+
+
+
 ## Fluxo de escrita científica ##
 
 <!-- http://blog.kdheepak.com/writing-papers-with-markdown.html 
@@ -501,7 +505,7 @@ de sistemas através de experiências de usuários que não conhecem o
 ## R Markdown: linguagem para reprodutibilidade de pesquisas científicas
 
 \index{R Markdown}
-Uma das iniciativas de utilização de Markdown na escrita científica é o R Markdown, diponibilizado na ferramenta R Studio \cite{rmarkdown}. O RStudio é uma IDE que facilita a criação, execução e depuração de *scripts* R, utilizado principalemnte para análises estatísticas.
+Uma das iniciativas de utilização de Markdown na escrita científica é o R Markdown, disponibilizado na ferramenta R Studio \cite{rmarkdown}. O RStudio é uma IDE que facilita a criação, execução e depuração de *scripts* R, utilizado principalemnte para análises estatísticas.
 
 O R Markdown é essencialmente Markdown, mas possibilita a inserção de blocos de instruções na linguagem R para realização de tratamentos estatísticos (como geração de gráficos, tabelas etc.). Durante a compilação de um documento os gráficos ou tabelas são gerados dinamicamente através da execução dos *scripts* R e inseridos no documento.
 
@@ -509,7 +513,7 @@ O R Markdown é essencialmente Markdown, mas possibilita a inserção de blocos 
 ### Discussão
 
 \index{reprodutibilidade}
-A linguagem R Markdown tem o propósito de facilitar a *reprodutibilidade* de pesquisas científicas. A *replicação* de uma pesquisa consiste em executar toda a análise estatística novamente, gerar gráficos ou tabelas e incorporá-los no documento final, no mesmo ambiente de trabalho. A *reprodução* da pesquisa consiste em outro pesquisador ser capaz de reproduzir os mesmos resultados em um ambiente de trabalho diferente \cite{Gandrud2015}.
+A linguagem R Markdown tem o propósito de facilitar a *reprodutibilidade* de pesquisas científicas. A *replicação* de uma pesquisa consiste em executar toda a análise estatística novamente, gerar gráficos ou tabelas e incorporá-los no documento final, no mesmo ambiente de trabalho. A *reprodução* da pesquisa consiste em outro pesquisador ser capaz de reproduzir os mesmos resultados em um ambiente de trabalho diferente \cite{gandrud2013reproducible}.
 
 Supondo um artigo científico que contenha um gráfico proveniente de um análise de dados, como esse gráfico foi gerado? Quais os dados utilizados? Qual método de análise foi empregado? Quais parâmetros foram utilizados?  Através dos *scripts* R é possível especificar todas essas informações. O autor da pesquisa é o primeiro beneficiado, pois consegue facilmente replicar a análise mesmo quando os dados mudam.
 
@@ -650,6 +654,7 @@ As soluções adotadas pelo ABNTFÁCIL, além de serem proprietárias, não poss
 
 A solução provavelmente tem como público alvo usuários da área de Humanas, que desconhecem as normas da ABNT, estão dispostos a pagarem pelo aplicativo, e que não precisam inserir equações ou códigos. 
 
+# Miolo
 # Proposta de dissertação
 
 A motivação dessa pesquisa é ofertar uma linguagem especializada para
@@ -677,6 +682,8 @@ Para alcançar este objetivo, os seguintes passos serão seguidos:
 <!-- conferência para submissão: https://www.computer.org/web/tlt/author -->
 
 ## Status de implementação ##
+
+\cite{limarka_paper}.
 
 A ferramenta Limarka foi produzida na linguagem Ruby, utilizando
 testes comportamentais automatizados (Apêndice \ref{apendice:testes}).
@@ -827,6 +834,7 @@ Código de interação com o pandoc
 ## Discussão
 
 
+# Miolo da Dissertação
 # Avaliação experimental
 
 ## Experimento
@@ -883,6 +891,12 @@ percentual que já utilizaram antes
 ## Discussão
 
 # Considerações finais
+## Recomendações para relaxamento das Normas da ABNT
+
+* Permitir que os títulos de Ilustrações e Tabelas possam apareçam na parte superior ou inferior, mas mantendo o mesmo padrão ao longo do documento. (ABNT NBR 14724:2011, item 5.8 Ilustrações)
+* Possibilitar que as indicações de fonte de Ilustrações e tabelas possam ser apresentadas como Notas de Rodapé, mesmo quando utilizando o Sistema de Referências Numérico. (NBR 6023:2002, item 9.2 Sistema numérico, ABNT NBR 14724:2011, item 5.8 Ilustrações)
+* Tornar opcionais as indicações de fonte de Ilustrações e Tabelas. (ABNT NBR 14724:2011, item 5.8 Ilustrações)
+
 
 ## Extrapolação
 
@@ -901,3 +915,4 @@ https://www.software.ac.uk/sites/default/files/SSI-SoftwareEvaluationTutorial.pd
 
 <!-- pdftk A=xxx-Monografia.pdf B=configuracao.pdf cat A1-47 B A68-END output proposta-qualificacao-eduardo.pdf
 -->
+# Conclusão
