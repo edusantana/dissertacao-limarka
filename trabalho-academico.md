@@ -2,12 +2,14 @@
 
 Durante o período de formação superior no Brasil muitos estudantes necessitam escrever um trabalho de conclusão de curso (TCC), como requisito para conclusão dos estudos. Neste momento eles são convocados a realizarem uma pesquisa científica e reportarem o trabalho através de uma monografia, dissertação ou tese -- geralmente em conformidade com as Normas da Associação Brasileira de Normas Técnicas (ABNT).
 
-De modo geral, o público nacional dispõe de duas alternativas para elaboração dos TCCs: (a) utilização de um editor de texto rico (como o Microsoft Word ou Libre Office) ou (b) utilização do Latex. 
-A primeira alternativa demanda do usuário conhecimentos de uso avançados da ferramenta para produzir um documeto de acordo com as normas da ABNT, até mesmo quando utiliza-se um modelo previamente disponibilizado. Sem esses conhecimentos técnicos e desconhecendo as Normas, alguns desses usuários são compelidos a pagarem para outros implementarem as mudanças necessárias em seu documento. 
+De modo geral, o público nacional dispõe de duas alternativas para elaboração dos TCCs: utilização de um editor de texto rico (como o Microsoft Word ou Libre Office) ou utilização do Latex. 
+A primeira alternativa demanda do usuário conhecimentos de uso avançados da ferramenta para produzir e formatar um documeto de acordo com as normas da ABNT, até mesmo quando utiliza-se um modelo previamente disponibilizado. Alguns estudantes sem esses conhecimentos técnicos e desconhecendo as Normas são compelidos a contratarem serviços para adequarem seu trabalho. 
 
-Embora o Latex possua uma *curva de aprendizado maior*, os editores on-line de Latex como o Overleaf \cite{overleaf} ou ShareLatex \cite{sharelatex} oferecem ambientes com interfaces gráficas que possibilitam uma experiência de edição similar aos editores de texto rico, tornando o processo mais fácil. Esta alternativa, em conjunto com a utilização de modelos disponibilizados pelas instituições, possibilita seus usuários abstraírem as regras de formatação (codificadas nos modelos) e se concentrarem na elaboração do texto. No entanto, o arquivo fonte do texto, onde a edição ocorre, permanece repleto de códigos (geralmente com nomenclaturas provenientes do inglês) ofuscando um pouco a legibilidade do arquivo em edição.
+Embora o Latex possua uma *curva de aprendizado maior*, editores on-line como o Overleaf \cite{overleaf} ou ShareLatex \cite{sharelatex} oferecem ambientes com interfaces gráficas que possibilitam uma experiência de edição similar aos editores de texto rico, tornando a escrita mais fácil. Esta alternativa em conjunto com a utilização de modelos pré-configurados possibilita seus usuários abstraírem algumas regras de formatação (codificadas nos modelos), por essa razão *o Latex é conhecido por permitir que seus usuários se concentrarem na elaboração do texto*, abstraindo a formatação. *O custo de sua utilização é a ofuscação do arquivo fonte do texto* devido a coexistência entre texto e códigos Latex -- que utiliza nomenclaturas originadas do inglês. 
 
-As linguagens de marcação de leve (*lightweight markup language*) surgiram, em diferentes contextos, como alternativas para elaboração de textos ou mensagens de comunicação. Essas linguagens possibilitam os usuários redigirem utilizando uma sintaxe de marcação simples, compatível com arquivos somente texto (*plain text*), e produzindo conteúdos fáceis de serem reconhecidos por humanos.
+No entanto, o arquivo fonte do texto, onde a edição ocorre, permanece repleto de códigos (geralmente com nomenclaturas provenientes do inglês) ofuscando um pouco a legibilidade do arquivo em edição.
+
+As linguagens de marcação de leve (*lightweight markup language*) surgiram, em diferentes contextos, como alternativas para elaboração de textos ou mensagens de comunicação. Essas linguagens, mais simples que o Latex, possibilitam os usuários redigirem utilizando uma sintaxe de marcação simples, compatível com arquivos somente texto (*plain text*), e produzindo conteúdos fáceis de serem reconhecidos por humanos.
 
 Este trabalho investiga a utilização de Markdown, uma linguagem de marcação leve, como outra alternativa para produção de TCCs em conformidade com as Normas da ABNT.
 
@@ -106,7 +108,7 @@ Argumentos de que uma linguagem não pode ser avaliada independente do seu ambie
 
 ## Normas da ABNT para trabalhos acadêmicos ##
 
-As normas da ABNT que normatizam os elemento dos trabalhos acadêmicos são apresentadas a seguir:
+As normas da ABNT que normatizam os elementos dos trabalhos acadêmicos são apresentadas a seguir:
 
 - ABNT NBR 14724, Informação e documentação - Trabalhos acadêmicos - Apresentação;
 
@@ -124,15 +126,42 @@ As normas da ABNT que normatizam os elemento dos trabalhos acadêmicos são apre
 
 - ABNT NBR 12225, Informação e documentação - Lombada - Apresentação;
 
-- Código de Catalogação Anglo-Americano. 2. ed. rev. 2002. São Paulo: FEBAB, 2004.
+- Código de Catalogação Anglo-Americano. 2. ed. rev. 2002. São Paulo: FEBRA, 2004.
 
 - IBGE. Normas de apresentação tabular. 3. ed. Rio de Janeiro, 1993.
 
-A seguir são destacadas regras dea elementos relevantes a essa pesquisa: Ilustrações e tabelas.
+A seguir são destacadas regras de elementos relevantes a essa pesquisa: Ilustrações e tabelas.
 
-### Regras da ABNT para Ilustrações e tabelas
+### A Capa
 
-Segundo a ABNT NBR 14724:2011, ao inserir uma ilustração no texto, deveremos:
+A NBR 14724 \cite[p. 5-6]{ABNT14724} que normatiza a capa do trabalho, especifica que ela deve conter os seguintes elementos:
+
+
+a) nome da instituição (opcional);
+b) nome do autor;
+c) título;
+d) subtítulo;
+e) número do volume;
+f) local (cidade);
+g) ano de depósito.
+
+
+#### Discussão
+
+A capa é um elemento frequentemente customizado pelas instituições, adicionando conteúdos que não estão presentes nas Normas, tais como:
+
+- Logotipo da instituição.
+- Curso ou Programa de Pós-Graduação;
+- Departamento
+
+A capa pode ser o primeiro elemento que o estudante irá avaliar, para verificar se um modelo está de acordo com as normas de sua instituição.
+
+
+### Regras da ABNT para ilustrações e tabelas
+
+As regras para ilustrações e tabelas são relevantes para essa pesquisa pois a sintaxe de Markdown para esses elementos não possibilita que a Norma seja contemplada.
+
+Segundo a ABNT NBR 14724:2011 \cite[p. 11]{ABNT14724}, ao inserir uma ilustração no texto, deveremos:
 
 - Obrigatoriamente, adicionar na *parte superior* (a) o tipo da ilustração (Figura, Quadro, Tabela etc.), (b) um travessão como separador, e (c) um título para a ilustração. (Regra de apresentação);
 
@@ -140,17 +169,18 @@ Segundo a ABNT NBR 14724:2011, ao inserir uma ilustração no texto, deveremos:
 
 - Opicionalmente notas explicativas e legendas também podem ser adicionadas na *parte inferior*. (Regra de apresentação);
 
-- Obrigatoriamente, referenciar a ilustração no texto, o mais próximo possível. (Regra de utilização).
+- Obrigatoriamente, *referenciar* a ilustração no texto, o mais próximo possível. (Regra de utilização).
 
-As tabelas também possui regras de apresentações adicionais, que são normatizadas pelo IBGE, através do documento "Normas de apresentação tabular".
-	
+As tabelas também possuem regras de apresentações adicionais, que são normatizadas pelo IBGE, através do documento "Normas de apresentação tabular".
+
+
 ### Guias ou manuais conflitantes com as Normas da ABNT
 
 Alguns guias de formatação disponibilizados por instituições de ensino superior estão em conflito com as Normas da ABNT. Os guias são documentos que apresentam informações adicionais (tais como tamanho ou tipo da fonte de determinados elementos) que direcionam os alunos a uma implementação das Normas, mas que não são exigências delas. 
 
 Segue exemplos de trechos de guias que estão em conflito com as Normas da ABNT:
 
-> o título [da figura] *na parte inferior*, sem ponto final, precedido da palavra FIGURA (ou GRÁFICO) e do número de ordem em algarismos arábicos, deve ser digitado em espaço simples e fonte tamanho 12 , sem negrito; 
+> o título [da figura] *na parte inferior*, sem ponto final, precedido da palavra FIGURA (ou GRÁFICO) e do número de ordem em algarismos arábicos, deve ser digitado em espaço simples e fonte tamanho 12, sem negrito; 
 >
 > na parte inferior da Figura deve constar *também* a fonte de onde foram obtidas as informações e a legenda (se houver), deve ser digitado em espaçamento simples e fonte tamanho 10, minúscula e sem negrito.  Faz-se necessária a indicação completa da fonte na seção “Referências”. \[...\] \cite[p. 7, grifo nosso]{conselheiro_lafaiete_manual_2016}
 
@@ -162,12 +192,11 @@ Segue exemplos de trechos de guias que estão em conflito com as Normas da ABNT:
 
 ### Discussão
 
-Os guias das Normas da ABNT tem o propósito de auxiliar os alunos a realizarem uma implementação das Normas, mas o surgimento de inconsistências de informações entre Guias e Normas provavelmente é decorrência das Normas não serem públicas.
+Os guias das Normas da ABNT tem o propósito de auxiliar os alunos a realizarem uma implementação das Normas. O surgimento de inconsistências de informações entre Guias e Normas poderia ser decorrência das Normas não serem públicas.
 
-As instituições não são obrigadas a seguirem as Normas da ABNT para trabalhos acadêmicos e podem elaborar suas regras próprias. Mas ao realizarem isso fazerem isso os estudantes entram em um dilema, *aonde obter informações 
-passam a serem exigidos do alunos 
-passam a serem *obrigados* a aprenderem 
+*Os estudantes podem estarem sendo sobrecarregados com atividades de formatação*. As instituições não são obrigadas a seguirem as Normas da ABNT para trabalhos acadêmicos, elas podem elaborar regras próprias. Quando instituições elaboram guias de formatação sem ofertarem modelos (Word, LibreOffice e Latex) os estudantes são terão um esforço maior para implementar as regras da instituição em seus trabalhos.
 
+*No caso extremo um estudante precisaria implementar quatro versões diferentes das Normas da ABNT*, quando sua formação acadêmica (graduação, especialização, mestrado e doutorado) ocorrer em instituições diferentes.
 
 
 ## Fluxo de escrita científica ##
@@ -890,12 +919,36 @@ percentual que já utilizaram antes
 
 ## Discussão
 
-# Considerações finais
-## Recomendações para relaxamento das Normas da ABNT
+# Resultados
 
-* Permitir que os títulos de Ilustrações e Tabelas possam apareçam na parte superior ou inferior, mas mantendo o mesmo padrão ao longo do documento. (ABNT NBR 14724:2011, item 5.8 Ilustrações)
-* Possibilitar que as indicações de fonte de Ilustrações e tabelas possam ser apresentadas como Notas de Rodapé, mesmo quando utilizando o Sistema de Referências Numérico. (NBR 6023:2002, item 9.2 Sistema numérico, ABNT NBR 14724:2011, item 5.8 Ilustrações)
-* Tornar opcionais as indicações de fonte de Ilustrações e Tabelas. (ABNT NBR 14724:2011, item 5.8 Ilustrações)
+Vol  | Campo | Valor
+:---:|-----------------|----------------------------------------------
+1 | Formação Acadêmica | Ensino técnico em Instituto Federal, Graduação em Ciência da Computação.
+
+Formação Acadêmica | Voluntários
+:----------:|:-------------------------------------:
+Engenharia de computação | 4
+Ciência da Computação | 2
+Engenheria Elétrica, Mestrando | 1
+Engenheira Florestal, Mestrando | 1
+Engenharia de Produção | 1
+Engenharia ambiental | 1
+
+
+# Considerações finais
+
+# Recomendações
+
+## Recomendações para relaxamento das Normas da ABNT para facilitar adoção de Markdown
+
+* Permitir que os títulos de Ilustrações e Tabelas possam apareçam na parte superior ou inferior, mantendo o mesmo padrão ao longo do documento. (ABNT NBR 14724:2011, item 5.8 Ilustrações);
+* Possibilitar que as indicações de fonte das Ilustrações e tabelas possam ser apresentadas como Notas de Rodapé, mesmo quando utilizando o Sistema de Referências Numérico. (NBR 6023:2002, item 9.2 Sistema numérico, ABNT NBR 14724:2011, item 5.8 Ilustrações);
+	* Somente no caso em que se estiver utilizando Referências Numéricas através de notas de rodapé, as notas de fontes adotariam o sequenciamento alfabético para distingui-las das referências.
+
+## Recomendações para instituições
+
+- Tornar opcional a especificação de Fontes para Ilustrações e Tabelas.
+
 
 
 ## Extrapolação
