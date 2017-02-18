@@ -225,6 +225,13 @@ $endif$}%% fim do preambulo
 %% Capa, Folha de rosto e Ficha catalográfica.
 
 
+%
+% Hifenizacao - Colocar lista de palavras que nao devem ser separadas e que 
+% nao estao no dicionario portugues.
+% As palavras do dicionario portugues ja sao separadas corretamente pelo lateX
+%
+\hyphenation{ Asciidoc }
+
 % ----
 % Início do documento
 % ----

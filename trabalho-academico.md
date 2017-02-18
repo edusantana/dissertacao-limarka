@@ -5,17 +5,17 @@ Durante o período de formação superior no Brasil muitos estudantes necessitam
 De modo geral, o público nacional dispõe de duas alternativas para elaboração dos TCCs: utilização de um editor de texto rico (como o Microsoft Word ou Libre Office) ou utilização do Latex. 
 A primeira alternativa demanda do usuário conhecimentos de uso avançados da ferramenta para produzir e formatar um documeto de acordo com as normas da ABNT, até mesmo quando utiliza-se um modelo previamente disponibilizado. Alguns estudantes sem esses conhecimentos técnicos e desconhecendo as Normas são compelidos a contratarem serviços para adequarem seu trabalho. 
 
-Embora o Latex possua uma *curva de aprendizado maior*, editores on-line como o Overleaf \cite{overleaf} ou ShareLatex \cite{sharelatex} oferecem ambientes com interfaces gráficas que possibilitam uma experiência de edição similar aos editores de texto rico, tornando a escrita mais fácil. Esta alternativa em conjunto com a utilização de modelos pré-configurados possibilita seus usuários abstraírem algumas regras de formatação (codificadas nos modelos), por essa razão *o Latex é conhecido por permitir que seus usuários se concentrarem na elaboração do texto*, abstraindo a formatação. *O custo de sua utilização é a ofuscação do arquivo fonte do texto* devido a coexistência entre texto e códigos Latex -- que utiliza nomenclaturas originadas do inglês. 
+Embora o Latex possua uma *curva de aprendizado maior*, editores on-line como o Overleaf \cite{overleaf} ou ShareLatex \cite{sharelatex} oferecem ambientes com interfaces gráficas que possibilitam uma experiência de edição similar aos editores de texto rico, tornando a escrita mais fácil. Esta alternativa em conjunto com a utilização de modelos pré-configurados possibilita seus usuários abstraírem algumas regras de formatação (codificadas nos modelos), por essa razão *o Latex é conhecido por permitir que seus usuários se concentrarem na elaboração do conteúdo do texto*, abstraindo a formatação. Para os usuários, *o custo da utilização de Latex é conviver com ofuscação do arquivo fonte do seu texto* devido a coexistência entre o conteúdo (o texto) e códigos Latex -- com nomenclaturas originadas do inglês. Como seria uma solução sem esse custo?
 
-No entanto, o arquivo fonte do texto, onde a edição ocorre, permanece repleto de códigos (geralmente com nomenclaturas provenientes do inglês) ofuscando um pouco a legibilidade do arquivo em edição.
+*O uso de linguagens de marcação leve possibilitaria obter os benefícios do Latex sem o custo de ofuscação do arquivo fonte do texto.* As linguagens de marcação leve (*lightweight markup language*) surgiram em diferentes contextos para elaboração de textos ou mensagens de comunicação. Essas linguagens, mais simples que Latex, possibilitam os usuários redigirem utilizando uma sintaxe de fácil memorização, utilização e reconhecimento. Seria possível utilizá-las para contemplar as exigências de produção de TCCs nacionais?
 
-As linguagens de marcação de leve (*lightweight markup language*) surgiram, em diferentes contextos, como alternativas para elaboração de textos ou mensagens de comunicação. Essas linguagens, mais simples que o Latex, possibilitam os usuários redigirem utilizando uma sintaxe de marcação simples, compatível com arquivos somente texto (*plain text*), e produzindo conteúdos fáceis de serem reconhecidos por humanos.
+*A natureza das normas exigidas no contexto nacional para elaboração de um TCC são complexas e conflitantes*. De forma geral, dever-se-ia exigir dos TCCs apenas contemplar as Normas da ABNT, na prática exige-se que o estudante produza um documento que contemple uma mesclagem entre Normas da ABNT, normas da instituição/curso, normas do orientador e histórico do que foi aceito previamente pelo curso, e que ele resolva os conflitos dessas exigências. *Sem alterar o contexto nacional, a utilização de uma linguagem de marcação leve para elaboração de TCCs tem o desafio de contemplar peculiaridades exigidas pelas Normas da ABNT e gerenciar conflitos entre as exigências de todos esses agentes*.
 
-Este trabalho investiga a utilização de Markdown, uma linguagem de marcação leve, como outra alternativa para produção de TCCs em conformidade com as Normas da ABNT.
+Este trabalho investiga a viabilidade de utilização de uma linguagem de marcação leve (Markdown) para produção de TCCs em conformidade com as Normas da ABNT e o contexto nacional.
 
 ## Motivação
 
-A motivação desse trabalho consiste em ofertar uma ferramenta para elaboração de trabalhos de conclusão de curso (monografia, dissertação ou tese) em conformidade com as Normas da ABNT, que seja fácil e agradável de utilizar, e minimizando os conhecimentos exigidos sobre as Normas.
+A motivação desse trabalho consiste em ofertar uma solução para os estudantes nacionais elaborarem seus TCCs, beneficiando-se da utilizaçao de uma linguagem de marcação leve para escrita do trabalho, proporcionando-lhes uma experiência fácil e agradável, despreocupando-os das Normas da ABNT e demais exigências de formatação.
 
 ## Objetivos
 
@@ -27,17 +27,21 @@ O objetivo geral desse trabalho é *avaliar* o uso de uma linguagem de marcaçã
 
 ### Objetivos Específicos
 
-- *Especificar* e *implementar* um sistema que possibilite usuários escrever TCCs em Markdown em conformidade com as Normas da ABNT;
-  
-- *Avaliar* o uso da linguagem Markdown para a escrita de TCCs por estudantes.
+- *Analisar* requisitos de formatação de TCCs;
 
+- *Identificar* linguagem de marcação mais apropriada para escrita de TCCs
+
+- *Implementar* aplicação que possibilite usuários escrever TCCs nacionais utilizando uma linguagem de marcação leve
+  
+- *Avaliar* o uso de uma linguagem de marcação leve para a escrita de TCCs nacionais por estudantes
 
 ## Metodologia ##
 
-A pesquisa adotou o método de *análise qualitativa*. De acordo com \cite{hazzan2006qualitative}, o método qualitativo deve ser empregado quando o objeto de estudo envolve analisar processos mentais de indivíduos ou quando o estudo é um dos pioneiros na área e não existem dados suficientes que sugestionem elaborações de hipóteses *a priori*. 
-Portanto a escolha do método qualitativo nessa pesquisa é justificada devido a ausência de pesquisas sobre utilização da linguagem Markdown para produção de TCCs nacionais.
+Esta pesquisa adotou o método de *análise qualitativa*. De acordo com \cite{hazzan2006qualitative} o método qualitativo deve ser empregado quando o estudo é um dos pioneiros na área e não existem dados suficientes que sugestionem elaborações de hipóteses *a priori*. Portanto a escolha do método qualitativo nessa pesquisa é justificada devido a ausência de pesquisas sobre utilização da linguagem Markdown para produção de TCCs nacionais.
 
-Os instrumentos adotados para coleta de dados foram observação e entrevistas semiestruturadas . <!-- Pq esse instrumento foi escolhido?--> 
+Para avaliação do uso da linguagem foram realizados experimentos de utilização (\autoref{experimentos}) e estudo de caso (\autoref{estudo-de-caso}) com usuários reais. 
+
+Os instrumentos de coleta de dados adotados foram observação e entrevista semiestruturada presencial nos experimentos e no estudo de caso foi utilizado apenas entrevista por telefone e comunicação por *chat*. <!-- Pq esse instrumento foi escolhido?--> 
 
 <!--
 Casos diferentes:
@@ -53,18 +57,16 @@ A avaliação da utilização do sistema foi realizada através de experimentos 
 
 Ver: Chapter 4 Ann Blandford and Thomas Green Methodological Development -->
 
-Essa pesquisa utilizará avaliação *com* envolvimento ativo dos usuários e *com* sistema em execução. Serão realizados experimentos
-*com* e *sem* um contexto realístico. Os experimentos estão descritos
-no Capítulo \ref{experimentos}.
 
 <!-- Essa pesquisa utiliza filosofia Pragmática \cite[easterbrook2008selecting], ao escolher o método de pesquisa que melhor convém ao pesquisador para solucionar o problema em que se depara. -->
 
-O contexto da pesquisa contempla apenas estudantes com nível superior *incompleto* ou *completo*, que tiveram contato com as normas da ABNT durante sua formação.
+Os perfis dos voluntários da pesquisa foram escolhidos tentando maximizar sua motivação para utilização da ferramenta. Por isso *a pesquisa foi realizada apenas com estudantes de graduação ou pós-graduação que potencialmente precisarão escrever um TCC* para concluir seus estudos e já tiveram contato com as normas da ABNT durante sua formação. Estudantes que desconhecem a problemática da elaboração de um TCC ou indivíduos que não precisarão elaborá-lo, seja por terem concluído ou abandonado os estudos, não participaram da pesquisa.
 
-
+<!--
 Fazer perguntas sobre motivação, percepção e experiência.\cite[p. 36]{guide2008}
 
 Ver: \cite{Seaman2008QualitativeMethods}
+-->
 
 <!-- The  principal  advantage  of  using  qualitative  methods  is  that  they  force  the 
 researcher to delve into the complexity of the problem rather than abstract it away. 
@@ -75,7 +77,17 @@ that involve variables that are difficult to quantify (particularly human charac
 
 ## Publicações Relacionadas
 
-O artigo \cite{limarka_paper} publicado no *Journal of Open Source Software* é um reconhecimento público que o software Limarka desenvolvido contempla os requisitos do *journal* \cite{joss}, que contemplam a licença, documentação, API e testes do *software*.
+O artigo \cite{limarka_paper} publicado no *Journal of Open Source Software* é um reconhecimento público que o [software desenvolvido nesta pesquisa](https://github.com/abntex/limarka#readme), foi elaborando contemplando todos os requisitos do *journal* \cite{joss} que abrange:
+
+a. Licença do software
+b. Documentação
+c. *statement of need*;
+d. Instruções de instalação
+e. Exemplo de uso
+f. Documentação da API
+g. Testes
+h. Guias para contribuição
+i. Funcionalidade
 
 <!-- 
 - pbcib
@@ -106,9 +118,11 @@ Os formulários em PDFs são apresentados como alternativas para aquisição de 
 
 Argumentos de que uma linguagem não pode ser avaliada independente do seu ambiente são apresentados (sistema = notação + ambiente).
 
-## Normas da ABNT para trabalhos acadêmicos ##
+## Normas da ABNT para trabalhos acadêmicos {#abnt}
 
-As normas da ABNT que normatizam os elementos dos trabalhos acadêmicos são apresentadas a seguir:
+*As Normas da ABNT apresentam um papel fundamental nessa pesquisa: fornece requisitos de formatação e apresentação dos TCCs*. Qualquer sistema que se proponha a permitir a escrita de TCCs nacionais deve contemplar as essas Normas.
+
+As normas da ABNT que normatizam os elementos dos TCCs estão divididas nos seguintes documentos:
 
 - ABNT NBR 14724, Informação e documentação - Trabalhos acadêmicos - Apresentação;
 
@@ -130,7 +144,19 @@ As normas da ABNT que normatizam os elementos dos trabalhos acadêmicos são apr
 
 - IBGE. Normas de apresentação tabular. 3. ed. Rio de Janeiro, 1993.
 
-A seguir são destacadas regras de elementos relevantes a essa pesquisa: Ilustrações e tabelas.
+Cada documento possui uma data de início de vigência, e posteriormente uma nova versão do documento pode surgir, tornando a versão anterior obsoleta.
+
+*Fazendo-se analogia a Orientação a Objetos, as Normas da ABNT equivaleria a uma classe Abstrata*. Ela contém diversas informações mas deixa deliberadamente diversos pontos em aberto tais como: quais fontes e tamanhos utilizar, configuração dos cabeçalhos de página, formatação do sumário e títulos das seções etc. Os guias de formatação surgiram para auxiliar os alunos a implementarem as normas em seus trabalhos, apresentando informações específicas decididas pelos autores dos guias.
+
+*Um sistema que se proponha a produzir trabalhos em conformidade com as Normas da ABNT deve ser aberto para customizações*. 
+
+
+*O que não divergir das Normas é permitido.* Os pontos em aberto das Normas permite que sejam adicionados novos conteúdos. Se o conteúdo adicionado não for divergente do especificado nas Normas, o documento ainda é considerado que está de acordo com as Normas.
+
+
+A seguir são destacadas regras de três elementos relevantes a essa pesquisa: capa, ilustrações e tabelas.
+
+<!-- Mostrar imagem do fórum como suporte da ferramenta -->
 
 ### A Capa
 
@@ -146,37 +172,27 @@ f) local (cidade);
 g) ano de depósito.
 
 
-#### Discussão
+### Regras da ABNT para ilustrações e tabelas {#regras-abnt}
 
-A capa é um elemento frequentemente customizado pelas instituições, adicionando conteúdos que não estão presentes nas Normas, tais como:
-
-- Logotipo da instituição.
-- Curso ou Programa de Pós-Graduação;
-- Departamento
-
-A capa pode ser o primeiro elemento que o estudante irá avaliar, para verificar se um modelo está de acordo com as normas de sua instituição.
-
-
-### Regras da ABNT para ilustrações e tabelas
-
-As regras para ilustrações e tabelas são relevantes para essa pesquisa pois a sintaxe de Markdown para esses elementos não possibilita que a Norma seja contemplada.
+As regras para ilustrações e tabelas são relevantes para essa pesquisa pois *a sintaxe da linguagem de marcação leve escolhida para escrita dos TCCs não possibilita que a Norma seja contemplada para esses elementos*.
 
 Segundo a ABNT NBR 14724:2011 \cite[p. 11]{ABNT14724}, ao inserir uma ilustração no texto, deveremos:
 
-- Obrigatoriamente, adicionar na *parte superior* (a) o tipo da ilustração (Figura, Quadro, Tabela etc.), (b) um travessão como separador, e (c) um título para a ilustração. (Regra de apresentação);
+- Obrigatoriamente adicionar na *parte superior* (a) o tipo da ilustração (Figura, Quadro, Tabela etc.), (b) um travessão como separador, e (c) um título para a ilustração. (Regra de apresentação);
 
 - Obrigatoriamente adicionar na *parte inferior*, a fonte da imagem, mesmo que seja do próprio autor. (Regra de apresentação);
 
 - Opicionalmente notas explicativas e legendas também podem ser adicionadas na *parte inferior*. (Regra de apresentação);
 
-- Obrigatoriamente, *referenciar* a ilustração no texto, o mais próximo possível. (Regra de utilização).
+- Obrigatoriamente *referenciar* a ilustração no texto, o mais próximo possível. (Regra de utilização).
 
 As tabelas também possuem regras de apresentações adicionais, que são normatizadas pelo IBGE, através do documento "Normas de apresentação tabular".
 
+Embora estas informações estejam claras nas Normas da ABNT, alguns guias de formatação apresentam instruções contraditórias, como mostrado a seguir.
 
 ### Guias ou manuais conflitantes com as Normas da ABNT
 
-Alguns guias de formatação disponibilizados por instituições de ensino superior estão em conflito com as Normas da ABNT. Os guias são documentos que apresentam informações adicionais (tais como tamanho ou tipo da fonte de determinados elementos) que direcionam os alunos a uma implementação das Normas, mas que não são exigências delas. 
+*Alguns guias de formatação disponibilizados por instituições de ensino superior estão em conflito com as Normas da ABNT*. Os guias são documentos que apresentam informações adicionais (tais como tamanho ou tipo da fonte de determinados elementos) que direcionam os alunos a uma implementação das Normas, mas que não são exigências delas. 
 
 Segue exemplos de trechos de guias que estão em conflito com as Normas da ABNT:
 
@@ -190,72 +206,69 @@ Segue exemplos de trechos de guias que estão em conflito com as Normas da ABNT:
 > 
 > 3\) título, precedido por *um hífen*, sem ponto final. \cite[p. 6, grifo nosso]{joelma_marques_da_silva_normas_2012}
 
+Como pode ser visto esses trechos dos guias contém:
+
+a. instruções adicionais: formatação específicas, como o tamanho da fonte, alinhamento e indicação de termos em maiúsculos
+b. restrições adicionais: não utilizar ponto final nos títulos
+c. contradição com a Norma: posicionamento do título na parte inferior, em vez da parte superior (ver \autoref{regras-abnt} - \nameref{regras-abnt}).
+
 ### Discussão
 
-Os guias das Normas da ABNT tem o propósito de auxiliar os alunos a realizarem uma implementação das Normas. O surgimento de inconsistências de informações entre Guias e Normas poderia ser decorrência das Normas não serem públicas.
+A capa é um dos principais elementos customizados pelas instituições, costuma-se adicionar conteúdos que não estão presentes nas Normas, tais como:
 
-*Os estudantes podem estarem sendo sobrecarregados com atividades de formatação*. As instituições não são obrigadas a seguirem as Normas da ABNT para trabalhos acadêmicos, elas podem elaborar regras próprias. Quando instituições elaboram guias de formatação sem ofertarem modelos (Word, LibreOffice e Latex) os estudantes são terão um esforço maior para implementar as regras da instituição em seus trabalhos.
+- Logotipo da instituição.
+- Curso ou Programa de Pós-Graduação;
+- Departamento
 
-*No caso extremo um estudante precisaria implementar quatro versões diferentes das Normas da ABNT*, quando sua formação acadêmica (graduação, especialização, mestrado e doutorado) ocorrer em instituições diferentes.
+Os guias, que podem contém instruções de formatações arbitrárias, tornam-se fontes de requisitos. Um sistema para produção de TCCs nacionais deveria contemplar customizações da capa e requisitos dos guias, caso contrário os trabalhos poderiam não ser aceitos por alguns instituições.
 
+*Os estudantes podem estarem sendo sobrecarregados com atividades de formatação*. As instituições não são obrigadas a exigirem as Normas da ABNT para trabalhos acadêmicos, podendo especificar regras próprias. Mas quando elaboram guias de formatação contraditórios e sem ofertarem modelos (Word, LibreOffice e Latex) os estudantes precisarão de um esforço maior para implementar as regras da instituição em seus trabalhos. Os estudantes também podem confundir e considerar que a Norma são as instruções dos Guias. *No caso extremo um estudante precisaria implementar quatro versões diferentes das Normas da ABNT* nos TCCs, quando sua formação acadêmica (graduação, especialização, mestrado e doutorado) ocorrer em instituições diferentes.
+
+
+<!-- 
 
 ## Fluxo de escrita científica ##
 
-<!-- http://blog.kdheepak.com/writing-papers-with-markdown.html 
+http://blog.kdheepak.com/writing-papers-with-markdown.html 
 
 -->
 
-### Considerações Finais ###
-
-Na fundamentação teórica apresentamos as normas da ABNT, as regras
-para utilizar ilustrações e como o projeto abnTeX popularizou o uso do
-Latex em trabalhos acadêmicos nacionais.
-
-Em seguida apresentamos duas linguagens de marcação de texto: Markdown e
-Asciidoc, com seus contextos de criação e suas limitações.
-
-A ferramenta Pandoc, que implementa a linguagem Markdown, pode ser
-configurada para utilizar modelos Latex para geração de arquivos
-PDFs. Muitas configurações são inseridas pelo usuário através de
-arquivos ou blocos no formato YAML, que possui uma sintaxe bastante
-expressiva, mas um pouco complexa. A sintaxe de inserção de imagens e
-tabelas utilizada pelo Markdown não permite incluir a notas
-explicativas ou informar a fonte da imagem, requisitos para produção
-de textos em conformidade com as Normas da ABNT.
-
-O formato de arquivo PDF, bastante utilizado para publicação de
-textos, também permite a inserção e extração de dados através do
-recurso de formulários, fornecendo uma interface potencialmente mais
-amigável que o YAML.
-
-O sistema comercial ABNTFácil implementou uma linguagem de marcação
-especializada para o público nacional, em que mesclou conceitos das
-normas da ABNT com recursos do Word.
-
-O Design de uma linguagem necessita de reflexões cognitivas de como
-usuário irá interagir com ela através de um sistema. O ideal é que as
-decisões da criação da linguagem estejam associadas a estudos
-empíricos.
-
-## Linguagem de marcação ##
+## Linguagens de marcação ##
 
 <!-- Falar sobre Linguagem de marcação sem ser leve -->
 
+As linguagens de marcação mais conhecidas são HTML, devido a utilização nas páginas de Internet, e XML elaborado para troca de dados através da Internet.
+
+O padrão XML foi elaborado baseado em dez princípios \cite{xml}, dentre os quais destacamos:
+
+- Deve ser fácil de utilizar através da internet
+- Deve suportar uma grande variedade de aplicações
+- Deve ser fácil escrever programas que processem documentos XML
+- Documentos XML devem ser *legíveis para os humanos e razoavelmente limpos*;
+- Documentos XML devem ser *fáceis de serem criados (por humanos e sistemas)*;
+- *Minimizar a digitação (keystrokes) não é considerado importante* em detrimento de alcançar as demais metas.
+
+Os três primeiros princípios estão relacionados a interoperabilidade e a facilidade de processamento de documentos XML. Enquanto os três últimos estão relacionados a fatores humanos: escrita e leitura.
+
+A próxima seção apresenta uma linguagem de marcação baseada em XML, elaborada para permitir a escrita de livros.
 
 ### Docbook ###
 
 \index{DocBook}
-Nessa seção é apresentado o formato DocBook, uma linguagem de marcação com o propósito original de possibilitar publicação de de livros técnicos, que posteriormente motivou a origem do Asciidoc (\autoref{Asciidoc}).
+Nessa seção é apresentado o formato DocBook, uma linguagem de marcação com o propósito original de possibilitar publicação de livros técnicos, posteriormente motivou a origem de uma linguagem de marcação leve.
 
-O Docbook é um formato XML de produção de livros criado pela editora O’Reilly, especializada na produção e comercialização de livros técnicos. O formato possui diversas versões que determinam todos os elementos de um livro \cite{docbook-guide}. Foram produzidas várias ferramentas para converter um DocBook para apresentação em diversos formatos.
+O Docbook é um formato XML de produção de livros criado pela editora O’Reilly, especializada na produção e comercialização de livros técnicos. O formato possui diversas versões que determinam todos os elementos de um livro \cite{docbook-guide}. Foram produzidas várias ferramentas para converter um documento DocBook para apresentação em diversos formatos (HTML, PDF, EPUB, etc).
 
-Na versão 5.0, o formato possui mais de 350 *tags* para contemplar a escrita dos livros e todos seus elementos: prefácio, preambulo, resumo, dedicatória, capítulo, glossário, sinopse, índice remissivo, exemplos, quadros (notas, informações, atenção), códigos fontes etc. Com o DocBook é possível separar a formatação da apresentação e configurá-la para cada formato de saída desejado.
+Na versão 5.0, o formato possui mais de 350 *tags* para contemplar a escrita dos livros com todos seus elementos: prefácio, preambulo, resumo, dedicatória, capítulo, glossário, sinopse, índice remissivo, exemplos, quadros (notas, informações, atenção), códigos fontes etc. Com o DocBook é possível separar a formatação da apresentação e configurá-la para cada formato de saída desejado.
 
-A complexidade dessas *tags* motivou a criação de uma linguagem mais simples, mas que fosse capaz de aproveitar todas as ferramentas compatíveis com formato DocBook: a Asciidoc.
+A complexidade dessas *tags* e o número elevado de digitação necessário para escrita dos textos motivou a criação de uma linguagem mais simples, mas que fosse capaz de aproveitar todas as ferramentas compatíveis com formato DocBook: a linguagem Asciidoc (\autoref{Asciidoc}).
 
-#### Discussão
+### Discussão
 
-## Linguagens de marcação leve ##
+O princípio da filosofia da concepção do XML *minimizar a digitação não é considerado importante* não se aplica bem ema atividades em que a principal ação seja a escrita por humanos. As linguagens de marcação leves, apresentadas na próxima seção, tem como principal requisito serem fáceis de serem escritas por humanos.
+
+
+## Linguagens de marcação leve {#LML}
 
 <!-- A lightweight markup language (LML), also termed a simple or humane markup language, is a markup language with simple, unobtrusive syntax. -->
 
@@ -265,63 +278,61 @@ https://techwhirl.com/what-is-structured-writing/
 
 -->
 
-As linguagens de marcação de leves (*lightweight markup languages*) são linguagens que realizaram marcações simples em textos, de fácil leitura/escrita para os usuários. Elas costumam serem utilizadas para escrita de textos e composição de mensagens na Internet.
+O princípio das linguagens de marcação leve (*lightweight markup languages*) é que os textos sejam fáceis de serem digitados e lidos por humanos, elas costumam serem utilizadas para escrita de textos e composição de mensagens na Internet. 
 
-Nessa seção são apresentadas três linguagens de marcação: Markdown que teve como objetivo original geração de código HTML, DocBook uma linguagem XML para produção de livros e Asciidoc uma linguagem no formato de texto para geração de documentos no formato DocBook.
+Nessa seção são apresentadas duas linguagens de marcação leves: Asciidoc uma linguagem originada para produção de livros no formato DocBook; e Markdown que teve como objetivo original escrita de mensagens e geração de código HTML.
 
-
-### Asciidoc {#Asciidoc} ###
+### Asciidoc {#Asciidoc}
 
 \index{Asciidoc}
-Nessa seção é apresentado o formato Asciidoc, uma linguagem de marcação simples com o propósito original agilizar a produção de livros e manter compatibilidade as ferramentas que processam DocBook.
+Nessa seção é apresentado a linguagem de marcação leve Asciidoc que teve como propósito original agilizar a produção de livros, através da exportação para o formato DocBook.
 
-A linguagem Asciidoc foi concebida para agilizar a produção de livros técnicos no formato DocBook.[^6] Em vez de escrever o livro em XML, o autor poderia utilizar a sintaxe do Asciidoc e exportar um arquivo em conformidade com o padrão DocBook \cite{asciidoc}.
+A linguagem Asciidoc foi concebida para agilizar a produção de livros técnicos no formato DocBook. Em vez de escrever o livro em XML, o autor poderia utilizar a sintaxe do Asciidoc (que requer menos digitação) e exportar os arquivos em conformidade com o padrão DocBook \cite{asciidoc}.
 
-[^6]: Formato XML, criado pela editora O’Reilly Media para editoração de
-    livros técnicos: <http://www.docbook.org>.
+A Asciidoc tem uma sintaxe mais simples para criar os elementos que correspondem as tags do DocBook,  aceitando inclusive a inserção de código DocBook puro. Ela suporta modularização do texto em vários arquivos, permite incluir códigos fontes de arquivos externos e a saída da execução de comandos.
 
-A Asciidoc possui sintaxe mais simples para criar vários elementos de um livro compatível, com mapeamentos com o padrão Docbook (aceitando inclusive a inserção de código DocBook puro). Ela suporta modularização através da inclusão de arquivos externos. Permite incluir códigos fontes de arquivos externos e invocar um comando do sistema e para incluir seu resultado.
+Ela é expansível através da criação ou instalações de filtros, existem filtros para geração de QRCode, diagramas UML, partitura etc.
 
-Ela é expansível através da instalações de filtros. Existem filtros para geração de QRCode, de diagramas UML, de partitura etc. O usuário pode escrever novos filtros.
-
-A sintaxe de criação de tabelas permite mesclar células, configurar o alingamento de colunas (ou de células individualmente), cabeçalho e rodapé. É possível inclusão de dados externos, como um arquivo de texto separado por vírgulas.
+A sintaxe de criação de tabelas permite mesclar células, configurar o alingamento de colunas (ou de células individualmente), cabeçalho e rodapé, além de possibilita inclusão de dados externos, como um arquivo de texto separado por vírgulas. 
 
 Por ter sua origem na produção de livros, é possível referenciar automaticamente quase todos os elementos, tais como: images, tabelas, capítulos, seções, códigos, quadros etc.
 
+Como diferencial para produção de livros técnicos também permite destaque automático das sintaxes de diversas linguagens de programação e inserção de códigos Latex.
+
+O curso de Licenciatura em Computação a distância da Universidade Federal da Paraíba editorou livros de diferentes áreas do conhecimento utilizando esta linguagem (<https://github.com/ufpb-computacao>).
 
 ### Markdown ###
 
 \index{Markdown}
-Markdown é uma linguagem de marcação de texto simples que dispensa o uso de palavras chaves \cite{pandoc}. Sua origem foi inspirada na escrita de e-mails e seu propósito original era exclusivamente *escrever para Web* (geração de código HTML). Sua filosofia é que *o formato do texto escrito possua uma formatação visual similar à apresentação do documento final* (página HTML) \cite{markdown}.
+Markdown é uma linguagem de marcação de texto simples que dispensa o uso de palavras chaves \cite{pandoc}. Sua origem foi inspirada na escrita de e-mails e seu propósito original era exclusivamente *escrever para Web* (geração de código HTML). Sua filosofia é que *o formato do texto escrito possua uma formatação visual similar à apresentação do documento final* \cite{markdown}.
 
-A Figura \ref{fig:rmarkdown} apresenta um subconjunto da linguagem Markdown. Na coluna esquerda (*syntax*) é apresentada a sintaxe da linguagem, na coluna do lado direito (*becomes*) temos a apresentação em HTML gerado a partir do código da esquerda. É possível ver a sintaxe para itálico, negrito, capítulos e seções (*headers*), listas, tabelas etc.
+A \autoref{fig:rmarkdown} apresenta um subconjunto da linguagem R Markdown (uma extensão de Markdown). Na coluna esquerda (*syntax*) é apresentada a sintaxe da linguagem, na coluna do lado direito (*becomes*) temos a apresentação em HTML que seria gerado a partir do código da esquerda. É possível ver a sintaxe para itálico, negrito, capítulos e seções (*headers*), listas, tabelas etc.
 
-\begin{figure}[htb]
-\caption{\label{fig:rmarkdown}Subconjunto da sintaxe de Markdown}
-\begin{center}
-\includegraphics[width=0.70000\textwidth]{imagens/Rmarkdown.png}
-\end{center}
-\legend{Fonte: \url{https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf}}
-\end{figure}
+![Apresentação da sintaxe de R Markdown](imagens/Rmarkdown.png){#fig:rmarkdown width=70%}
+
+Fonte: \cite{markdown-sintaxe}.
+
+Várias ferramentas possuem implementações próprias do Markdown, expandindo o formato original para contemplar novos contextos e funcionalidaes, uma dessas ferramentas bastante utilizada é a Pandoc (\autoref{pandoc}). 
 
 
-Várias ferramentas possuem implementações próprias do Markdown, expandindo o formato original para contemplar novos contextos e funcionalidaes, uma dessas ferramentas bastante utilizada é a Pandoc. 
+### Discussão
+
+
 
 ## Ferramentas ##
-### Pandoc ###
+### Pandoc {#pandoc}
 
 \index{Pandoc}
+
+A ferramenta Pandoc é uma das principais ferramentas que 
+
 A arquitetura da ferramenta Pandoc permite converter arquivos em diferentes formatos.[^2] Ela difere de ferramentas usuais por possibilitar o usuário escolher quais extensões do Markdown deseja utilizar, em outras palavras, ela possibilita configurar a sintaxe da linguagem.
+
 
 
 Na geração do código ela utiliza modelos internamente e configuração
 de parâmetros em arquivos no formato YAML, que será apresentado adiante.
 
-[^2]: Atualmente possibilita ler os formatos Markdown, CommonMark, PHP
-    Markdown Extra, GitHub-Flavored Markdown, reStructuredText, HTML,
-    LaTeX, MediaWiki markup, TWiki markup, Haddock markup, OPML, Emacs
-    Org mode, DocBook, txt2tags, EPUB, ODT e Word docx. Além desses
-    formatos, a ferramenta também permite mais formatos de saída.
 
 ### YAML ###
 
@@ -345,58 +356,6 @@ A permissividade agiliza a inserção de dados pelo o usuário, pois permite ins
 
 A *indentação* também é obrigatória para definir hierarquia. Na Figura \ref{fig:yaml}, a variável `affiliation` não estaria relacionada a `author` se não houvesse indentação.
 
-#### Notações de imagens e tabelas do Markdown não são expressivas para atender requisitos da ABNT {#inclusao-imagens-e-tabelas} ####
-
-Nessa seção é apresentada a notação de inclusão de imagens e tabelas
-no Markdown do Pandoc *e como ela são insuficientes para atender as
-especificações das Normas da ABNT*.
-
-A notação para inserir imagens no Markdown é simples, sendo de fácil
-memorização e utilização:
-
-~~~~~~~
-![Título da figura](/caminho/da/imagem.png)
-~~~~~~~
-
-A notação original foi estendida para possibilitar referenciar a
-imagem e redimensionar sua apresentação:
-
-~~~~~~~
-![Título da figura](/caminho/da/imagem.png){#id width=30 height=20px}
-~~~~~~~
-
-O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para elaboração de tabelas, a seguir é apresentado uma delas:
-
-	: Título da tabela
-	
-    +---------------+---------------+--------------------+
-    | Fruit         | Price         | Advantages         |
-    +===============+===============+====================+
-    | Bananas       | $1.34         | - built-in wrapper |
-    |               |               | - bright color     |
-    +---------------+---------------+--------------------+
-    | Oranges       | $2.10         | - cures scurvy     |
-    |               |               | - tasty            |
-    +---------------+---------------+--------------------+
-
-
-Essa notação não permite configurar alinhamento, e nenhuma das demais notações permite a mesclagem de células.
-
-É válido mencionar que a edição de uma tabela no formato apresentado através de um editor de texto simples pode ser bastante tediosa. Na tabela a seguir é apresentado um possível problema de edição quando o editor não provém suporte a edição de tabelas com essa notação:
-
-
-    +---------------+---------------+--------------------+
-    | Fruit         | Price         | Advantages         |
-    +===============+===============+====================+
-    | Bananas       | $1.34         | Indicativo da dificuldade de edição |
-    +---------------+---------------+--------------------+
-    | Oranges       | $2.10         | - cures scurvy     |
-    |               |               | - tasty            |
-    +---------------+---------------+--------------------+
-
-Para que essa sintaxe seja utilizada facilmente é recomendado que o editor de texto implemente funcionalidades para auxiliar na edição.
-
-Mas nenhuma das sintaxes de Figura e Tabela possibilitam atender as especificações exigidas pelas Normas da ABNT, pois *não proveem a notação para a Fonte* da Figura ou Tabela. E as tabelas *não possuem sintaxe para mesclagem de células*.
 
 ### Editores ###
 
@@ -408,7 +367,14 @@ https://www.authorea.com/featured_templates
 Working on a research paper, thesis or a scientific project? To simplify your research submission process, we give you over 8000 templates to choose from. The templates follow guidelines set by the journals including the correct citation format. How does it work? Just pick the journal template and start writing. Don’t worry if you decide to submit your work to a different journal, you can switch templates at any time. All your data, text, images, and citations will be reformatted automatically.
 -->
 
-#### Discussão ####
+
+### abnTeX2 ###
+
+O abnTeX (*ABsurd Norms for TeX*) é uma iniciativa da comunidade  de software livre que teve início em 2001 com o objetivo de facilitar para produção de documentos Latex em conformidade com as Normas da ABNT. A versão atual, abnTeX2, foi oficialmente lançada em 2012 \cite{abntex2manual}. Ele oferece modelos de documentos (artigo, trabalho acadêmico, relatório técnico e projeto de pesquisa), documentação através de manuais, suporte através de grupos de discussão e um conjunto de comandos para contemplar as Normas da ABNT.
+
+O surgimento do projeto abnTeX constribuiu com a popularização da utilização do Latex para trabalhos de conclusão de curso no Brasil. Algumas instituições de ensino superior disponibilizam modificações dos modelos baseados no abnTeX e incentivam seus alunos a realizar os trabalhos de conclusão de curso no Latex.
+
+### Discussão
 
 Embora Asciidoc seja uma linguagem mais expressiva que Markdown, ela exige que o usário conheça uma sintaxe maior de símbolos e, os significados e grafias de alguns termos em inglês (tais como: *image, table, witdh, footnote e preface*).
 	
@@ -425,44 +391,24 @@ Embora Asciidoc seja uma linguagem mais expressiva que Markdown, ela exige que o
 -->
 
 
-### abnTeX2 ###
-
-O abnTeX (*ABsurd Norms for TeX*) é uma iniciativa da comunidade da comunidade de software livre que teve início em 2001 para produção de documentos Latex em conformidade com as Normas da ABNT. A versão atual, abnTeX2, foi oficialmente lançada em 2012 \cite{abntex2manual}. Ele oferece modelos de documentos (artigo, trabalho acadêmico, relatório técnico e projeto de pesquisa), manuais e um conjunto de comandos para contemplar as Normas da ABNT.
-
-O surgimento do projeto abnTeX constribuiu na popularização da utilização do Latex para trabalhos acadêmicos no Brasil. Algumas instituições de ensino superior disponibilizam modificações dos modelos baseados no abnTeX para os alunos que desejam realizar os trabalhos de conclusão de curso no Latex.
 
 <!-- A escolha de qual ambiente utilizar varia de acordo com gosto, a área
 do trabalho e afinidade do aluno (e do orientado) com as ferramentas. -->
 
 <!--
 
-Em ambos sistemas são possíveis elaborar modelos de documentos com
-estilos de formatação, previamente configurados, para atender aos
-requisitos das Normas da ABNT para trabalhos acadêmicos.
+Em ambos sistemas são possíveis elaborar modelos de documentos com estilos de formatação, previamente configurados, para atender aos requisitos das Normas da ABNT para trabalhos acadêmicos.
 
-As coordenações de cursos costumam disponibilizar para os alunos tais
-modelos.
+As coordenações de cursos costumam disponibilizar para os alunos tais modelos.
 
-costuma utilizar o Word, mas uma parcela menor opta pelo Latex, que
-possui uma curva de aprendizado maior. As linguagens de marcações de
-texto, como o Markdown e similares, surgem como alternativas para
-simplificar a complexidade de formatação de textos.
+costuma utilizar o Word, mas uma parcela menor opta pelo Latex, que possui uma curva de aprendizado maior. As linguagens de marcações de texto, como o Markdown e similares, surgem como alternativas para simplificar a complexidade de formatação de textos.
 
-Essas linguagens de marcação de texto alegam serem mais
-ágeis\footnote{Comparado ao Latex.} para composição de textos, mas não
-encontramos na literatura estudos empíricos para suportar essa
-afirmação, especialmente para formatação com as normas da ABNT.
+Essas linguagens de marcação de texto alegam serem mais ágeis\footnote{Comparado ao Latex.} para composição de textos, mas não encontramos na literatura estudos empíricos para suportar essa afirmação, especialmente para formatação com as normas da ABNT.
 
-, mas o equivalente
-ainda não aconteceu com as linguagens de marcação. Não encontramos
-iniciativas que foram capazes de escrever e formatar, com sucesso,
-monografias em Markdown no país.
+, mas o equivalente ainda não aconteceu com as linguagens de marcação. Não encontramos iniciativas que foram capazes de escrever e formatar, com sucesso, monografias em Markdown no país.
 
-O *Design* simplista do Markdown impõe algumas
-limitações\footnote{Sintaxe original do Markdown
-\href{https://daringfireball.net/projects/markdown/syntax}.}, uma
-delas é impossibilitar adicionar, simultaneamente, as legendas e
-fontes das Figuras ou Tabelas, exigência das normas da ABNT.
+O *Design* simplista do Markdown impõe algumas limitações\footnote{Sintaxe original do Markdown \href{https://daringfireball.net/projects/markdown/syntax}.}, uma delas é impossibilitar adicionar, simultaneamente, as legendas e fontes das Figuras ou Tabelas, exigência das normas da ABNT.
+
 -->
 
 ### Formulários em PDF ###
@@ -516,20 +462,45 @@ eles:
 -->
 
 
+### Considerações Finais ###
+
+Na fundamentação teórica apresentamos as normas da ABNT, as regras
+para utilizar ilustrações e como o projeto abnTeX popularizou o uso do
+Latex em trabalhos acadêmicos nacionais.
+
+Em seguida apresentamos duas linguagens de marcação de texto: Markdown e
+Asciidoc, com seus contextos de criação e suas limitações.
+
+A ferramenta Pandoc, que implementa a linguagem Markdown, pode ser
+configurada para utilizar modelos Latex para geração de arquivos
+PDFs. Muitas configurações são inseridas pelo usuário através de
+arquivos ou blocos no formato YAML, que possui uma sintaxe bastante
+expressiva, mas um pouco complexa. A sintaxe de inserção de imagens e
+tabelas utilizada pelo Markdown não permite incluir a notas
+explicativas ou informar a fonte da imagem, requisitos para produção
+de textos em conformidade com as Normas da ABNT.
+
+O formato de arquivo PDF, bastante utilizado para publicação de
+textos, também permite a inserção e extração de dados através do
+recurso de formulários, fornecendo uma interface potencialmente mais
+amigável que o YAML.
+
+O sistema comercial ABNTFácil implementou uma linguagem de marcação
+especializada para o público nacional, em que mesclou conceitos das
+normas da ABNT com recursos do Word.
+
+O Design de uma linguagem necessita de reflexões cognitivas de como
+usuário irá interagir com ela através de um sistema. O ideal é que as
+decisões da criação da linguagem estejam associadas a estudos
+empíricos.
+
 # Trabalhos relacionados
 
 Nessa seção são apresentados os trabalhos relacionados da pesquisa.
 
-O R Markdown é apresentado como um exemplo de personalização da
+O R Markdown é apresentado como um exemplo de implementação da
 linguagem Markdown para possibilitar a reprodutibilidade de pesquisas
 científicas.
-
-Os demais trabalhos apresentam análises de usabilidade que foram
-empregadas utilizando o *framework* de Dimensões Cognitivas.
-
-O último trabalho relacionado apresenta um Questionário para avaliação
-de sistemas através de experiências de usuários que não conhecem o
-*framework.*
 
 ## R Markdown: linguagem para reprodutibilidade de pesquisas científicas
 
@@ -683,6 +654,264 @@ As soluções adotadas pelo ABNTFÁCIL, além de serem proprietárias, não poss
 
 A solução provavelmente tem como público alvo usuários da área de Humanas, que desconhecem as normas da ABNT, estão dispostos a pagarem pelo aplicativo, e que não precisam inserir equações ou códigos. 
 
+
+# Realização da pesquisa
+
+Neste capítulo cada seção corresponde a um objetivo específico da pesquisa:
+
+- *Analisar* requisitos de formatação de TCCs;
+
+- *Identificar* linguagem de marcação mais apropriada para escrita de TCCs
+
+- *Implementar* aplicação que possibilite usuários escrever TCCs nacionais utilizando uma linguagem de marcação leve
+  
+- *Avaliar* o uso de uma linguagem de marcação leve para a escrita de TCCs nacionais por estudantes
+
+## Analisar requisitos de formatação de TCCs {#obj-requisitos}
+
+Os requisitos de formatação de TCCs nacionais originam-se de duas fontes:
+
+a) Normas da ABNT;
+
+b) Guias de formatação elaborados por instituições de ensino superior.
+
+*Um dos principais problemas em extrair requisitos das Normas da ABNT é que elas não foram elaboradas para permitir automação de formatação*. Um dos manuais do abnTeX \cite[p. 3-5]{abntex2cite} evidencia esta afirmação:
+
+> A primeira equipe do abnTeX usou a ABNT NBR 6023:2000 e outras normas da ABNT vigentes, em média, até 2004. Naquela época as normas eram confusas, inconsistentes e repletas de exemplos incoerentes. Atualmente a situação não é muito diferente. Porém, percebe-se que houve uma tentativa mínima dos comitês da ABNT em tornar o labor de interpretar as normas menos árduo. De toda forma, acompanhamos os autores originais do abnTeX e recomendamos: “Se puder não use e não peça para ninguém usar.”
+>
+> [...]
+>
+> A ‘norma’ 6023:2000 (2) é complicada e cheia de inconsistências. Jamais será possível gerar um estilo bibtex totalmente consistente com a ‘norma’, até porque nem a ‘norma’ é compatível com ela mesma. Um bom estilo bibliográfico deve ter uma linha lógica para formatação de referências. Assim, com alguns poucos exemplos, qualquer pessoa poderia deduzir os casos omissos. Nesse sentido, a ‘norma’ 6023 trafega pela contra-mão. É quase impossível deduzir sua linha lógica.  O problema mais grave, no entanto, fica pela maneira de organizar nomes. A ABNT quebrou o sobrenome em duas partes. Normalmente se fala apenas em “last name”, mas agora temos o “last last name” graças à ABNT. Isso não apenas é problemático, pelo menos do ponto de vista do bibtex, mas é também um desrespeito ao autor citado.
+
+Elaborar um documento de requisitos para as Normas da ABNT é um trabalho complexo, devido ao quantitativo enorme de documentos e regras, suas inconsistências, casos omissos, e instruções difíceis de serem automatizadas por sistemas. Uma iniciativa de agrupar requisitos das Normas da ABNT foi iniciada pelo grupo do abnTeX, mas o documento está incompleto e não está estruturado apropriadamente, tornando-se uma fonte confiável.
+
+Dois requisitos relevantes para essa pesquisa eram a *obrigatoriedade de adicionar, na parte inferior, a fonte das imagens e tabelas e referenciá-las no texto*. Na maioria das linguagens de marcações leve só existe suporte para adicionar títulos às figuras e tabelas, não há como especificar a fonte segundo as normas das ABNT. A solução poderia ser a utilização dos comandos em abnTeX2 para inserir estes recursos.
+
+*O sistema de referências e citações da ABNT é complexo*. As Normas permite a utilização do sistema numérico ou autor-data. Quando utiliza-se o sistema numérico não é permitido o uso de notas de rodapé. No sitema autor-data, a chamada da citação difere se o texto ocorrer dentro de parênteses ou fora deles;  citação de citação existe apenas para o sistema autor-data. Todas as chamadas de citações diretas devem informar a página ou seção de onde se originam. 
+
+*A contemplação dos requisitos da ABNT seria considerada suficiente se a solução utiliza-se os modelos abnTeX2 e oferta-se seus comandos Latex (ou meios de atingir o mesmo resultado) na escrita de trabalho.* Em vez de elaborar um lista de requisitos, essa pesquisa preferiu adotar as classes e modelos Latex disponibilizados pelo projeto abnTeX2. Tendo sua primeira versão do abnTeX2 lançada em 2012, passa por melhorias constantes e o seu desenvolvimento ainda encontra-se ativo. Seus modelos são as melhores referências existentes para produção de trabalhos Latex em conformidade com as Normas da ABNT. Eles já foram utilizados e aprovados por diversas instituições nacionais.
+
+### Requisitos de um sistema para contemplar as Normas da ABNT {#requisitos}
+
+De forma geral, um sistema para escrita de TCCs nacionais deve possibilitar:
+
+- Configuração da capa
+- Configuração dos pretextuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract*
+- Criação de Sumário automático
+- Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais.
+- Configuração de estilos de capítulos, seções e texto
+- Inclusão de Ilustrações e Tabelas
+- Referenciação de Ilustrações e Tabelas
+- Adição de Fontes para Ilustrações e Tabelas
+- Elaboração da seção de Referências (com formatação diferenciada do texto)
+- Elaboração de apêndices e anexos
+
+Um requisito não funcional desejado é ser de *fácil utilização*. Quanto menos conhecimentos técnicos necessários para editar e gerar o documento, melhor.
+
+## Identificar linguagem de marcação mais apropriada para escrita de TCCs {#obj-linguagem}
+
+
+### Avaliação de linguagem inclui a avaliação do sistema
+
+### Avaliando Asciidoc (original)
+
+Várias ferramentas implementam o linguagem Asciidoc. Esta seção refere-se a avaliação da ferramenta original, escrita em Python: asciidoc \cite{asciidoc}.
+
+*Devido as similaridades entre TCCs e livros a linguagem Asciidoc (concebida para produção de livros) foi a primeira linguagem avaliada*. 
+
+A \autoref{tab:requisitos} apresenta uma avalização inicial da contemplação dos requisitos das Normas da ABNT (ver \autoref{requisitos}) através da linguagem Asciidoc provida pela ferramenta asciidoc.
+
+
+
+: Requisitos contemplados pela linguagem Asciidoc (através da ferramentas asciidoc)\label{tab:requisitos}
+
+| Requisito                                             | Contemplado |
+|------------------------------------------------------ | :----------:|
+| Configuração da capa | ?
+| Configuração dos pretextuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract*| ?
+| Criação de Sumário automático| Sim
+| Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais.| Não
+| Configuração de estilos de capítulos, seções e texto | ?
+| Inclusão de Ilustrações e Tabelas | Sim
+| Referenciação de Ilustrações e Tabelas | Sim
+| Adição de Fontes para Ilustrações e Tabelas | Não
+| Elaboração da seção de Referências (com formatação diferenciada do texto) | ?
+| Elaboração de apêndices e anexos | Sim
+
+Fonte: Autor
+
+A avaliação dessa alternativa:
+
+a. Ferramenta utiliza DocBook como intermediário
+
+    A geração de PDFs do asciidoc utilizava uma cadeia de ferramentas que transforma código Asciidoc em DocBook (XML), em seguida transforma o código para Latex e depois iniciava a compilação para PDF.
+
+a. Complexidade para customização do PDF
+
+	As configurações para gerar um PDF personalizado consistia em criar transformações XSTL (*eXtensible Stylesheet Language for Transformation*) para transformar o código XML para Latex. Este processo é bastante custoso.
+
+a. Não é possível gerar um TCC se a solução utilizar o formato DocBook como intermediário
+	
+	Não existe um mapeamento entre os pretextuais do ABNT com as *tags* DocBook.
+
+Essa solução foi abortada.
+
+
+### Avaliando Asciidoc (asciidoctor-pdf)
+
+A ferramenta asciidoctor-pdf \cite{asciidoctor-pdf} se propõe a gerar PDFs a partir de texto escrito em Asciidoc sem utilização de DocBook como intermediário (que foi um empecilho na avaliação da ferramenta anterior). 
+
+Segue avaliação da utilização de asciidoctor-pdf para produção de TCCs em conformidade com as Normas da ABNT:
+
+a. Não utiliza DocBook como intermediário
+
+    Na avaliação da ferramenta anterior, a utilização de DocBook como intermediário foi um empecilho para geração de um TCC com as normas da ABNT. Esta funcionalidade poderia ser benéfica para solução.
+
+a. A geração do PDF ocorre sem utilizar Latex
+
+    Isto diminui consideravelmente as dependências necessárias para sua utilização. No entanto, inviabilizaria a utilização do abnTeX2 que implementa as Normas da ABNT.
+
+a. As configurações de formatação são realizadas através de arquivos YAML
+
+    Devido a ausência do Latex (e consequentemente do abnTeX2), a utilização dessa ferramenta implicaria em configurar todas as regras de formatação da ABNT manualmente.
+
+a. A ferramenta ainda encontra-se em estágio *alpha*
+
+    A ferramenta adverte que ainda encontra-se em estágio *alpha*, e que suas funcionalidades podem estarem incompletas, incorreras ou não implementadas.
+
+
+
+### Avaliando Asciidoc (asciidoctor-latex)
+
+A ferramenta asciidoctor-latex \cite{asciidoctor-latex}, criada em 2016 (ainda experimental), tem o propósito de gerar códigos Latex diretamente a partir de textos em Asciidoc, sem utilizar DocBook como intermediário. Esta solução demonstrou-se mais fácil de ser personalizada.
+
+Uma solução foi implementada (<https://github.com/edusantana/abnt_asciidoc>) utilizando uma *engine de templates* que criava documentos baseados nos modelos do abnTeX2. Os textos em Asciidoc eram convertidos para Latex e incluídos na geração do documento. 
+
+A solução foi implementada utilizando uma arquitetura similar a servidor de integração contínua. O usuário criava um repositório no Github com o conteúdo de um modelo de TCC em Asciidoc (<https://github.com/edusantana/trabalho-academico-abnt-asciidoc>). Diversas configurações eram realizadas através da edição de arquivos no formato YAML. Em seguida o usuário configurava um *Webhook* (um serviço) em seu repositório para enviar notificações de alterações (*commits*) para um servidor. A implementação do servidor (<https://github.com/edusantana/abnt-asciidoc-webhook>) ao receber a notificação de alteração baixava apenas as novas atualizações e iniciava a geração do código Latex através da ferramenta abnt_asciidoc desenvolvida e iniciava a compilação do PDF. O PDF compilado (junto com o log de compilação e demais arquivos temporários) eram disponibilizados através de uma interface WEB. O sistema foi instalado em uma máquina virtual no Google e testado através de transcrições de monografias reais.
+
+Do ponto de vista dos usuários, eles editavam e criavam arquivos através da interface Web do Github, que possui um editor com destaque da sintaxe Asciidoc. Ao salvar as alterações o usuário precisava acessar a página do servidor Web que apresentaria o PDF gerado ou os logs de erro. Esta solução permitia qualquer estudante gerar um documento PDF remotamente sem instalar aplicativos localmente.
+
+Segue a avaliação da utilização da linguagem Asciidoc para produção de TCCs com essa solução:
+
+a. Requer conhecimentos da sintaxe de YAML e Latex
+	
+	A utilização de caractéres com significado especial na sintaxe de YAML ou no Latex ("&") causavam erros de *parse* no arquivo de configuração ou comportamento inesperado na compilação do PDF.
+
+a. Exige validação do arquivo fonte com base na sintaxe de Asciidoc
+
+    As transcrições de documentos feitos no Word para Asciidoc gerava erros de validação quando o símbolo "[" era utilizado (tem significado especial na sintaxe do Asciidoc). Em TCCs é comum utilizá-lo da seguinte forma: "[...]".
+
+a. Exige familiaridade para escrita de termos básico em inglês
+		
+	O conhecimento de nomenclaturas básicas em inglês era necessário para inserir imagens, tabelas e configurar diversos elementos: *image, table, width, grid, none, appendix* etc.
+
+a. Inexiste na linguagem sintaxe para inserir fontes em figuras e tabelas
+
+	Para inserir uma fonte em uma figura seria necessário criar um filtro personalizado com este propósito ou alterar o código fonte da ferramenta asciidoctor-pdf. A criação desse filtro seria relativamente simples, mas descaracterizava a sintaxe padrão para inserção de imagens.
+	
+	A adição de fontes nas tabelas exigia alterar o código fonte da ferramenta asciidoctor-pdf. A sintaxe de tabelas é bastante complexa, a criação de um filtro para inserir uma tabela com fonte exigiria reimplementar todo o processamento de tabelas, um trabalho bastante custoso.
+
+    Provavelmente seria possível incluir as fontes em figuras e tabelas se o usuário criasse esses recursos através de códigos Latex.
+
+
+a. Fácil experimentação
+
+    Não requer infraestrutural local para edição do texto, o usuário poderia testar *on-line*. Mas haveria necessidade de saber utilizar o git para submissão de imagens.
+
+a. Transparência orientações e escrita dos trabalhos para educação a distância
+
+	As instituições de ensino superior poderiam instalar servidores próprios para geração dos PDFs,  potencialmente facilitando o processo de orientação dos alunos em educação a distância, uma vez que os orientadores teriam acesso ao textos dos orientandos, sempre que desejarem. Seria possível até ter acesso às rotinas (horários) de trabalho dos orientandos, pois os repositórios git mantém histórico das edições (*commits*) com as datas e horários em que foram realizadas.
+	
+	Seria possível os orientadores (a distância) acessar os textos dos orientandos para adição de comentários.
+
+a. Não contemplava todos os recursos de Asciidoc
+
+    A ferramenta asciidoctor-latex foi iniciada em 2016, ainda não implementava todos recursos da linguagem Asciidoc, estava em estágio *alfa*. Ao ser utilizada neste projeto foram surgindo necessidades de melhorias que foram notificadas para o seus desenvolvedores.
+
+Devido a falta de contemplação da linguagem Asciidoc pela ferramenta utilizada asciidoctor-latex a solução foi abortada.
+
+
+### Avaliando Markdown (sintaxe original)
+
+
+Em sua sintaxe original Markdown tinha o propósito de geração de texto para internet.
+
+- Configuração da capa
+- Configuração dos pretextuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract*
+- Criação de Sumário automático
+- Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais.
+- Configuração de estilos de capítulos, seções e texto
+- Inclusão de Ilustrações e Tabelas
+- Referenciação de Ilustrações e Tabelas
+- Adição de Fontes para Ilustrações e Tabelas
+- Elaboração da seção de Referências (com formatação diferenciada do texto)
+- Elaboração de apêndices e anexos
+
+
+
+### Avaliando Markdown do Pandoc
+
+### Avaliando Markdown + Pandoc + abnTeX2
+
+### Notações de imagens e tabelas do Markdown não são expressivas para atender requisitos da ABNT {#inclusao-imagens-e-tabelas}
+
+Nessa seção é apresentada a notação de inclusão de imagens e tabelas
+no Markdown do Pandoc *e como ela são insuficientes para atender as
+especificações das Normas da ABNT*.
+
+A notação para inserir imagens no Markdown é simples, sendo de fácil
+memorização e utilização:
+
+~~~~~~~
+![Título da figura](/caminho/da/imagem.png)
+~~~~~~~
+
+A notação original foi estendida para possibilitar referenciar a
+imagem e redimensionar sua apresentação:
+
+~~~~~~~
+![Título da figura](/caminho/da/imagem.png){#id width=30 height=20px}
+~~~~~~~
+
+O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para elaboração de tabelas, a seguir é apresentado uma delas:
+
+	: Título da tabela
+	
+    +---------------+---------------+--------------------+
+    | Fruit         | Price         | Advantages         |
+    +===============+===============+====================+
+    | Bananas       | $1.34         | - built-in wrapper |
+    |               |               | - bright color     |
+    +---------------+---------------+--------------------+
+    | Oranges       | $2.10         | - cures scurvy     |
+    |               |               | - tasty            |
+    +---------------+---------------+--------------------+
+
+
+Essa notação não permite configurar alinhamento, e nenhuma das demais notações permite a mesclagem de células.
+
+É válido mencionar que a edição de uma tabela no formato apresentado através de um editor de texto simples pode ser bastante tediosa. A seguir é apresentado um possível problema de edição quando o editor não provém suporte a edição de tabelas com essa notação:
+
+
+    +---------------+---------------+--------------------+
+    | Fruit         | Price         | Advantages         |
+    +===============+===============+====================+
+    | Bananas       | $1.34         | Indicativo da dificuldade de edição |
+    +---------------+---------------+--------------------+
+    | Oranges       | $2.10         | - cures scurvy     |
+    |               |               | - tasty            |
+    +---------------+---------------+--------------------+
+
+Para que essa sintaxe seja utilizada facilmente é recomendado que o editor de texto implemente funcionalidades para auxiliar na edição.
+
+Mas nenhuma das sintaxes de Figura e Tabela possibilitam atender as especificações exigidas pelas Normas da ABNT, pois *não proveem a notação para a Fonte* da Figura ou Tabela. E as tabelas *não possuem sintaxe para mesclagem de células*.
+
+
+## Implementar aplicação que possibilite usuários escrever TCCs nacionais utilizando uma linguagem de marcação leve {#obj-implementacao}
+  
+## Avaliar o uso de uma linguagem de marcação leve para a escrita de TCCs nacionais por estudantes {#obj-analise}
+
+
 # Miolo
 # Proposta de dissertação
 
@@ -817,7 +1046,7 @@ fig:modulos do sistema
 
 
 
-## Requisitos
+## RequisitosX
 
 ### BNR 6028-2003 - Resumo
 
