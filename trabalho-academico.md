@@ -29,7 +29,7 @@ O objetivo geral desse trabalho é *avaliar* o uso de uma linguagem de marcaçã
 
 - *Analisar* requisitos de formatação de TCCs;
 
-- *Identificar* linguagem de marcação mais apropriada para escrita de TCCs
+- *Identificar* linguagem de marcação apropriada para escrita de TCCs
 
 - *Implementar* aplicação que possibilite usuários escrever TCCs nacionais utilizando uma linguagem de marcação leve
   
@@ -105,7 +105,7 @@ Esta proposta está dividida da seguinte forma:
 - Capítulo 6: Cronograma de atividades para atingir os objetivos.
 
 # Fundamentação Teórica
-
+	
 A fundamentação teórica do trabalho apresenta as Normas da ABNT, e alguns dos seus requisitos.
 
 Em seguida apresentamos o projeto abnTeX que implementa os requisitos das Normas da ABNT e auxiliou a popularizar o uso do Latex na comunidade acadêmica nacional.
@@ -212,6 +212,18 @@ a. instruções adicionais: formatação específicas, como o tamanho da fonte, 
 b. restrições adicionais: não utilizar ponto final nos títulos
 c. contradição com a Norma: posicionamento do título na parte inferior, em vez da parte superior (ver \autoref{regras-abnt} - \nameref{regras-abnt}).
 
+### Alíneas {#alineas}
+
+Segundo a norma ABNT NBR 6024:2012 as alíneas são as subdivisões das seção do texto. Algumas das regras sobre as alíneas são apresentadas a seguir:
+
+a. o texto que antecede as alíneas terminam em dois pontos
+a. as alíneas são iniciadas por letras, seguido do carácter ")";
+a. o texto da alínea deve iniciar com letra em minúsculo e terminar com ponto e vírgula, menos a última alínea que deve terminar com ponto.
+
+    
+
+<!-- explicar o que é uma alínea -->
+
 ### Discussão
 
 A capa é um dos principais elementos customizados pelas instituições, costuma-se adicionar conteúdos que não estão presentes nas Normas, tais como:
@@ -314,6 +326,57 @@ Fonte: \cite{markdown-sintaxe}.
 
 Várias ferramentas possuem implementações próprias do Markdown, expandindo o formato original para contemplar novos contextos e funcionalidaes, uma dessas ferramentas bastante utilizada é a Pandoc (\autoref{pandoc}). 
 
+### Notações de imagens e tabelas do Markdown não são expressivas para atender requisitos da ABNT {#inclusao-imagens-e-tabelas}
+
+Nessa seção é apresentada a notação de inclusão de imagens e tabelas no Markdown do Pandoc *e como ela são insuficientes para atender as especificações das Normas da ABNT*.
+
+A notação para inserir imagens no Markdown é simples, sendo de fácil
+memorização e utilização:
+
+~~~~~~~
+![Título da figura](/caminho/da/imagem.png)
+~~~~~~~
+
+A notação original foi estendida para possibilitar referenciar a
+imagem e redimensionar sua apresentação:
+
+~~~~~~~
+![Título da figura](/caminho/da/imagem.png){#id width=30 height=20px}
+~~~~~~~
+
+O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para elaboração de tabelas, a seguir é apresentado uma delas:
+
+	: Título da tabela
+	
+    +---------------+---------------+--------------------+
+    | Fruit         | Price         | Advantages         |
+    +===============+===============+====================+
+    | Bananas       | $1.34         | - built-in wrapper |
+    |               |               | - bright color     |
+    +---------------+---------------+--------------------+
+    | Oranges       | $2.10         | - cures scurvy     |
+    |               |               | - tasty            |
+    +---------------+---------------+--------------------+
+
+
+Essa notação não permite configurar alinhamento, e nenhuma das demais notações permite a mesclagem de células.
+
+É válido mencionar que a edição de uma tabela no formato apresentado através de um editor de texto simples pode ser bastante tediosa. A seguir é apresentado um possível problema de edição quando o editor não provém suporte a edição de tabelas com essa notação:
+
+
+    +---------------+---------------+--------------------+
+    | Fruit         | Price         | Advantages         |
+    +===============+===============+====================+
+    | Bananas       | $1.34         | Indicativo da dificuldade de edição |
+    +---------------+---------------+--------------------+
+    | Oranges       | $2.10         | - cures scurvy     |
+    |               |               | - tasty            |
+    +---------------+---------------+--------------------+
+
+Para que essa sintaxe seja utilizada com facilidade pelo usuário é recomendado que o editor de texto implemente funcionalidades para auxiliar na edição.
+
+Mas nenhuma das sintaxes de Figura e Tabela possibilitam atender as especificações exigidas pelas Normas da ABNT, pois *não proveem a notação para a Fonte* da Figura ou Tabela. E as tabelas *não possuem sintaxe para mesclagem de células*.
+
 
 ### Discussão
 
@@ -326,24 +389,23 @@ Várias ferramentas possuem implementações próprias do Markdown, expandindo o
 
 A ferramenta Pandoc é uma das principais ferramentas que 
 
-A arquitetura da ferramenta Pandoc permite converter arquivos em diferentes formatos.[^2] Ela difere de ferramentas usuais por possibilitar o usuário escolher quais extensões do Markdown deseja utilizar, em outras palavras, ela possibilita configurar a sintaxe da linguagem.
-
-
+A arquitetura da ferramenta Pandoc permite converter arquivos em diferentes formatos. Ela difere de ferramentas usuais por possibilitar o usuário escolher quais extensões do Markdown deseja utilizar, em outras palavras, ela possibilita configurar a sintaxe da linguagem.
 
 Na geração do código ela utiliza modelos internamente e configuração
 de parâmetros em arquivos no formato YAML, que será apresentado adiante.
-
 
 ### YAML ###
 
 \index{YAML}
 
-Nessa seção é apresentado o formato YAML, como ele agiliza a inserção de dados pelo usuário mas exige conhecimentos de estrutura de dados para sua utilização. Por essa razão foi optado por substituí-lo por um formulário PDF no Limarka.
+Nessa seção é apresentado o formato YAML, como ele agiliza a inserção de dados pelo usuário mas exige conhecimentos de estrutura de dados para sua utilização. 
 
-As configurações dos modelos na ferramenta Pandoc são realizadas através de uma *linguagem de template*. O usuário deve atribuir os valores das variáveis no formato YAML, seja em um arquivo separado ou dentro do próprio texto através da criação de um bloco de configuração YAML, como mostrado em \ref{fig:yaml}. Os templates do Pandoc processam esses valores para gerar o documento final.
+<!-- Por essa razão foi optado por substituí-lo por um formulário PDF no Limarka. -->
+
+As configurações dos modelos na ferramenta Pandoc são realizadas através de uma *linguagem de template*. O usuário deve atribuir os valores das variáveis no formato YAML, seja em um arquivo separado ou dentro do próprio texto através da criação de um bloco de configuração YAML, como mostrado na \autoref{fig:yaml}. Os templates do Pandoc processam esses valores para gerar o documento final.
 
 \begin{figure}[htb]
-\caption{\label{fig:yaml}Exemplo de um bloco configuração no formato YAML}
+\caption{\label{fig:yaml}Exemplo de um bloco de configuração no formato YAML}
 \begin{center}
 \includegraphics[width=0.80000\textwidth]{imagens/yaml.png}
 \end{center}
@@ -357,11 +419,13 @@ A permissividade agiliza a inserção de dados pelo o usuário, pois permite ins
 A *indentação* também é obrigatória para definir hierarquia. Na Figura \ref{fig:yaml}, a variável `affiliation` não estaria relacionada a `author` se não houvesse indentação.
 
 
+
+<!-- 
+
 ### Editores ###
 
 A Ferramenta Authorea 
 
-<!-- 
 https://www.authorea.com/featured_templates
 
 Working on a research paper, thesis or a scientific project? To simplify your research submission process, we give you over 8000 templates to choose from. The templates follow guidelines set by the journals including the correct citation format. How does it work? Just pick the journal template and start writing. Don’t worry if you decide to submit your work to a different journal, you can switch templates at any time. All your data, text, images, and citations will be reformatted automatically.
@@ -370,7 +434,7 @@ Working on a research paper, thesis or a scientific project? To simplify your re
 
 ### abnTeX2 ###
 
-O abnTeX (*ABsurd Norms for TeX*) é uma iniciativa da comunidade  de software livre que teve início em 2001 com o objetivo de facilitar para produção de documentos Latex em conformidade com as Normas da ABNT. A versão atual, abnTeX2, foi oficialmente lançada em 2012 \cite{abntex2manual}. Ele oferece modelos de documentos (artigo, trabalho acadêmico, relatório técnico e projeto de pesquisa), documentação através de manuais, suporte através de grupos de discussão e um conjunto de comandos para contemplar as Normas da ABNT.
+O abnTeX (*ABsurd Norms for TeX*) é uma iniciativa da comunidade  de software livre que teve início em 2001 com o objetivo de facilitar para produção de documentos Latex em conformidade com as Normas da ABNT. A versão atual, abnTeX2, foi oficialmente lançada em 2012 \cite{abntex2manual}. O projeto oferece modelos de documentos (artigo, trabalho acadêmico, relatório técnico e projeto de pesquisa), documentação através de manuais, suporte através de grupos de discussão e um conjunto de comandos para contemplar as Normas da ABNT.
 
 O surgimento do projeto abnTeX constribuiu com a popularização da utilização do Latex para trabalhos de conclusão de curso no Brasil. Algumas instituições de ensino superior disponibilizam modificações dos modelos baseados no abnTeX e incentivam seus alunos a realizar os trabalhos de conclusão de curso no Latex.
 
@@ -413,56 +477,15 @@ O *Design* simplista do Markdown impõe algumas limitações\footnote{Sintaxe or
 
 ### Formulários em PDF ###
 
-Nessa seção apresentamos os formulários PDF como uma alternativa
-amigável para obtenção de dados do usuário para processamento
-posterior.
+Nessa seção apresentamos os formulários PDF como uma alternativa amigável para obtenção de dados do usuário para processamento posterior.
 
-O formato PDF foi criado pela Adobe, mas atualmente é um formato aberto
-mantido pela ISO. Além de textos e imagens, o formato permite a adição
-de botões, *formulários*, áudio, vídeo e lógica de negócios
-\cite{adobe-pdf}.
+O formato PDF foi criado pela Adobe, mas atualmente é um formato aberto mantido pela ISO. Além de textos e imagens, o formato permite a adição de botões, *formulários*, áudio, vídeo e lógica de negócios \cite{adobe-pdf}.
 
-Através do software leitor de PDF e um documento com formulário é
-possível solicitar ao usuário dados que podem salvos e posteriormente
-processados.
+Através de um software leitor de PDF e um documento com formulário é possível solicitar ao usuário dados que podem salvos e posteriormente processados.
 
-### Sistema = Notação + Ambiente ###
+Nessa pesquisa um formulário foi utilizado para configuração de TCCs, ele encontra-se no \autoref{apendice:formulariopdf}.
 
-Um sistema é formado pelo conjunto Notação (linguagem) e o Ambiente de
-utilização. Não podemos avaliar uma linguagem separadamente do seu
-ambiente de utilização \cite{green1989}.
-
-<!--
-A seguir são fornecidos dois exemplos que ilustram essa afirmação.
-
-Em Java nós atribuímos *um tipo* a uma coleção (*Generics*), e o
-compilador emite um erro se tentarmos adicionar um objeto de tipo
-diferente. Qual seria o propósito da linguagem exigir que o usuário
-forneça um tipo se a ferramenta (ambiente) não emitisse o erro de
-compilação?
-
-Outro exemplo foi a produção de uma ferramenta com o propósito de
-possibilitar deficientes físicos desenvolverem aplicações em pascal
-através de comandos por voz \cite{green1989}. No entanto, o sistema
-permitia apenas entradas válidas, ou seja, seria necessário ditar as
-instruções sequencialmente e sem nenhum erro de sintaxe. Uma decisão
-do design do sistema causou uma limitação na utilização da linguagem,
-pois exigia um esforço cognitivo enorme do usuário para programar
-nesse ambiente.
--->
-
-<!--
-
-O Design de uma linguagem deve levar em consideração aspectos de
-usabilidade. Quem desejar implemetar uma nova linguagens encontrará
-recomendações sobre o tema em \cite{pane1996}, \cite{green1989} e \cite{green1998}. O
-desginer deverá ponderar sobre diversos aspectos da linguagem, entre
-eles:
-
--->
-
-
-### Considerações Finais ###
+## Considerações Finais ##
 
 Na fundamentação teórica apresentamos as normas da ABNT, as regras
 para utilizar ilustrações e como o projeto abnTeX popularizou o uso do
@@ -661,7 +684,7 @@ Neste capítulo cada seção corresponde a um objetivo específico da pesquisa:
 
 - *Analisar* requisitos de formatação de TCCs;
 
-- *Identificar* linguagem de marcação mais apropriada para escrita de TCCs
+- *Identificar* linguagem de marcação apropriada para escrita de TCCs
 
 - *Implementar* aplicação que possibilite usuários escrever TCCs nacionais utilizando uma linguagem de marcação leve
   
@@ -708,51 +731,65 @@ De forma geral, um sistema para escrita de TCCs nacionais deve possibilitar:
 
 Um requisito não funcional desejado é ser de *fácil utilização*. Quanto menos conhecimentos técnicos necessários para editar e gerar o documento, melhor.
 
-## Identificar linguagem de marcação mais apropriada para escrita de TCCs {#obj-linguagem}
-
+## Identificar linguagem de marcação apropriada para escrita de TCCs {#obj-linguagem}
 
 ### Avaliação de linguagem inclui a avaliação do sistema
 
+
+#### Sistema = Notação + Ambiente
+
+Um sistema é formado pelo conjunto Notação (linguagem) e o Ambiente de
+utilização. Não podemos avaliar uma linguagem separadamente do seu
+ambiente de utilização \cite{green1989}.
+
+<!--
+A seguir são fornecidos dois exemplos que ilustram essa afirmação.
+
+Em Java nós atribuímos *um tipo* a uma coleção (*Generics*), e o
+compilador emite um erro se tentarmos adicionar um objeto de tipo
+diferente. Qual seria o propósito da linguagem exigir que o usuário
+forneça um tipo se a ferramenta (ambiente) não emitisse o erro de
+compilação?
+
+Outro exemplo foi a produção de uma ferramenta com o propósito de
+possibilitar deficientes físicos desenvolverem aplicações em pascal
+através de comandos por voz \cite{green1989}. No entanto, o sistema
+permitia apenas entradas válidas, ou seja, seria necessário ditar as
+instruções sequencialmente e sem nenhum erro de sintaxe. Uma decisão
+do design do sistema causou uma limitação na utilização da linguagem,
+pois exigia um esforço cognitivo enorme do usuário para programar
+nesse ambiente.
+-->
+
+<!--
+
+O Design de uma linguagem deve levar em consideração aspectos de
+usabilidade. Quem desejar implemetar uma nova linguagens encontrará
+recomendações sobre o tema em \cite{pane1996}, \cite{green1989} e \cite{green1998}. O
+desginer deverá ponderar sobre diversos aspectos da linguagem, entre
+eles:
+
+-->
+
 ### Avaliando Asciidoc (original)
+
+Devido a *aparente* similaridade entre TCCs e livros a linguagem Asciidoc (concebida para produção de livros) foi a primeira linguagem avaliada.
 
 Várias ferramentas implementam o linguagem Asciidoc. Esta seção refere-se a avaliação da ferramenta original, escrita em Python: asciidoc \cite{asciidoc}.
 
-*Devido as similaridades entre TCCs e livros a linguagem Asciidoc (concebida para produção de livros) foi a primeira linguagem avaliada*. 
+Segue avaliação da utilização de asciidoc para produção de TCCs em conformidade com as Normas da ABNT:
 
-A \autoref{tab:requisitos} apresenta uma avalização inicial da contemplação dos requisitos das Normas da ABNT (ver \autoref{requisitos}) através da linguagem Asciidoc provida pela ferramenta asciidoc.
+a. Utilização do DocBook como intermediário
 
+    A geração de PDFs do asciidoc utilizava uma cadeia de ferramentas que transforma código Asciidoc em DocBook (XML), em seguida transforma o código para Latex e depois inicia a compilação para PDF.
 
-
-: Requisitos contemplados pela linguagem Asciidoc (através da ferramentas asciidoc)\label{tab:requisitos}
-
-| Requisito                                             | Contemplado |
-|------------------------------------------------------ | :----------:|
-| Configuração da capa | ?
-| Configuração dos pretextuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract*| ?
-| Criação de Sumário automático| Sim
-| Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais.| Não
-| Configuração de estilos de capítulos, seções e texto | ?
-| Inclusão de Ilustrações e Tabelas | Sim
-| Referenciação de Ilustrações e Tabelas | Sim
-| Adição de Fontes para Ilustrações e Tabelas | Não
-| Elaboração da seção de Referências (com formatação diferenciada do texto) | ?
-| Elaboração de apêndices e anexos | Sim
-
-Fonte: Autor
-
-A avaliação dessa alternativa:
-
-a. Ferramenta utiliza DocBook como intermediário
-
-    A geração de PDFs do asciidoc utilizava uma cadeia de ferramentas que transforma código Asciidoc em DocBook (XML), em seguida transforma o código para Latex e depois iniciava a compilação para PDF.
-
-a. Complexidade para customização do PDF
+a. Complexo para customização do PDF
 
 	As configurações para gerar um PDF personalizado consistia em criar transformações XSTL (*eXtensible Stylesheet Language for Transformation*) para transformar o código XML para Latex. Este processo é bastante custoso.
 
-a. Não é possível gerar um TCC se a solução utilizar o formato DocBook como intermediário
+a. Não é possível utilizar o formato DocBook como intermediário
 	
-	Não existe um mapeamento entre os pretextuais do ABNT com as *tags* DocBook.
+	Não existe um mapeamento entre os pretextuais do ABNT com as *tags* DocBook, portanto não é possível gerar um TCC em conformidade com as Normas da ABNT através dessa ferramenta.
 
 Essa solução foi abortada.
 
@@ -779,9 +816,7 @@ a. A ferramenta ainda encontra-se em estágio *alpha*
 
     A ferramenta adverte que ainda encontra-se em estágio *alpha*, e que suas funcionalidades podem estarem incompletas, incorreras ou não implementadas.
 
-
-
-### Avaliando Asciidoc (asciidoctor-latex)
+### Avaliando Asciidoc (asciidoctor-latex) {#avaliacao-asciidoctor-latex}
 
 A ferramenta asciidoctor-latex \cite{asciidoctor-latex}, criada em 2016 (ainda experimental), tem o propósito de gerar códigos Latex diretamente a partir de textos em Asciidoc, sem utilizar DocBook como intermediário. Esta solução demonstrou-se mais fácil de ser personalizada.
 
@@ -830,89 +865,132 @@ a. Não contemplava todos os recursos de Asciidoc
 
 Devido a falta de contemplação da linguagem Asciidoc pela ferramenta utilizada asciidoctor-latex a solução foi abortada.
 
-
-### Avaliando Markdown (sintaxe original)
-
-
-Em sua sintaxe original Markdown tinha o propósito de geração de texto para internet.
-
-- Configuração da capa
-- Configuração dos pretextuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract*
-- Criação de Sumário automático
-- Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais.
-- Configuração de estilos de capítulos, seções e texto
-- Inclusão de Ilustrações e Tabelas
-- Referenciação de Ilustrações e Tabelas
-- Adição de Fontes para Ilustrações e Tabelas
-- Elaboração da seção de Referências (com formatação diferenciada do texto)
-- Elaboração de apêndices e anexos
+### Avaliando Markdown (original)
 
 
+O Markdown original não serviria para produção de TCCs, pois seu propósito era conversão de texto para HTML \cite{markdown}.
 
-### Avaliando Markdown do Pandoc
+### Avaliando Markdown (Pandoc)
 
-### Avaliando Markdown + Pandoc + abnTeX2
+A ferramenta Pandoc autodenomina-se um conversor universal de documentos \cite{pandoc}. Ela permite a conversão entre diversos tipos de documentos (ver \autoref{pandoc}), através de *templates* e parâmetros configurados no formato YAML.
 
-### Notações de imagens e tabelas do Markdown não são expressivas para atender requisitos da ABNT {#inclusao-imagens-e-tabelas}
+Segue a avaliação da utilização da linguagem Markdown para produção de TCCs com a ferramenta Pandoc com seu *template* padrão:
 
-Nessa seção é apresentada a notação de inclusão de imagens e tabelas
-no Markdown do Pandoc *e como ela são insuficientes para atender as
-especificações das Normas da ABNT*.
+a. Configuração requer conhecimentos de Estruturas de Dados, sintaxe YAML e Latex
 
-A notação para inserir imagens no Markdown é simples, sendo de fácil
-memorização e utilização:
-
-~~~~~~~
-![Título da figura](/caminho/da/imagem.png)
-~~~~~~~
-
-A notação original foi estendida para possibilitar referenciar a
-imagem e redimensionar sua apresentação:
-
-~~~~~~~
-![Título da figura](/caminho/da/imagem.png){#id width=30 height=20px}
-~~~~~~~
-
-O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para elaboração de tabelas, a seguir é apresentado uma delas:
-
-	: Título da tabela
+    Conforme apresentado na \autoref{yaml} (p. \pageref{yaml}), para um usuário utilizar YAML nessa solução ele precisaria conhecer bem a sintaxe de YAML, estruturas de dados (Hash e Lista) tipos de dados (String, Numérico e Boolean), indentação (para definir hierarquias das estruturas),  *escape* de caracteres, e sintaxe de caracteres especiais em Latex.
 	
-    +---------------+---------------+--------------------+
-    | Fruit         | Price         | Advantages         |
-    +===============+===============+====================+
-    | Bananas       | $1.34         | - built-in wrapper |
-    |               |               | - bright color     |
-    +---------------+---------------+--------------------+
-    | Oranges       | $2.10         | - cures scurvy     |
-    |               |               | - tasty            |
-    +---------------+---------------+--------------------+
+a. Usuário teria dificuldade em obter suporte do código Latex gerado
 
+    O código Latex gerado é baseado no *template* padrão de conversão para Latex do Pandoc. Esse código não se assemelha aos modelos do abnTeX2, o que dificultaria os usuários obter auxílio nas comunidades nacionais do Latex ou abnTeX.
 
-Essa notação não permite configurar alinhamento, e nenhuma das demais notações permite a mesclagem de células.
+a. Os pré-textuais precisariam ser criados em Latex pelo usuário
 
-É válido mencionar que a edição de uma tabela no formato apresentado através de um editor de texto simples pode ser bastante tediosa. A seguir é apresentado um possível problema de edição quando o editor não provém suporte a edição de tabelas com essa notação:
+    Como os elementos pré-textuais não fazem parte do *template* Latex padrão do Pandoc, estes conteúdos precisariam ser inseridos e configurados manualmente pelo usuário. Isto implica em realizar diversas configurações em códigos Latex do abnTeX2.
 
+a. A sintaxe de citação da linguagem suporta um único estilo de chamada de citações
 
-    +---------------+---------------+--------------------+
-    | Fruit         | Price         | Advantages         |
-    +===============+===============+====================+
-    | Bananas       | $1.34         | Indicativo da dificuldade de edição |
-    +---------------+---------------+--------------------+
-    | Oranges       | $2.10         | - cures scurvy     |
-    |               |               | - tasty            |
-    +---------------+---------------+--------------------+
+    No sistema de citação Autor-Data das Normas da ABNT, as chamadas de citações são apresentadas diferentes se ocorrer dentro de parênteses ou fora deles. Com essa solução somente uma única forma poderia ser empregada no texto.
 
-Para que essa sintaxe seja utilizada facilmente é recomendado que o editor de texto implemente funcionalidades para auxiliar na edição.
+a. Inexiste suporte na sintaxe da linguagem para especificação de fonte de ilustrações e tabelas
 
-Mas nenhuma das sintaxes de Figura e Tabela possibilitam atender as especificações exigidas pelas Normas da ABNT, pois *não proveem a notação para a Fonte* da Figura ou Tabela. E as tabelas *não possuem sintaxe para mesclagem de células*.
+    Todas as imagens e tabelas precisariam ser escritas em Latex, único meio de adicionar as fontes em figuras e tabelas para contemplar as Normas da ABNT.
 
+Existiu uma iniciativa anterior \cite{pandoc-template-padrao} tentando realizar este mesmo objetivo: *produzir documentos em conformidade com as normas da ABNT parametrizando o modelo padrão do Pandoc e utilizando os estilos do abnTeX2*. Os arquivos foram mantidos para referência, mas a iniciativa não produziu resultados satisfatórios.
 
+Esta solução foi abortada.
+
+### Avaliando Markdown (Limarka com Pandoc, *template* abnTeX2 e formulário)
+
+Esta solução seria uma evolução da anterior (que utilizava o *template* padrão do Pandoc) e tem as seguintes características:
+
+a. Utilização de formulário em vez de arquivo YAML
+
+    A complexidade de configuração do YAML seria substituída por um formulário. A partir dos dados preenchidos um arquivo YAML intermediário seria gerado com sintaxe apropriada para utilização com o Pandoc.
+	
+	Através do formulário seria possível escolher as principais configurações utilizadas pelas instituições nacionais.
+
+a. O processamento do formulário requer um software extra
+
+    Um software precisaria ser desenvolvido para processar o formulário e gerar o PDF.
+
+a. Utilização de um *template* customizado baseado no abnTeX2
+
+    A elaboração de um template customizado possibilita esconder do usuário os códigos Latex necessários para geração dos pré-textuais. A apresentação dos pré-textuais seriam configuradas através do formulário.
+
+a. As figuras e tabelas precisariam ser inseridas através de código Latex
+
+    Como a linguagem Markdown (do Pandoc) não tem sintaxe para inserir fontes de figuras e tabelas, estes recursos precisariam ser escritos em Latex pelo usuário.
+	
+	Outra possibilidade seria estender a sintaxe da linguagem Markdown através da criação de um filtro que processe o texto e gere os códigos Latex desses recursos.
+
+a. Possibilitar customizações não previstas
+
+    Configurações específicas poderiam ser realizadas através da inclusão de códigos Latex diretamente no *template* baseado no abnTeX2.
+
+Essa foi a solução escolhida para implementação pois possibilitaria produzir documentos em conformidade com as Normas da ABNT.
+	
 ## Implementar aplicação que possibilite usuários escrever TCCs nacionais utilizando uma linguagem de marcação leve {#obj-implementacao}
-  
+
+A aplicação Limarka, escrita em Ruby, foi implementada de acordo com a especificação da solução descrita na seção anterior.
+
+### Configuração através de formulário PDF
+
+O formulário foi criado para evitar expor as sintaxes de YAML e Latex para os usuários.
+
+A seguir são apresentados como o formulário foi desenvolvido:
+
+a. Adoção do formato PDF agilizou o desenvolvimento
+
+    A solução de utilizar um formulário através de arquivo PDF permitiu o desenvolvimento rápido do formulário através do software LibreOffice. A outra alternativa planejada era utilizar um formulário HTML através de um servidor Web embutido.
+
+a. Os campos de texto no formulário utilizam a mesma sintaxe do texto
+
+    Isto permite que o usuário insira palavras com itálico no resumo utilizando a mesma sintaxe do texto. Sem o formulário o usuário precisaria saber o código Latex para itálico e utilizar os *escapes* apropriado para codificá-lo no arquivo YAML.
+	
+a. Processamento e correção dos campos
+
+    Além de processar os valores do formulário convertendo-os de Markdown, o software limarka também realiza ajustes dos valores. Por exemplo, a especificação de palavras chaves na ABNT requer que elas sejam separadas por ponto. Caso o usuário utilize vírgula, o sistema troca e utiliza o valor correto.
+
+a. Escolhas da configuração são apresentadas seguindo a ordem das do trabalho
+
+    O formulário exibe as escolhas de configuração baseado na ordem esperada de utilização. Por exemplo, o tipo de trabalho e a capa são escolhidos inicialmente, enquanto as opções para incluir folha de aprovação e errata são apresentados por último.
+
+
+### Melhorias implementadas depois dos experimentos
+
+Posteriormente um filtro pandoc-abnt (<https://github.com/limarka/pandoc_abnt>) foi elaborado com as seguintes funcionalidades:
+
+a. estender a linguagem Markdown para possibilitar a especificação de fonte de imagens e tabelas sem necessitar criá-los com código Latex.
+
+b. correção automática de pontuação de listas e alíneas 
+
+    Todos os itens das listas e alíneas teriam sua pontuação final corrigida para terminar com ponto e vírgula (";"), menos o último item que seria finalizado com ponto (".").
+
+c. compilação automática ao salvar alterações do texto
+
+    Atualmente é possível iniciar um serviço que monitora as alterações dos arquivos e inicia a compilação do PDF quando detecta alterações do texto.
+
+### Melhorias futuras
+
+a. Substituir a *engine de templates* do Pandoc
+
+    A *engine* de *templates* do Pandoc é bastante limitada, sua sintaxe é da seguinte forma: `SE ($var) ENTÃO (...) SENÃO (...) FIM`. Ela não permite a configuração dos *templates* baseados em comparações com expressões contendo valores, como a seguir: `SE ($var==valor) ENTÃO (...)`. Essa limitação dificulta a elaboração de *templates*, sua substituição pela *engine* utilizada na solução de Asciidoc (ver \autoref{avaliacao-asciidoctor-latex}) facilitaria essa atividade.
+
+a. Utilização de Formulário HTML
+
+    Embora o formulário PDF seja simples de ser utilizado, uma página WEB permite mais interatividade que um documento PDF. Seria possível adicionar validações com mensagens específicas.
+
+a. Editor de referências *on-line* embutido
+
+    
+
+    
+
 ## Avaliar o uso de uma linguagem de marcação leve para a escrita de TCCs nacionais por estudantes {#obj-analise}
 
 
-# Miolo
+
 # Proposta de dissertação
 
 A motivação dessa pesquisa é ofertar uma linguagem especializada para
@@ -1162,7 +1240,6 @@ Engenheria Elétrica, Mestrando | 1
 Engenheira Florestal, Mestrando | 1
 Engenharia de Produção | 1
 Engenharia ambiental | 1
-
 
 # Considerações finais
 
