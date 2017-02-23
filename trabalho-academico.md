@@ -36,7 +36,7 @@ Embora o Latex possua uma *curva de aprendizado maior*, editores on-line como o 
 
 *A natureza das normas exigidas no contexto nacional para elaboração de um TCC são complexas e conflitantes*. De forma geral, dever-se-ia exigir dos TCCs apenas contemplar as Normas da ABNT, na prática exige-se que o estudante produza um documento que contemple uma mesclagem entre Normas da ABNT, normas da instituição/curso, orientações do orientador e histórico do que foi aceito previamente pelo curso. *Sem alterar o contexto nacional, a utilização de uma linguagem de marcação leve para elaboração de TCCs tem o desafio de contemplar peculiaridades exigidas pelas Normas da ABNT e gerenciar conflitos entre as exigências de todos esses agentes*.
 
-Este trabalho investiga a utilização de uma linguagem de marcação leve para produção de TCCs em conformidade com as Normas da ABNT e o contexto nacional.
+Este trabalho investiga a utilização de uma linguagem de marcação leve para produção de TCCs em conformidade com as Normas da ABNT para o contexto nacional.
 
 ## Motivação
 
@@ -122,11 +122,11 @@ i. Funcionalidade
 Esta proposta está dividida da seguinte forma:
 
 - Capítulo 2: Apresenta a fundamentação teórica, abordando assuntos necessários para o desenvolvimento do trabalho;
-- Capítulo 3: Apresenta um trabalho relacionado sobre adaptação da
-  linguagem Markdown para um contexto científico;
-- Capítulo 4: Apresenta a proposta de dissertação;
-- Capítulo 5: Apresenta a proposta do experimento;
-- Capítulo 6: Cronograma de atividades para atingir os objetivos.
+- Capítulo 3: Apresenta os trabalhos relacionado sobre criação de
+  linguagens de marcação simples para o contexto acadêmico;
+- Capítulo 4: Apresenta o miolo da pesquisa.
+- Capítulo 5: Apresenta a conclusão;
+- Capítulo 6: Apresenta as considerações finais.
 
 # Fundamentação Teórica
 	
@@ -136,17 +136,16 @@ Em seguida apresentamos o projeto abnTeX que implementa os requisitos das Normas
 
 Em seguida são apresentadas duas linguagens de marcação de texto Markdown e Asciidoc. A primeira, mais limitada, surgiu para edição de mensagens para Internet, enquanto a outra surgiu com o propósito de elaboração de livros técnicos. Ambas as linguagens não apresentam sintaxe que possibilitam a implementação dos requisitos das Normas da ABNT.
 
-A ferramenta ABNTFÁCIL que implementa uma linguagem de marcação de texto nacional (e comercial) voltada para produção de trabalhos acadêmicos também é apresentada.
+O formato de arquivo de configuração YAML é apresentado como uma alternativa que exige conhecimentos técnicos para sua utilização.
 
 Os formulários em PDFs são apresentados como alternativas para aquisição de dados do usuário.
 
-Argumentos de que uma linguagem não pode ser avaliada independente do seu ambiente são apresentados (sistema = notação + ambiente).
 
 ## Normas da ABNT para trabalhos acadêmicos {#abnt}
 
 *As Normas da ABNT apresentam um papel fundamental nessa pesquisa: fornece requisitos de formatação e apresentação dos TCCs*. Qualquer sistema que se proponha a permitir a escrita de TCCs nacionais deve contemplar as essas Normas.
 
-As normas da ABNT que normatizam os elementos dos TCCs estão divididas nos seguintes documentos:
+As normas da ABNT que regulam os elementos dos TCCs estão divididas nos seguintes documentos:
 
 - ABNT NBR 14724, Informação e documentação - Trabalhos acadêmicos - Apresentação;
 
@@ -256,9 +255,10 @@ A capa é um dos principais elementos customizados pelas instituições, costuma
 - Curso ou Programa de Pós-Graduação;
 - Departamento
 
-Os guias, que podem contém instruções de formatações arbitrárias, tornam-se fontes de requisitos. Um sistema para produção de TCCs nacionais deveria contemplar customizações da capa e requisitos dos guias, caso contrário os trabalhos poderiam não ser aceitos por alguns instituições.
 
-*Os estudantes podem estarem sendo sobrecarregados com atividades de formatação*. As instituições não são obrigadas a exigirem as Normas da ABNT para trabalhos acadêmicos, podendo especificar regras próprias. Mas quando elaboram guias de formatação contraditórios e sem ofertarem modelos (Word, LibreOffice e Latex) os estudantes precisarão de um esforço maior para implementar as regras da instituição em seus trabalhos. Os estudantes também podem confundir e considerar que a Norma são as instruções dos Guias. *No caso extremo um estudante precisaria implementar quatro versões diferentes das Normas da ABNT* nos TCCs, quando sua formação acadêmica (graduação, especialização, mestrado e doutorado) ocorrer em instituições diferentes.
+Um sistema para produção de TCCs nacionais *dever contemplar customizações da capa e requisitos dos guias*, que podem conter instruções de formatações arbitrárias, quem devem poder se implementadas também. 
+
+*Os estudantes podem estarem sendo sobrecarregados com atividades de formatação*. As instituições não são obrigadas a exigirem as Normas da ABNT para trabalhos acadêmicos, podendo especificar regras próprias. Mas quando elaboram guias de formatação contraditórios e sem ofertarem modelos (Word, LibreOffice e Latex) seus estudantes precisarão de um esforço maior para implementar as regras da instituição em seus trabalhos. Eles podem confundir e passar a considerar que as Norma da ABNT e as instruções dos Guias são idênticos. *No caso extremo um estudante precisaria implementar quatro versões diferentes das Normas da ABNT* nos TCCs, quando sua formação acadêmica (graduação, especialização, mestrado e doutorado) ocorrer em instituições diferentes.
 
 
 <!-- 
@@ -291,7 +291,7 @@ A próxima seção apresenta uma linguagem de marcação baseada em XML, elabora
 ### Docbook ###
 
 \index{DocBook}
-Nessa seção é apresentado o formato DocBook, uma linguagem de marcação com o propósito original de possibilitar publicação de livros técnicos, posteriormente motivou a origem de uma linguagem de marcação leve.
+Nessa seção é apresentado o formato DocBook, uma linguagem de marcação com o propósito original de possibilitar publicação de livros técnicos.
 
 O Docbook é um formato XML de produção de livros criado pela editora O’Reilly, especializada na produção e comercialização de livros técnicos. O formato possui diversas versões que determinam todos os elementos de um livro \cite{docbook-guide}. Foram produzidas várias ferramentas para converter um documento DocBook para apresentação em diversos formatos (HTML, PDF, EPUB, etc).
 
@@ -301,7 +301,7 @@ A complexidade dessas *tags* e o número elevado de digitação necessário para
 
 ### Discussão
 
-O princípio da filosofia da concepção do XML *minimizar a digitação não é considerado importante* não se aplica bem ema atividades em que a principal ação seja a escrita por humanos. As linguagens de marcação leves, apresentadas na próxima seção, tem como principal requisito serem fáceis de serem escritas por humanos.
+O princípio da filosofia da concepção do XML *"minimizar a digitação não é considerado importante"* não se aplica bem em atividades em que a principal ação seja a escrita por humanos. As linguagens de marcação leves, apresentadas na próxima seção, tem como principal requisito serem fáceis de serem escritas por humanos.
 
 
 ## Linguagens de marcação leve {#LML}
@@ -404,9 +404,28 @@ Mas nenhuma das sintaxes de Figura e Tabela possibilitam atender as especificaç
 
 ### Discussão
 
+As lingagens de marcação leve possibilitam uma solução que facilite a escrita, pois minimizam a digitação. Para sua utilização na escrita de TCCs deve-se criar mecanismos para sanar suas limitações.
 
+## Recursos diversos ##
 
-## Ferramentas ##
+Nesta seção estão agrupados recursos diversos que são relevantes para essa pesquisa:
+
+a. Pandoc
+
+    Ferramenta que possibilita conversão de código Markdown para Latex.
+
+b. \ YAML
+
+    Não é uma ferramenta, mas um formato de arquivo para troca de dados *tipados*.
+
+c. abnTeX2
+
+    Pacote e conjunto de modelos Latex que permite a produção de documentos em conformidades com as Normas da ABNT.
+
+d. Formulários PDF
+
+    Recurso do arquivo PDF que possibilita utilizar um formulário para obtenção de dados do usuário.
+
 ### Pandoc {#pandoc}
 
 \index{Pandoc}
@@ -422,7 +441,7 @@ de parâmetros em arquivos no formato YAML, que será apresentado adiante.
 
 \index{YAML}
 
-Nessa seção é apresentado o formato YAML, como ele agiliza a inserção de dados pelo usuário mas exige conhecimentos de estrutura de dados para sua utilização. 
+Nessa seção é apresentado o formato YAML (*YAML Ain't Markup Language*), como ele agiliza a inserção de dados pelo usuário mas exige conhecimentos de estrutura de dados para sua utilização. 
 
 <!-- Por essa razão foi optado por substituí-lo por um formulário PDF no Limarka. -->
 
@@ -467,16 +486,6 @@ O surgimento do projeto abnTeX constribuiu com a popularização da utilização
 Embora Asciidoc seja uma linguagem mais expressiva que Markdown, ela exige que o usário conheça uma sintaxe maior de símbolos e, os significados e grafias de alguns termos em inglês (tais como: *image, table, witdh, footnote e preface*).
 	
 
-\begin{figure}[htbp]
-\caption{\label{fig:comparacao-popularidade-de-linguagens}Comparação de consultas de linguagens de marcação de texto}
-\begin{center}
-\includegraphics[width=1.0\textwidth]{/home/eduardo/w/dissertacao-limarka/imagens/comparacao-popularidade-de-linguagens.png}
-\end{center}
-\legend{Fonte: Google trends.}
-\end{figure}
-
-<!--Para referenciar a figura acima no texto utilize: Figura \ref{fig:comparacao-popularidade-de-linguagens} 
--->
 
 
 
@@ -503,7 +512,7 @@ O *Design* simplista do Markdown impõe algumas limitações\footnote{Sintaxe or
 
 Nessa seção apresentamos os formulários PDF como uma alternativa amigável para obtenção de dados do usuário para processamento posterior.
 
-O formato PDF foi criado pela Adobe, mas atualmente é um formato aberto mantido pela ISO. Além de textos e imagens, o formato permite a adição de botões, *formulários*, áudio, vídeo e lógica de negócios \cite{adobe-pdf}.
+O formato PDF foi criado pela Adobe, mas atualmente é um formato aberto mantido pela ISO (*International Organization for Standardization*). Além de textos e imagens, o formato permite a adição de botões, *formulários*, áudio, vídeo e lógica de negócios \cite{adobe-pdf}.
 
 Através de um software leitor de PDF e um documento com formulário é possível solicitar ao usuário dados que podem salvos e posteriormente processados.
 
@@ -511,43 +520,33 @@ Nessa pesquisa um formulário foi utilizado para configuração de TCCs, ele enc
 
 ## Considerações Finais ##
 
-Na fundamentação teórica apresentamos as normas da ABNT, as regras
+Neste capítulo apresentamos as normas da ABNT, as regras
 para utilizar ilustrações e como o projeto abnTeX popularizou o uso do
 Latex em trabalhos acadêmicos nacionais.
 
-Em seguida apresentamos duas linguagens de marcação de texto: Markdown e
-Asciidoc, com seus contextos de criação e suas limitações.
+Também foi apresentamos duas linguagens de marcação de texto: Asciidoc e Markdown, com seus contextos de criação e suas limitações.
 
-A ferramenta Pandoc, que implementa a linguagem Markdown, pode ser
-configurada para utilizar modelos Latex para geração de arquivos
-PDFs. Muitas configurações são inseridas pelo usuário através de
-arquivos ou blocos no formato YAML, que possui uma sintaxe bastante
-expressiva, mas um pouco complexa. A sintaxe de inserção de imagens e
-tabelas utilizada pelo Markdown não permite incluir a notas
-explicativas ou informar a fonte da imagem, requisitos para produção
-de textos em conformidade com as Normas da ABNT.
+A ferramenta Pandoc, que implementa a linguagem Markdown, pode ser configurada para utilizar modelos Latex para geração de arquivos PDFs. Muitas configurações são inseridas pelo usuário através de arquivos ou blocos no formato YAML, que possui uma sintaxe bastante expressiva, mas um pouco complexa. A sintaxe de inserção de imagens e tabelas utilizada pelo Markdown não permite incluir a notas explicativas ou informar a fonte da imagem, requisitos para produção de textos em conformidade com as Normas da ABNT.
 
-O formato de arquivo PDF, bastante utilizado para publicação de
-textos, também permite a inserção e extração de dados através do
-recurso de formulários, fornecendo uma interface potencialmente mais
-amigável que o YAML.
+O formato de arquivo PDF, bastante utilizado para publicação de textos, também permite a inserção e extração de dados através do recurso de formulários, fornecendo uma interface potencialmente mais amigável que o YAML.
 
-O sistema comercial ABNTFácil implementou uma linguagem de marcação
-especializada para o público nacional, em que mesclou conceitos das
-normas da ABNT com recursos do Word.
-
-O Design de uma linguagem necessita de reflexões cognitivas de como
-usuário irá interagir com ela através de um sistema. O ideal é que as
-decisões da criação da linguagem estejam associadas a estudos
-empíricos.
 
 # Trabalhos relacionados
 
-Nessa seção são apresentados os trabalhos relacionados da pesquisa.
+Nessa seção são apresentados os trabalhos relacionados da pesquisa:
 
-O R Markdown é apresentado como um exemplo de implementação da
-linguagem Markdown para possibilitar a reprodutibilidade de pesquisas
-científicas.
+a. \ R Markdown: linguagem para reprodutibilidade de pesquisas científicas
+
+    O R Markdown é apresentado como um exemplo de implementação da linguagem Markdown para possibilitar a reprodutibilidade de pesquisas científicas.
+
+b. Proposta para utilização de Markua em dissertações
+
+    Uma iniciativa de utilização da linguagem de marcação leve Markua para produção de dissertações é apresentado.
+
+c. \ ABNTFÁCIL: formatação de trabalhos acadêmicos
+
+     A ferramenta comercial ABNTFÁCIL implementa uma linguagem de marcação de texto própria voltada para produção de trabalhos acadêmicos.
+
 
 ## R Markdown: linguagem para reprodutibilidade de pesquisas científicas
 
@@ -564,7 +563,7 @@ A linguagem R Markdown tem o propósito de facilitar a *reprodutibilidade* de pe
 
 Supondo um artigo científico que contenha um gráfico proveniente de um análise de dados, como esse gráfico foi gerado? Quais os dados utilizados? Qual método de análise foi empregado? Quais parâmetros foram utilizados?  Através dos *scripts* R é possível especificar todas essas informações. O autor da pesquisa é o primeiro beneficiado, pois consegue facilmente replicar a análise mesmo quando os dados mudam.
 
-Se os dados da pesquisa esteveremm disponibilizados publicamente outros pesquisadores podem reproduzir o mesmo ambiente de execução e chegar aos mesmos resultados, promovendo a *reprodutibilidade* de pesquisas científicas.
+Se os dados da pesquisa esteveremm disponibilizados publicamente outros pesquisadores podem reproduzir o mesmo ambiente de execução e chegar aos mesmos resultados, promovendo a *reprodutibilidade* de pesquisas científicas. O livro \cite{gandrud2013reproducible} apresenta os meios para a automação da aquisição dos dados externos através de *scripts* R.
 
 <!--
 O surgumento de R Markdown mostra que a linguagem Markdown já foi
@@ -577,6 +576,8 @@ para elaboração de trabalhos acadêmicos, conforme explicado na Seção
 \ref{inclusao-imagens-e-tabelas}.
 
 -->
+
+Para essa pesquisa R Markdown é relevante foi apresenta uma solução comercial de utilização de uma linguagem de marcação leve (Markdown) para escrita científica.
 
 ## Proposta para utilização de Markua em dissertações no Departamento de Minas da FEUP
 
@@ -629,7 +630,7 @@ O software ABNTFÁCIL (Figura \ref{fig_abntfacil_apresentacao}) possui duas nota
 \legend{Fonte: \citeonline{abntfacil}.}
 \end{figure}
 
-A linguagem do ABNTFÁCIL utiliza *tags*, com formato parecido com xml. Todas as *tags* são em português (ver Figuras \ref{fig:abntfacil:tags} e \ref{fig:abntfacil:tags:independentes}) e curtas, sendo fáceis de serem memorizadas e digitadas.
+A linguagem do ABNTFÁCIL utiliza *tags*, com formato parecido com XML. Todas as *tags* são em português (ver Figuras \ref{fig:abntfacil:tags} e \ref{fig:abntfacil:tags:independentes}) e curtas, sendo fáceis de serem memorizadas e digitadas.
 
 \begin{figure}[htbp]
 \caption{\label{fig:abntfacil:tags}Tags com abertura e fechamento do ABNTFÁCIL}
@@ -688,18 +689,23 @@ referenciá-las, através de formulários.
 
 ### Discussão
 
-Apesar do ABNTFÁCIL ser um solução especializada nas Normas da ABNT ela falha em implementar a Norma, expõe conceitos originados no MS  Word, não permite personalização e interoperabilidade, e impossibilita utilizar alguns recursos como Fórmulas e Códigos.
+O sistema comercial ABNTFácil implementou uma linguagem de marcação especializada para o público nacional, em que mesclou conceitos das normas da ABNT com recursos do Word.
+
+Apesar do ABNTFÁCIL ser um solução especializada nas Normas da ABNT ela falha em implementar a Norma, expõe conceitos originados do Microsoft Word, não permite personalização e interoperabilidade, e impossibilita utilizar alguns recursos como Fórmulas e Códigos.
 
 Percebemos que algumas *tags* foram inspiradas nas normas da ABNT: **QDR** (Quadro), **TAB** (Tabela), **int** (Introdução), **NRP** (Nota de rodapé), **ctd** (Citação direta) e **img** (Imagem). E outras foram inspiradas na nomenclatura que o MS-Word utilizada para os recursos: **mci** (marcadores de itens – *lista não ordenada*), **mcl** (marcadores com letras – *lista ordenada com letras*), **mcn** (*marcador de número – lista ordenada por números*).
 
-Inexiste meios para customizar a geração do documento, além dos já previstos pela ferramenta. Por exemplo, não seria possível personalizar a capa do trabalho, embora a alteração possa ser realizada manualmente no arquivo do Word após geração.
+Inexiste meios para customizar a geração do documento, além dos já previstos pela ferramenta. Por exemplo, não seria possível personalizar a capa folha de rosto, embora a alteração possa ser realizada manualmente no arquivo do Word após geração.
 
-Não existe suporte a equações, lista de tabelas, inserção de códigos, fontes de imagens e tabelas e referenciação de conteúdos no texto.
-O suporte a Anexos e Apêndices é realizado através da geração de páginas em branco, que devem ser substituídas por páginas impressas externamente, mas mantendo a numeração exigida pela ABNT.
+Inexiste suporte a equações, lista de tabelas, inserção de códigos, fontes de imagens e tabelas e referenciação de conteúdos no texto.  O suporte a Anexos e Apêndices é realizado através da geração de páginas em branco, que devem ser substituídas por páginas impressas externamente, mas mantendo a numeração exigida pela ABNT.
 
 As soluções adotadas pelo ABNTFÁCIL, além de serem proprietárias, não possuem interoperabilidade com outros formatos internacionais. A sintaxe da linguagem é proprietária e não é utilizada por outros aplicativos. O sistema de referências não importa entradas salvas no *formato bibtex*, o único meio de inserir uma nova referência é através do preenchimento de formulários.
 
 A solução provavelmente tem como público alvo usuários da área de Humanas, que desconhecem as normas da ABNT, estão dispostos a pagarem pelo aplicativo, e que não precisam inserir equações ou códigos. 
+
+
+
+
 
 
 # Realização da pesquisa
@@ -730,7 +736,7 @@ b) Guias de formatação elaborados por instituições de ensino superior.
 >
 > A ‘norma’ 6023:2000 (2) é complicada e cheia de inconsistências. Jamais será possível gerar um estilo bibtex totalmente consistente com a ‘norma’, até porque nem a ‘norma’ é compatível com ela mesma. Um bom estilo bibliográfico deve ter uma linha lógica para formatação de referências. Assim, com alguns poucos exemplos, qualquer pessoa poderia deduzir os casos omissos. Nesse sentido, a ‘norma’ 6023 trafega pela contra-mão. É quase impossível deduzir sua linha lógica.  O problema mais grave, no entanto, fica pela maneira de organizar nomes. A ABNT quebrou o sobrenome em duas partes. Normalmente se fala apenas em “last name”, mas agora temos o “last last name” graças à ABNT. Isso não apenas é problemático, pelo menos do ponto de vista do bibtex, mas é também um desrespeito ao autor citado.
 
-Elaborar um documento de requisitos para as Normas da ABNT é um trabalho complexo, devido ao quantitativo enorme de documentos e regras, suas inconsistências, casos omissos, e instruções difíceis de serem automatizadas por sistemas. Uma iniciativa de agrupar requisitos das Normas da ABNT foi iniciada pelo grupo do abnTeX, mas o documento está incompleto e não está estruturado apropriadamente, tornando-se uma fonte confiável.
+Elaborar um documento de requisitos para as Normas da ABNT é um trabalho complexo, devido ao quantitativo enorme de regras, suas inconsistências, casos omissos, e instruções difíceis de serem automatizadas por sistemas. Uma iniciativa de agrupar requisitos das Normas da ABNT foi iniciada pelo grupo do abnTeX, mas o documento está incompleto e não está estruturado apropriadamente, tornando-se uma fonte confiável.
 
 Dois requisitos relevantes para essa pesquisa eram a *obrigatoriedade de adicionar, na parte inferior, a fonte das imagens e tabelas e referenciá-las no texto*. Na maioria das linguagens de marcações leve só existe suporte para adicionar títulos às figuras e tabelas, não há como especificar a fonte segundo as normas das ABNT. A solução poderia ser a utilização dos comandos em abnTeX2 para inserir estes recursos.
 
@@ -740,26 +746,33 @@ Dois requisitos relevantes para essa pesquisa eram a *obrigatoriedade de adicion
 
 ### Requisitos de um sistema para contemplar as Normas da ABNT {#requisitos}
 
-De forma geral, um sistema para escrita de TCCs nacionais deve possibilitar:
+De forma geral, um sistema para escrita de TCCs nacionais utilizando uma linguagem de marcação leve deve possibilitar:
 
 - Configuração da capa
-- Configuração dos pretextuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract*
+- Configuração dos pré-textuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract*
 - Criação de Sumário automático
 - Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais.
 - Configuração de estilos de capítulos, seções e texto
 - Inclusão de Ilustrações e Tabelas com título, fonte e possibilidade de referenciação no texto.
 - Elaboração da seção de Referências (com formatação diferenciada)
 - Elaboração de apêndices e anexos
+- Escrita dos principais elementos do trabalho através de uma linguagem de marcação leve
 
-Um requisito não funcional desejado é ser de *fácil utilização*. Deve-se buscar minimizar os conhecimentos técnicos necessários para editar e gerar o documento.
+Os requisitos não funcionais são:
 
+a. Ser de *fácil utilização*. 
+
+    Deve-se buscar minimizar os conhecimentos técnicos necessários para editar e gerar o documento.
+
+a. Ser *confiável* em relação as mudanças das Normas.
+
+    O sistema deve proporcionar confiança aos usuários que continuará a fornecer as implementações das Normas, mesmo que elas mudem.
+	
 ## Identificar linguagem de marcação apropriada para escrita de TCCs {#obj-linguagem}
 
-Nesta seção são apresentadas as avaliações que foram realizadas com linguagens, associadas as ferramentas que as implementam.
+Nesta seção são apresentadas as avaliações que foram realizadas com linguagens de marcações leves, associadas as ferramentas que as implementam.
 
 Existem várias linguagens de marcação leve, quais delas seriam apropriadas para produção de TCCs capazes de contemplar as Normas da ABNT? Para encontrar essa resposta foi necessário avaliar as linguagens e as ferramentas que as implementam, pois uma linguagem não pode ser avaliada desassociada de seu ambiente de utilização \cite{green1989}. 
-
-
 
 <!--
 Avaliação de linguagem inclui a avaliação do sistema
@@ -846,9 +859,9 @@ A solução com a utilização de asciidoctor-pdf foi abortada devido a complexi
 
 A ferramenta asciidoctor-latex \cite{asciidoctor-latex}, criada em 2016 (ainda experimental), tem o propósito de gerar códigos Latex diretamente a partir de textos em Asciidoc, sem utilizar DocBook como intermediário. Esta solução demonstrou-se mais fácil de ser personalizada.
 
-Uma solução foi implementada (<https://github.com/edusantana/abnt_asciidoc>) utilizando uma *engine de templates* que criava documentos baseados nos modelos do abnTeX2. Os textos em Asciidoc eram convertidos para Latex e incluídos na geração do documento. 
+Uma solução foi implementada \cite{abnt_asciidoc} utilizando uma *engine de templates* que criava documentos baseados nos modelos do abnTeX2. Os textos em Asciidoc eram convertidos para Latex e incluídos na geração do documento. 
 
-A solução foi implementada utilizando uma arquitetura similar a servidor de integração contínua. O usuário criava um repositório no Github com o conteúdo de um modelo de TCC em Asciidoc (<https://github.com/edusantana/trabalho-academico-abnt-asciidoc>). Diversas configurações eram realizadas através da edição de arquivos no formato YAML. Em seguida o usuário configurava um *Webhook* (um serviço) em seu repositório para enviar notificações de alterações (*commits*) para um servidor. A implementação do servidor (<https://github.com/edusantana/abnt-asciidoc-webhook>) ao receber a notificação de alteração baixava apenas as novas atualizações e iniciava a geração do código Latex através da ferramenta abnt_asciidoc desenvolvida e iniciava a compilação do PDF. O PDF compilado (junto com o log de compilação e demais arquivos temporários) eram disponibilizados através de uma interface WEB. O sistema foi instalado em uma máquina virtual no Google e testado através de transcrições de monografias reais.
+A solução utiliza uma arquitetura similar a servidores de integração contínua. O usuário criava um repositório no Github com o conteúdo de um modelo de TCC em Asciidoc \cite{trabalho-academico-abnt-asciidoc}. Diversas configurações eram realizadas através da edição de arquivos no formato YAML. Em seguida o usuário configurava um *Webhook* (um serviço) em seu repositório para enviar notificações de alterações (*commits*) para um servidor. A implementação do servidor \cite{abnt-asciidoc-webhook} ao receber a notificação de alteração baixava apenas as novas atualizações e iniciava a geração do código Latex através da ferramenta abnt_asciidoc desenvolvida e iniciava a compilação do PDF. O PDF compilado (junto com o log de compilação e demais arquivos temporários) eram disponibilizados através de uma interface WEB. O sistema foi instalado em uma máquina virtual no Google e testado através de transcrições de monografias reais.
 
 Do ponto de vista dos usuários, eles editavam e criavam arquivos através da interface Web do Github, que possui um editor com destaque da sintaxe Asciidoc. Ao salvar as alterações o usuário precisava acessar a página do servidor Web que apresentaria o PDF gerado ou os logs de erro. Esta solução permitia qualquer estudante gerar um documento PDF remotamente sem instalar aplicativos localmente.
 
@@ -893,7 +906,7 @@ Devido a falta de contemplação da linguagem Asciidoc (pela ferramenta asciidoc
 ### Avaliação de Markdown (original)
 
 
-O Markdown original não serviria para produção de TCCs, pois seu propósito era conversão de texto para HTML \cite{markdown}.
+O Markdown original dificilmente serviria para produção de TCCs, pois seu propósito era conversão de texto para HTML \cite{markdown}. Para adaptá-lo as normas da ABNT seria necessário criar estilos CSS para formatar a página HTML de tal forma que sua impressão estivesse de acordo com as Normas da ABNT, um trabalho bastante complexo.
 
 ### Avaliação de Markdown (Pandoc)
 
@@ -1023,6 +1036,8 @@ Menu interativo:
 
 O Limarka contém um conversor que exige uma estrutura de arquivos fixa, para possibilitar uma experiência mais intuitiva, porém limita. Por exemplo, espera-se que os conteúdos das seções de Anexos e Apêndices devem ser digitados nos arquivos `anexos.md` e `apendices.md` respectivamente.
 
+O Limarka foi inserido como um projeto de *software* livre dentro da comunidade do abnTeX, responsável pela produção e manutenção de modelos de documentos baseados nas Normas da ABNT. O usuário pode ter confiança de que ao serem lançadas novas versões das Normas, esta comunidade irá coordenar as atualizações dos modelos Latex utilizados nacionalmente, incluindo os do Limarka.
+
 Para que os usuários aprenderem a utilizar o *software*, foi necessário criar o suporte da ferramenta contendo:
 
 - Documentação no formato Wiki explicando como utilizar o Limarka (<https://github.com/abntex/limarka/wiki>);
@@ -1048,43 +1063,8 @@ xdg-open /home/eduardo/Downloads/dissertacoes/6116-2013.pdf_unencrypted.pdf
 
 -->
 
-#### Melhorias implementadas após os experimentos
-
-Esta seção são descritas as melhorias que foram implementadas no Limarka após os experimentos, portanto elas estão disponíveis nas novas versões da ferramenta mas os experimentos foram realizados sem elas.
-
-A ferramenta Pandoc \cite{pandoc} permite a utilização de filtros para modificar a sintaxe da linguagem.
-
-O filtro pandoc_abnt \cite{pandoc_abnt} foi elaborado com as seguintes funcionalidades:
-
-a. estender a linguagem Markdown para possibilitar a especificação de fonte de imagens e tabelas sem necessitar criá-los com código Latex.
-
-    A \autoref{figura-sintaxe} apresenta a documentação da nova sintaxe de figuras permitindo a especificação de sua fonte. A tabela utiliza a mesma sintaxe.
-   
-b. correção automática de pontuação de listas e alíneas (ver \autoref{alineas});
-
-    Todos os itens das listas e alíneas teriam sua pontuação final corrigida para terminar com ponto e vírgula (";"), menos o último item que seria finalizado com ponto (".").
-
-![Apresentação da sintaxe de Figura com fonte na Documentação do Limarka](imagens/figura-sintaxe-com-fonte.png){#figura-sintaxe width=70%}
-	
-Fonte: \cite{limarka}
 
 
-Também foi adicionado um recurso para *compilação automática ao salvar alterações do texto*. Atualmente é possível iniciar um serviço que monitora as alterações dos arquivos e inicia a compilação do PDF quando as alterações forem salvas.
-
-
-#### Melhorias futuras
-
-a. Substituir a *engine de templates* do Pandoc
-
-    A *engine* de *templates* do Pandoc \cite{pandoc} é bastante limitada, sua sintaxe de configuração permite apenas comparar o valor de uma variável, da seguinte forma: `SE ($var) ENTÃO (...) SENÃO (...) FIM`. Ela não permite a configuração dos *templates* baseados em comparações com expressões contendo valores, como a seguir: `SE ($var==valor) ENTÃO (...)`. Essa limitação dificulta a elaboração de *templates*, sua substituição por outra *engine* \cite{liquid} possibilitaria a elaboração de *templates* mais sofisticados.
-
-a. Utilização de formulário HTML
-
-    Embora o formulário PDF seja simples de ser utilizado, uma página WEB permite mais interatividade que um documento PDF. Seria possível adicionar validações com mensagens específicas.
-
-a. Editor de referências *on-line* embutido
-
-    O abnTeX precisou criar campos personalizados nas entradas no formato BibTex para contemplar as Normas da ABNT. Este editor iria ofertar uma interface amigável para edição das referências neste formato.
 
  
 ## Avaliar o uso de uma linguagem de marcação leve para a escrita de TCCs nacionais por estudantes {#avaliacao}
@@ -1139,7 +1119,7 @@ Os perfis dos voluntários da pesquisa foram escolhidos tentando maximizar sua m
 -->
 
 
-### Execução do experimento ###
+### Execução do experimento e análise ###
 	
 Os experimentos foram realizados em Janeiro de 2017, após o retorno da férias. Ao total dez voluntários participaram dos experimentos que ocorreram em dois formatos:
 
@@ -1163,15 +1143,15 @@ E no quarto período, existe outro professor na instituição que exige que os t
 |Vol.|Formação acadêmica           |Experiência c/ Latex| Expeiência c/ Markdown|
 |:-:|:----------------------------:|:------------------:|:--------------------:|
 |1  |Ciência da Computação         |ShareLatex          | Readme/Github|
-|2  |Engenharia da computação      |Viu prof. utilizando|-|
+|2  |Engenharia da Computação      |Viu prof. utilizando|-|
 |3  |Engenheiro elétrico (mestrando)|Utiliza para tudo  |-|
 |4  |Engenharia da computação      |3 vezes *on-line*   |-|
-|5|Engenharia da Computação|Mictex no Windows|-|
-|6|Ciência da Computação|Viu prof. utilizando|-|
-|7|Engenheiro Florestal (mestrando)|-|-|
-|8|Engenharia de Produção|-|-|
-|9|Engenharia de Computação|Overleaf|Readme/Github|
-|10|Engenharia Ambiental|-|-|
+|5  |Engenharia da Computação|Mictex no Windows|-|
+|6  |Ciência da Computação|Viu prof. utilizando|-|
+|7  |Engenheiro Florestal (mestrando)|-|-|
+|8  |Engenharia de Produção|-|-|
+|9  |Engenharia da Computação|Overleaf|Readme/Github|
+|10 |Engenharia Ambiental|-|-|
 
 Fonte: Autor.
 
@@ -1216,7 +1196,8 @@ Antes de iniciar a utilização do Limarka é necessário baixar o modelo de TCC
 	1. Problema de instalação do corretor ortográfico do Notepad++ (faltou baixar o dicionário do idioma português).
 -->	
 
-#### Como os usuários se sentiram durante o experimento
+<!--
+Como os usuários se sentiram durante o experimento
 
 Objetivando captar quaisquer sentimentos negativos foi perguntado no início na entrevistas como eles se sentiram durante o experimento, segue as respostas:
 
@@ -1235,22 +1216,31 @@ Objetivando captar quaisquer sentimentos negativos foi perguntado no início na 
 - "Tudo bem fácil e intuitivo, o que precisava de explicação tinha no wiki. Estou pensando em utilizar [o Limarka] nos próximos trabalhos."
 	
 - "Na parte da leitura para aprender foi um pouco cansativo, mas quando começa a mecher é mais fácil, bem intuitivo".
+-->
 
-### Configuração ###
 
-A configuração do Limarka é realizada em um formulário PDF (em vez de um arquivo YAML como no Pandoc),  
-segue os comentários sobre a realização da configuração utilizando esse formulário:
+#### Configuração ####
 
-- "Fácil pois bastava preencher um formulário no PDF", e está habituado a preencher formulários.
-- "Simples, autoexplicativo".
-- "Legal e didática. Intuitivo".
-- "Simples, didática, sem problemas".
-- Achou interessante, porque já mostrava formatado. Nunca havia utilizado um formulário em PDF.
-- "Foi um pouco diferente. Foi fácil, simples e prático. Não precisamos ficar editando o arquivo do Word. Ficamos despreocupados em editar o arquivo, porque no Word se abrir o arquivo em outro computador, com uma versão diferente, há uma desconfiguração do arquivo".
-- "Fácil".
-- "Foi bem fácil, já estava tudo bem explicado. Errar não tinha como. É aqui que você faz isso, e já tinha um exemplo preenchido." [Ele utilizava os marcadores para navegar no documento, então encontrava fácil o que precisava configurar].
-- "Fácil, é só olhar para encontrar o que precisa mexer".
-- "Foi muito fácil, nunca tinha utilizando formulário".
+A configuração do Limarka é realizada em um formulário PDF (em vez de um arquivo YAML como no Pandoc), os comentários sobre a realização da configuração utilizando esse formulário estão apresentados na \autoref{tab:configuracao}.
+
+: Depoimentos sobre configuração através do formulário PDF\label{tab:configuracao}
+
+|Vol.| Depoimento
+|:-:|:------------------------------------------------------------------|
+|1| "Fácil pois bastava preencher um formulário no PDF", e está habituado a preencher formulários.
+|2| "Foi muito fácil, nunca tinha utilizando formulário".
+|3| "Simples, autoexplicativo".
+|4| "Legal e didática. Intuitivo".
+|5| "Simples, didática, sem problemas".
+|6| Achou interessante, porque já mostrava formatado. Nunca havia utilizado um formulário em PDF.
+|7| "Foi um pouco diferente. Foi fácil, simples e prático. Não precisamos ficar editando o arquivo do Word. Ficamos despreocupados em editar o arquivo, porque no Word se abrir o arquivo em outro computador, com uma versão diferente, há uma desconfiguração do arquivo".
+|8| "Fácil".
+|9| "Foi bem fácil, já estava tudo bem explicado. Errar não tinha como. É aqui que você faz isso, e já tinha um exemplo preenchido." [Ele utilizava os marcadores para navegar no documento, então encontrava fácil o que precisava configurar].
+|10| "Fácil, é só olhar para encontrar o que precisa mexer".
+
+Fonte: Autor.
+
+A utilização do formulário PDF foi considera fácil de ser utilizada.
 
 <!--
 Interessante, Simples, fácil, bem fácil, muito fácil, didático, autoexplicativo.
@@ -1258,168 +1248,193 @@ Interessante, Simples, fácil, bem fácil, muito fácil, didático, autoexplicat
 
 #### Execução ####
 
-A primeira execução da ferramenta no Windows demora um pouco pois a distribuição do Latex baixa os pacotes utilizados de forma transparente para os usuários. No Linux, a primeira invocação demora alguns segundos enquanto carrega as bibliotecas do Ruby. Segue os comentários sobre a execução do Limarka:
+A primeira execução da ferramenta no Windows demora um pouco pois a distribuição do Latex baixa os pacotes utilizados de forma transparente para os usuários. No Linux, a primeira invocação demora alguns segundos enquanto carrega as bibliotecas do Ruby. 
 
-- "Foi tranquilo". [Utilizou prompt de comando no Windows, limarka exec. ]
-- "Simples com o menu e linha direta."
-- "Legal. Demora na primeira vez". [Utilizou linha de comando.]
-- [Sem problemas de execução]
-- "Na primeira vez demorou bastante", pensou que havia travado. Mas nas próximas vezes foi fácil. Quando alterava os arquivos Markdown e configuração e executando através de `limarka exec` já aparecia o arquivo formatado. *Gostou de poder utilizar o mesmo editor de texto que ele utiliza no dia a dia*, sublime ou notepad++. Se adapta melhor pois já utiliza o mesmo ambiente de trabalho. Instalou o corretor ortográfico. [Invocou o menu-interatico através da linha de comando]
-- "De ininício pareceu um pouco complicado, mas vai se acostumando com novidade e vai se tornando prático. Mas de início há um pouco de dificuldade porque não é uma coisa que fazemos no dia a dia."
-- Fácil. Mas ter que abrir vários arquivos, ter que fechar antes de executar, antes de dá um Enter poderia ter um aviso. [O leitor de PDF utilizado realiza um *lock* no arquivo aberto, para invocar a geração do PDF (o Enter) era necessário fechar o leitor de PDF, o Limarka não exibia nenhuma mensagem informando isso].
-- Foi fácil, na primeira execução demorava alguns segundos, mas nas próximas foi de boa. [Preferiu utilizar a linha de comando. Não experimentou o menu interativo].
-- "Não conhecia nenhum dos comandos,  mas é fácil de utilizar quando você conhece". [Utilizou o Menu interativo]
-- "A execução foi tranquila demais, foi só botar exec". Primeiro utilizou `limarka exec`, depois utilizou o menu interativo para testar os dois.
+Existem duas formas de executar o Limarka, através de linha de comando (`limarka exec`) ou menu interativo, que pode ser executado diretamente do navegador de arquivos no Windows. O menu interativo fica em *loop* aguardando instruções para execução, a instrução "exec" executar a geração do PDF. 
 
-### Capa, Folha de Rosto e Resumo ###
+Os comentários sobre a execução do Limarka estão na \autoref{tab:execucao}.
 
-A Capa, Folho de Rosto e Resumo são configurados no formulário PDF (ver \autoref{apendice:formulariopdf}).
+: Depoimentos sobre execução do limarka\label{tab:execucao}
 
-Segue os depoimentos dos voluntários sobre elaboração desses conteúdos:
+|Vol.| Depoimento
+|:-:|:------------------------------------------------------------------|
+|1| "Foi tranquilo". [Utilizou prompt de comando no Windows, `limarka exec`. ]
+|2| "A execução foi tranquila demais, foi só botar exec". Primeiro utilizou `limarka exec`, depois utilizou o menu interativo para testar os dois.
+|3| "Simples com o menu e linha direta."
+|4| "Legal. Demora na primeira vez". [Utilizou linha de comando.]
+|5| [Sem problemas de execução]
+|6| "Na primeira vez demorou bastante", pensou que havia travado. Mas nas próximas vezes foi fácil. Quando alterava os arquivos Markdown e configuração e executando através de `limarka exec` já aparecia o arquivo formatado. *Gostou de poder utilizar o mesmo editor de texto que ele utiliza no dia a dia, sublime ou notepad++. Se adapta melhor pois já utiliza o mesmo ambiente de trabalho*. Instalou o corretor ortográfico. [Invocou o menu-interatico através da linha de comando]
+|7| "De ininício pareceu um pouco complicado, mas vai se acostumando com a novidade e vai se tornando prático. Mas de início há um pouco de dificuldade porque não é uma coisa que fazemos no dia a dia."
+|8| Fácil. Mas ter que abrir vários arquivos, ter que fechar antes de executar, antes de dá um Enter poderia ter um aviso. [O leitor de PDF utilizado no Windows realiza *lock* no arquivo aberto, para invocar a geração do PDF (o Enter) era necessário fechar o leitor de PDF, o Limarka não exibia nenhuma mensagem informando isso].
+|9| Foi fácil, na primeira execução demorava alguns segundos, mas nas próximas foi de boa. [Preferiu utilizar a linha de comando. Não experimentou o menu interativo].
+|10| "Não conhecia nenhum dos comandos,  mas é fácil de utilizar quando você conhece". [Utilizou o Menu interativo]
 
-- "Eram gerados automaticamente".
-- "Super simples. Só no clique. No Latex precisava configurar para utilização correta. O modelo da instituição não rodava no Overleaf [*editor de Latex online que utilizou na Monografia*] por isso que precisa customizar inserindo comandos."
-- "Tranquilo, bastava preencher o formulário".
-- "Zero problema, muito simples, muito explicativo".
-- "Manualmente não saberia fazer sozinho e teria que pesquisar. Rápido, questão de segundos".
-- "Foi simples. Com o uso de alguns códigos que a ferramenta já disponibiliza. É gerado o PDF já com essas informações. No Word teria que colocar tudo, na ferramenta já está estruturado, amarrado. [Na monografia, formatou tudo desde o começo]. No limarka se demonstrou bem mais prático, e bem amarrado nas normas da ABNT. Não tem o problema de esquecer algum tópico [elemento]".
-- "Fácil e intuitivo".
-- "Foi bem fácil. Não precisava escrever muita coisa, mal precisou digitar. Fácil e intuitivo. [Comparando com o Latex] aqui foi mais rápido. Lá precisava modificar pouca coisa, mas precisava procurar o que precisava configurar. E tinha algumas paradas obscuras em Latex, e aqui eu não precisava me preocupar com isso".
-- "Foi simples, foi só trocar os dados".
-- "Tranquilo capa. Resumo, bem intuitivo. Folha de rosto também, foi fácil".
+Fonte: Autor.
 
-### Citações ###
+#### Capa, Folha de Rosto e Resumo ####
+
+A Capa, Folho de Rosto e Resumo são configurados no formulário PDF (ver \autoref{apendice:formulariopdf}). Após o preenchimento do formulário o usuário deve invocar a geração do TCC.
+
+Os depoimentos dos voluntários sobre elaboração desses conteúdos encontram-se na \autoref{tab:capa}.
+
+: Depoimentos sobre execução Capa, Folha de Rosto e Resumo\label{tab:capa}
+ 
+|Vol.| Depoimento
+|:-:|:------------------------------------------------------------------|
+|1| "Eram gerados automaticamente".
+|2| "Tranquilo capa. Resumo, bem intuitivo. Folha de rosto também, foi fácil".
+|3| "Super simples. Só no clique. No Latex precisava configurar para utilização correta. O modelo da instituição não rodava no Overleaf [*editor de Latex online que utilizou na Monografia*] por isso que precisa customizar inserindo comandos."
+|4|"Tranquilo, bastava preencher o formulário".
+|5|"Zero problema, muito simples, muito explicativo".
+|6|"Manualmente não saberia fazer sozinho e teria que pesquisar. Rápido, questão de segundos".
+|7|"Foi simples. Com o uso de alguns códigos que a ferramenta já disponibiliza. É gerado o PDF já com essas informações. No Word teria que colocar tudo, na ferramenta já está estruturado, amarrado. [Na monografia, formatou tudo desde o começo]. No limarka se demonstrou bem mais prático, e bem amarrado nas normas da ABNT. Não tem o problema de esquecer algum tópico [elemento]".
+|8|"Fácil e intuitivo".
+|9|"Foi bem fácil. Não precisava escrever muita coisa, mal precisou digitar. Fácil e intuitivo. [Comparando com o Latex] aqui foi mais rápido. Lá precisava modificar pouca coisa, mas precisava procurar o que precisava configurar. E tinha algumas paradas obscuras em Latex, e aqui eu não precisava me preocupar com isso".
+|10|"Foi simples, foi só trocar os dados".
+
+Fonte: Autor.
+
+#### Citações ####
 
 No Roteiro era solicitado aos voluntários realizassem uma citação indireta, uma citação direta e uma citação direta com mais de três linhas. 
 
 As citações utilizam o mesmo comando Latex `\cite` e suas variações \cite{limarka}. No entanto, a citação direta com mais de três linhas requer um recuo no texto, que na sintaxe de Markdown é realizado iniciando uma linha com o carácter ">" (solução inspirada nas respostas de *e-mails*).
 
-Segue os depoimentos relacionados a esse tópico:
+Os depoimentos relacionados as citações estão na \autoref{tab:citacoes}.
 
-- Realizou as duas citações, utilizando ">".
-- Utilizou citação indireta como no Latex, copiou do texto da Qualificação e colou o código que fazia referências. Não utilizou citação com mais de três linhas. [Mas não teria dificuldades em realizar].
-- Teve dificuldade porque não sabia o que era e como fazer. [Não editou o arquvo de referências].
-- Não utilizou citações.
-- Fez citação direta com mais de três linhas corretamente. [Solicitou ajuda de colega para configurar o arquivo de referências].
-- "A primeira citação foi um pouco complicada. Mas seguindo o manual do Limarka, a gente consegue facilitar a introdução dessas citações. [...] Foi um pouco diferente, pra gente que já trabalha no Word. Mas ao final, fica algo bem bacana, porque ao citar no texto, com um clique a gente vai nas referências e localiza a referência e vice e versa, nas referências clicamos e volta para a citação no texto através do número da página. Deixando mais fácil a localização e o não esquecimento de uma dessas citações quando citadas nos textos e nas referências, que é o que ocorre muito em monografias e dissertações.
-- "Foi mediano. Não foi muito fácil, nem difícil".
-- "Foi bem fácil, a parte mais complicada era [seria] em Latex para fazer as referências. Mas já tem pronto [referindo-se aos exemplos disponibilizados no Wiki], mas na hora de usar era bem fácil".
-- "Foi um pouquinho difícil, mas consegui fazer depois" [Só fez citações uma vez na disciplina e acha que fez incorreto. Não chegou a ler a documentação para realizar corretamente].
-- Não fez citação indireta. "Foi tranquilo, [a citação direta] foi só colocar o maior quê. Achou que cadastrar no arquivos de referências foi organizado. Por que se fosse colocar tudo em um arquivo só iria ficar um emaranhado de código, iria ficar feio. Foi melhor colocar as referências só em um lado, e depois é só chamar. Não teria porquê ficar tudo junto, a pessoa teria que passar por um monte de linhas porque tem um bloco de códigos. Da forma que está, quando abre o arquivo de texto, [a pessoa] se preocupa apenas em editar o texto" [Não conhecia o arquivo bib].
+: Depoimentos sobre as realizações de citações\label{tab:citacoes}
+ 
+|Vol.| Depoimento
+|:-:|:------------------------------------------------------------------|
+|1| Realizou as duas citações utilizando ">".
+|2| Não fez citação indireta. "Foi tranquilo, [a citação direta] foi só colocar o maior quê. Achou que cadastrar no arquivos de referências foi organizado. Por que se fosse colocar tudo em um arquivo só iria ficar um emaranhado de código, iria ficar feio. Foi melhor colocar as referências só em um lado, e depois é só chamar. Não teria porquê ficar tudo junto, a pessoa teria que passar por um monte de linhas porque tem um bloco de códigos. Da forma que está, quando abre o arquivo de texto, [a pessoa] se preocupa apenas em editar o texto" [Não conhecia o arquivo bib].
+|3| Utilizou citação indireta como no Latex, copiou do texto da Qualificação e colou o código que fazia referências. Não utilizou citação com mais de três linhas. [Mas não teria dificuldades em realizar].
+|4| Teve dificuldade porque não sabia o que era e como fazer. [Não editou o arquivo de referências].
+|5| Não utilizou citações.
+|6| Fez citação direta com mais de três linhas corretamente. [Solicitou ajuda de colega para configurar o arquivo de referências].
+|7| "A primeira citação foi um pouco complicada. Mas seguindo o manual do Limarka, a gente consegue facilitar a introdução dessas citações. [...] Foi um pouco diferente, pra gente que já trabalha no Word. Mas ao final, fica algo bem bacana, porque ao citar no texto, com um clique a gente vai nas referências e localiza a referência e vice e versa, nas referências clicamos e volta para a citação no texto através do número da página. Deixando mais fácil a localização e o não esquecimento de uma dessas citações quando citadas nos textos e nas referências, que é o que ocorre muito em monografias e dissertações.
+|8| "Foi mediano. Não foi muito fácil, nem difícil".
+|9| "Foi bem fácil, a parte mais complicada era [seria] em Latex para fazer as referências. Mas já tem pronto [referindo-se aos exemplos disponibilizados no Wiki], mas na hora de usar era bem fácil".
+|10| "Foi um pouquinho difícil, mas consegui fazer depois" [Só fez citações uma vez na disciplina e acha que fez incorreto. Não chegou a ler a documentação para realizar corretamente].
 
-### Figuras ###
+Fonte: Autor.
 
-As figuras eram inseridas utilizando códigos Latex disponibilizado no Wiki ou através de comando de linha que auxiliava a criação do código permitindo a escolha de imagem e perguntando mais detalhes sobre sua inserção. Para o usuário era ofertado duas alternativas: copiar o código do Wiki ou invocar um comando para geração assistida do código Latex para inserção da imagem.
+#### Figuras ####
 
-![Ajuda do comando para geração assistida do código Latex para inclusão de figuras](imagens/figura-comando.png){#fig:insersao-figura width=75%}
+As figuras eram inseridas utilizando códigos Latex disponibilizado no Wiki ou através de comando de linha que auxiliava a criação do código permitindo a escolha de imagem e perguntando mais detalhes sobre sua inserção. Para o usuário era ofertado duas alternativas: copiar o código do Wiki ou invocar um comando para geração assistida do código Latex (ver \autoref{fig:insersao-figura}) para inserção da imagem.
+
+![Instrução no Wiki sobre utilização do comando para geração assistida do código Latex para inclusão de figuras](imagens/figura-comando.png){#fig:insersao-figura width=75%}
 
 Fonte: \cite{limarka}.
 
-Segue os depoimentos sobre as figuras:
+Os depoimentos sobre a inclusão de figuras encontra-se na \autoref{tab:figuras}.
 
-- "São inseridas como Latex. Só precisou colocar na pasta específica" Como já tinha conhecimento, utilizou os comandos de um arquivo que já tinha salvo [Como ele percebeu que as imagens eram incluídas em Latex, preferiu utilizou um código de outro arquivo que possuía (e que já havia testado), mas não percebeu que o código copiado era incompatível com as Normas da ABNT, pois não especificava a fonte da imagem].
-- Simples [também utilizou um código Latex que já havia utilizado, incompatível com as Normas da ABNT].
-- Adicionou figura através do menu interativo.
-- Teve problema ao copiar o código do Github. Adicionava a imagem mas teve problema na renderização do PDF. Depois funcionou.
-- Não colocou devido ao tempo, tentou sozinho em casa e não conseguiu. [Sua entrevista ocorreu um dia após o experimento. Errou ao colocar o caminho da imagem. Não consultou o Wiki para conhecer como incluir figuras].
-- "A gente salva a imagem, numa pastinha, que a gente abre para baixar o arquivo. Dela a gente insere no texto, utilizando o menu interativo com outro *codigozinho*, já dentro das Normas da ABNT. Ficou bem bacana [a referência da figura], porque a pessoa pode clicar e vai direto para figura".
-- "Foi mais fácil".
-- "Foi bem simples, coloca na pasta e depois se for referenciar é bem fácil, é só uma linhazinha" [Não chegou a referenciar, mas viu como fazer].
-- Teve dificuldades para salvar a figura, estava salvando a página da figura em vez do arquivo. Não tem costume em fazer isso.
-- "Segue o mesmo modelo, pega [altera] a origem da figura e a legenda que ela vai ter. Seria interessante colocar em um outro arquivo, gosto da ideia de abstrair a codificação" [Ele considerou que quando estava inserindo o código Latex referente a imagem estava descaracterizando o arquivo como texto. Preferia uma solução em que o código referente aos detalhes da imagem estivessem separados, como foi no caso das referências, e depois apenas invocar a inclusão da imagem. Após o encerramento da entrevista, não disponível no áudio, ao ser apresentado à sintaxe original de Markdown para inclusão de imagens (ver \autoref{inclusao-imagens-e-tabelas}) não identificou como problemático em deixá-la no texto].
+: Depoimentos sobre as realizações de citações\label{tab:figuras}
+ 
+|Vol.| Depoimento
+|:-:|:------------------------------------------------------------------|
+|1| "São inseridas como Latex. Só precisou colocar na pasta específica" Como já tinha conhecimento, utilizou os comandos de um arquivo que já tinha salvo [Como ele percebeu que as imagens eram incluídas em Latex, preferiu utilizou um código de outro arquivo que possuía (e que já havia testado), mas não percebeu que o código copiado era incompatível com as Normas da ABNT, pois não especificava a fonte da imagem].
+|2| "Segue o mesmo modelo, pega [altera] a origem da figura e a legenda que ela vai ter. Seria interessante colocar em um outro arquivo, gosto da ideia de abstrair a codificação" [Ele considerou que quando estava inserindo o código Latex referente a imagem estava descaracterizando o arquivo como texto. Preferia uma solução em que o código referente aos detalhes da imagem estivessem separados, como foi no caso das referências, e depois apenas invocar a inclusão da imagem. Após o encerramento da entrevista, não disponível no áudio, ao ser apresentado à sintaxe original de Markdown para inclusão de imagens (ver \autoref{inclusao-imagens-e-tabelas}) não identificou como problemático em deixá-la no texto].
+|3| Simples [também utilizou um código Latex que já havia utilizado, incompatível com as Normas da ABNT].
+|4| Adicionou figura através do menu interativo.
+|5| Teve problema ao copiar o código do Github. Adicionava a imagem mas teve problema na renderização do PDF. Depois funcionou.
+|6| Não colocou devido ao tempo, tentou sozinho em casa e não conseguiu. [Sua entrevista ocorreu um dia após o experimento. Errou ao colocar o caminho da imagem. Não consultou o Wiki para conhecer como incluir figuras].
+|7| "A gente salva a imagem, numa pastinha, que a gente abre para baixar o arquivo. Dela a gente insere no texto, utilizando o menu interativo com outro *codigozinho*, já dentro das Normas da ABNT. Ficou bem bacana [a referência da figura], porque a pessoa pode clicar e vai direto para figura".
+|8| "Foi mais fácil".
+|9| "Foi bem simples, coloca na pasta e depois se for referenciar é bem fácil, é só uma linhazinha" [Não chegou a referenciar, mas viu como fazer].
+|10| Teve dificuldades para salvar a figura, estava salvando a página da figura em vez do arquivo. Não tem costume em fazer isso.
 
+Fonte: Autor.
 
-### Tabelas ###
+#### Tabelas ####
 
 As figuras eram inseridas utilizando códigos Latex disponibilizado no Wiki ou através de comando de linha que fornece o mesmo conteúdo (acessível mesmo que o usuário esteja *off-line*). Portanto para o usuário era ofertado duas alternativas: copiar o código da tabela do Wiki ou invocar um comando no terminal para imprimir os códigos de duas tabelas exemplos. Depois de inserido a tabela, esperava-se que o usuário editasse o seu conteúdo (códigos Latex).
 
-Segue os depoimentos sobre as tabelas:
+Os depoimentos sobre as tabelas encontram-se na \autoref{tab:tabelas}.
 
-1. "Semelhante ao Latex, também foi fácil utilizar".
-1. Colou uma tabela já utilizada proveniente de outro lugar, faltando fonte. [Sente-se confortável com tabelas em Latex, edita sem ajuda de interfaces].
-1. Adicionou tabela através do menu interativo e editou manualmente. "Quando descobre a sintaxe fica fácil".
-1. Adicinou tabela sem editá-la [mas editaria sem problemas].
-1. Não utilizou.
-1. "Foi um pouco mais trabalhoso que a figura, porque precisa saber de acordo com o código qual o número de colunas que vai utilizar e de seções". [Habitualmente faz as tabelas no excel] bem prático de fazer, e para colocar no Word é só copiar e colar. E no Word faz a formatação da tabela.
-1. Não utilizou.
-1. "Precisava daquele comandozinho em Latex, mas já tinha um exemplo pronto, só ia ter as mesmas dificuldades para procurar no código aonde está" [Não ficou claro a qual dificuldade ou local referia-se]. Olhou aonde deveria modificar a tabela, mas não fez. Não teria dificuldade em editar a tabela.
-1. "Foi só copiar e colar e depois modificar e acordo com necessitar". Conseguiria fazer novas tabelas.
-1. Não tinha entendido a marcação inicialmente. Depois entendeu.
+: Depoimentos sobre utilização de tabelas Latex\label{tab:tabelas}
+ 
+|Vol.| Depoimento
+|:-:|:------------------------------------------------------------------|
+|1| "Semelhante ao Latex, também foi fácil utilizar".
+|2| Não tinha entendido a marcação inicialmente. Depois entendeu.
+|3| Colou uma tabela já utilizada proveniente de outro lugar, faltando fonte. [Sente-se confortável com tabelas em Latex, edita sem ajuda de interfaces].
+|4| Adicionou tabela através do menu interativo e editou manualmente. "Quando descobre a sintaxe fica fácil".
+|5| Adicinou tabela sem editá-la [mas editaria sem problemas].
+|6| Não utilizou.
+|7| "Foi um pouco mais trabalhoso que a figura, porque precisa saber de acordo com o código qual o número de colunas que vai utilizar e de seções". [Habitualmente faz as tabelas no excel] bem prático de fazer, e para colocar no Word é só copiar e colar. E no Word faz a formatação da tabela.
+|8| Não utilizou.
+|9| "Precisava daquele comandozinho em Latex, mas já tinha um exemplo pronto, só ia ter as mesmas dificuldades para procurar no código aonde está" [Não ficou claro a qual dificuldade ou local referia-se]. Olhou aonde deveria modificar a tabela, mas não fez. Não teria dificuldade em editar a tabela.
+|10| "Foi só copiar e colar e depois modificar e acordo com necessitar". Conseguiria fazer novas tabelas.
 
-### Utilização de Markdown para elaboração de TCCs ###
+Fonte: Autor.
+
+
+#### Utilização de Markdown para elaboração de TCCs ####
 
 Como foi para você a utilização de Markdown para elaboração de um TCC?
 
-Foi perguntado como era para eles a utilização de Markdown para elaboração de um TCC. Segue as respostas:
+Foi perguntado como era para eles a utilização de Markdown para elaboração de um TCC. Suas repostas encontram-se na \autoref{tab:markdown:depoimentos}.
 
-- "É muito bom de utilizar porque se preocupa com o conteúdo, e utiliza apenas ferramentas textuais [marcações] só para marcar o que quer no texto" [Já havia utilizado antes para realizar documentações nos READMEs do Github].
-- "Bem mais simples que Latex".
-- "Foi bem, não tive dificuldades. Tive dificuldades na escrita do conteúdo. [Gostei porque] só faz colocar as informações".
-- "Gostei, achei simples. Se for fazer [manualmente] necessita de muitos detalhes, a ferramenta era muito explicativa".
-- "Fácil e simples de utilizar". Achou que trás benefícios com a utilização. Costuma acessar documentação dos README nos repositórios do Github. [Já havia percebido que os READMEs no Github tinha extensão '.md', mas não sabia o que é Markdown].
-- "Foi fácil para inserir tópicos [capítulos e seções]. É fácil a pessoa vai no menu interativo e nele insere o tópico, não é isso?" -- [Os tópicos não são inseridos através do menu interativo, provavelmente confundiu a pergunta ou teve dificuldades de lembrar do experimento que ocorreu três dias antes dessa entrevista].
-- "Quem não tem contato com programação se assustaria um pouco". Intuitivo e legal. [Aluno de Engenharia de Produção que pagou uma disciplina de programação, provavelmente se referindo ao processo de compilação do documento].
-- "Foi bem fácil. Os comandos são bem pequenos e rápidos. Fáceis de utilizar, o que torna rápido de digitar. Não tem o trabalho de formatar no Word e não precisaria dos códigos Latex que são gigantes". Sentiria-se bastante confortável em utilizar.
-- Achou "tranquilo" para a escrita e inicialmente pensava que seria mais complicado.
+: Depoimentos sobre uso de Markdown para elaboração de um TCC\label{tab:markdown:depoimentos}
+ 
+|Vol.| Depoimento
+|:-:|:------------------------------------------------------------------|
+|1|"É muito bom de utilizar porque se preocupa com o conteúdo, e utiliza apenas ferramentas textuais [marcações] só para marcar o que quer no texto" [Já havia utilizado antes para realizar documentações nos READMEs do Github].
+|2|Achou "tranquilo" para a escrita e inicialmente pensava que seria mais complicado.
+|3|"Bem mais simples que Latex".
+|4|"Foi bem, não tive dificuldades. Tive dificuldades na escrita do conteúdo. [Gostei porque] só faz colocar as informações".
+|5|"Gostei, achei simples. Se for fazer [manualmente] necessita de muitos detalhes, a ferramenta era muito explicativa".
+|6|"Fácil e simples de utilizar". Achou que trás benefícios com a utilização. Costuma acessar documentação dos README nos repositórios do Github. [Já havia percebido que os READMEs no Github tinha extensão '.md', mas não sabia o que é Markdown].
+|7|"Foi fácil para inserir tópicos [capítulos e seções]. É fácil a pessoa vai no menu interativo e nele insere o tópico, não é isso?" -- [Os tópicos não são inseridos através do menu interativo, provavelmente confundiu a pergunta ou teve dificuldades de lembrar do experimento que ocorreu três dias antes dessa entrevista].
+|8|"Quem não tem contato com programação se assustaria um pouco". Intuitivo e legal. [Aluno de Engenharia de Produção que pagou uma disciplina de programação, provavelmente se referindo ao processo de compilação do documento].
+|9|"Foi bem fácil. Os comandos são bem pequenos e rápidos. Fáceis de utilizar, o que torna rápido de digitar. Não tem o trabalho de formatar no Word e não precisaria dos códigos Latex que são gigantes". Sentiria-se bastante confortável em utilizar.
+|10| Não foi perguntado.
+
+Fonte: Autor.
 
 #### Resumo, utilização e recomendação ####
 
 Ao final da entrevista era perguntado a quem eles recomendariam a utilização do Limarka, se eles pretendiam utilizá-lo na elaboração do seu TCC e um resumo da experiência de utilização do Limarka. Segues os depoimentos:
 
-: Depoimentos
+: Depoimentos sobre a experiência de utilização de Markdown\labe{tab:depoimentos}
 
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
 |1|  **Resumo**: "*Com a ferramenta Limarka, você consome mais tempo se preocupando com o conteúdo do seu trabalho do que com a formatação*".
 | | **Recomenda**: "Para os usuários que utilizam o pacote Office, o Word, que não tem conhecimento específico de ferramenta como o Latex. Que tem muitos problemas com formatação. Mas que também não querem ou não tem tempo para aprender o Latex, por ser bastante complicado. O Limarka ele está nesse meio termo, nessa zona de segurança. Eu tou falando em curva de aprendizado. Porque o Word todo mundo está acostumado a utilizar, mas ele também tem muitas limitações e trás muitos problemas. E Latex ele já é muito complicado para quem nunca teve experiência com isso. Ele [o Limarka] está no meio termo, para pessoa que está acostumada a utilizar o programa como o Office".
 | | ***Software* que pretende utilizar no TCC:** *Se a coordenação do curso aceitasse o modelo produzido pelo Limarka, preferia utilizar ele do que o ShareLatex, mesmo tendo que instalar e utilizar as ferramentas localmente*. Prefere o Limarka porque deixa as normas da ABNT transparente para ele. "O Limarka é mais simples de utilizar do que Latex, é mais transparente pra gente não precisa saber tanto... nenhuma linguagem específica".
-|2| - **Resumo**: "*Com a ferramenta Limarka, você consome mais tempo se preocupando com o conteúdo do seu trabalho do que com a formatação*".
-||**Recomenda**: "Para os usuários que utilizam o pacote Office, o Word, que não tem conhecimento específico de ferramenta como o Latex. Que tem muitos problemas com formatação. Mas que também não querem ou não tem tempo para aprender o Latex, por ser bastante complicado. O Limarka ele está nesse meio termo, nessa zona de segurança. Eu tou falando em curva de aprendizado. Porque o Word todo mundo está acostumado a utilizar, mas ele também tem muitas limitações e trás muitos problemas. E Latex ele já é muito complicado para quem nunca teve experiência com isso. Ele [o Limarka] está no meio termo, para pessoa que está acostumada a utilizar o programa como o Office".
-||***Software* que pretende utilizar no TCC:** *Se a coordenação do curso aceitasse o modelo produzido pelo Limarka, preferia utilizar ele do que o ShareLatex, mesmo tendo que instalar e utilizar as ferramentas localmente*. Prefere o Limarka porque deixa as normas da ABNT transparente para ele. "O Limarka é mais simples de utilizar do que Latex, é mais transparente pra gente não precisa saber tanto... nenhuma linguagem específica".
+|2| **Resumo**: "Tranquilo. O que era difícil ficou fácil".
+| | **Recomenda**: "Recomendaria para todos os alunos de computação que estão precisando fazendo TCC. Para fazer artigo não seria necessário. Pra gente que meche em linhas de comando, em coisas mais brutas, o tempo todo, aí você pega um negócio tranquilo desse, é tranquilo comparado com o que a gente vê. Estou no paraíso aqui, é só dá uma alterada nas referências, e botar uma imagem, não preciso setar um diretório source=... O nível de complexidade é bem menor."
+| | ***Software* que pretende utilizar no TCC:** Pretende utilizar o Limarka.
+|3| **Resumo**: "É simples de utilizar".
+| | **Recomenda**: "Para quem já tem o texto pronto e precisa formatar o texto. Escreva aonde quiser, depois cole dessa forma e que você irá conseguir gerar".
+| | ***Software* que pretende utilizar no TCC:** Tem dúvidas se utilizaria o Limarka, para evitar o problema em ter que configurar o Latex novamente [utilizou o editor Overleaf *on-line* na qualificação]. Teve que refazer depois, configurou coisas que depois precisou refazer. [O problema havia diso utilização de um modelo errado na produção do trabalho].
+|4| **Resumo**: Agilidade e bem estar no uso da ferramenta.
+| | **Recomenda**: Para os alunos de engenharia [da computação].
+| | ***Software* que pretende utilizar no TCC:** Passaria a utilizar o Limarka. Fica mais fácil de utilizar e não precisa lidar com as regras do Latex.
+|5| **Resumo**: Simples, compacta e cômoda.
+| | ***Software* que pretende utilizar no TCC:** Pretente utilizar o Limarka.
+|6| **Resumo**: O Limarka para mim tornou-se uma experiência inovadora para escrita de TCC.
+| | **Recomenda**: Recomendaria para os colegas da turma [Ciência da Computação].
+| | ***Software* que pretende utilizar no TCC:** Pretende aprender um pouco mais do markdown. "Agrada o nosso perfil que gosta de invocar comandos". [Planeja convencer colega para utilizar o Limarka e obter o *feedback* dele].
+|7| **Resumo**: Complicado mas prático. 
+| | ***Software* que pretende utilizar no TCC:** Utilizaria o Word.
+|8| **Resumo**: Experiencia inovadora, mas não muito usual. 
+| | **Recomenda**: Recomendaria para acadêmicos que precisam gerar esses trabalhos. Poderia ser extendido para artigos também.
+| | ***Software* que pretende utilizar no TCC:** Utilizaria o Word, pois tem mais contato no cotidiano. "Mas talvez Limarka, após alguns aprimoramentos".
+|9| **Resumo**: Rápido e intuitivo.
+| | **Recomenda**: "Recomendaria para alunos de computação, dá para outros aprenderem mas é que tem gente que não gosta de ficar digitando código. Aonde esse povo faz os trabalhos? No Word? É muito ruim de manter a formatação no Word. Dá trabalho, iria demorar mais um 'pouquinho'."
+| | ***Software* que pretende utilizar no TCC:** Limarka.
+|10| **Resumo**: É complicado no início, mas vale a pena.
+| | **Recomenda**: "Recomendaria para pessoas de computação, porque tem que mecher com essa tela preta e linha de código. Para quem faz computação deve ser mais fácil, porque vocês estão mais acostumado com esse jeito de fazer as coisas".
+| | ***Software* que pretende utilizar no TCC:** "Limarka. Mesmo habituado a fazer no Word, mas esse aqui é mais direto, faz toda a estrutura para mim. No Word eu teria que fazer tudo, passo a passo, todas as coisas. E teria que tomar muito tempo vendo as normas da ABNT, esse aqui é mais direto depois que você aprende a utilizar". [Esse experimento ocorreu no final da tarde. O irmão dele, de Engenharia de computação, havia sido entrevistado pela manhã. Os dois moram juntos.] Quando questionado se utilizaria devido ao provável suporte do irmão: "Com certeza, eu confio mais na computação dele do que o meu [conhecimento] nas normas da ABNT".
 
 Fonte: Autor.
 
-1. **Resumo**: "É simples de utilizar".
-**Recomenda**: "Para quem já tem o texto pronto e precisa formatar o texto. Escreva aonde quiser, depois cole dessa forma e que você irá conseguir gerar".
-***Software* que pretende utilizar no TCC:** Tem dúvidas se utilizaria o Limarka, para evitar o problema em ter que configurar o Latex novamente [utilizou o editor Overleaf *on-line* na qualificação]. Teve que refazer depois, configurou coisas que depois precisou refazer. [O problema havia diso utilização de um modelo errado na produção do trabalho].
+### Análise e discussão ###
 
-2. **Resumo**: Agilidade e bem estar no uso da ferramenta.
-**Recomenda**: Para os alunos de engenharia [da computação].
-***Software* que pretende utilizar no TCC:** Passaria a utilizar o Limarka. Fica mais fácil de utilizar e não precisa lidar com as regras do Latex.
-
-3. **Resumo**: Simples, compacta e cômoda.
-***Software* que pretende utilizar no TCC:** Pretente utilizar o Limarka.
-
-
-- **Resumo**: O Limarka para mim tornou-se uma experiência inovadora para escrita de TCC.
-**Recomenda**: Recomendaria para os colegas da turma [Ciência da Computação].
-***Software* que pretende utilizar no TCC:** Pretende aprender um pouco mais do markdown. "Agrada o nosso perfil que gosta de invocar comandos". [Planeja convencer colega para utilizar o Limarka e obter o *feedback* dele].
-
-- **Resumo**: Complicado mas prático. 
-***Software* que pretende utilizar no TCC:** Utilizaria o Word.
-
-- **Resumo**: Experiencia inovadora, mas não muito usual. 
-**Recomenda**: Recomendaria para acadêmicos que precisam gerar esses trabalhos. Poderia ser extendido para artigos também.
-***Software* que pretende utilizar no TCC:** Utilizaria o Word, pois tem mais contato no cotidiano. "Mas talvez Limarka, após alguns aprimoramentos".
-
-- **Resumo**: Rápido e intuitivo.
-**Recomenda**: "Recomendaria para alunos de computação, dá para outros aprenderem mas é que tem gente que não gosta de ficar digitando código. Aonde esse povo faz os trabalhos? No Word? É muito ruim de manter a formatação no Word. Dá trabalho, iria demorar mais um 'pouquinho'."
-***Software* que pretende utilizar no TCC:** Limarka.
-
-- **Resumo**: É complicado no início, mas vale a pena.
-**Recomenda**: "Recomendaria para pessoas de computação, porque tem que mecher com essa tela preta e linha de código. Para quem faz computação deve ser mais fácil, porque vocês estão mais acostumado com esse jeito de fazer as coisas.
-***Software* que pretende utilizar no TCC:** Limarka. Mesmo habituado a fazer no Word, mas esse aqui é mais direto, faz toda a estrutura para mim. No Word eu teria que fazer tudo, passo a passo, todas as coisas. E teria que tomar muito tempo vendo as normas da ABNT, esse aqui é mais direto depois que você aprende a utilizar". [Esse experimento ocorreu no final da tarde. O irmão dele, de Engenharia de computação, havia sido entrevistado pela manhã. Os dois moram juntos.] Quando questionado se utilizaria devido ao provável suporte do irmão: "Com certeza, eu confio mais na computação dele do que o meu [conhecimento] nas normas da ABNT".
-
-- **Resumo**: "Tranquilo. O que era difícil ficou fácil".
-**Recomenda**: "Recomendaria para todos os alunos de computação que estão precisando fazendo TCC. Para fazer artigo não seria necessário. Pra gente que meche em linhas de comando, em coisas mais brutas, o tempo todo, aí você pega um negócio tranquilo desse, é tranquilo comparado com o que a gente vê. Estou no paraíso aqui, é só dá uma alterada nas referências, e botar uma imagem, não preciso setar um diretório "source=...". O nível de complexidade é bem menor."
-***Software* que pretende utilizar no TCC:** Pretende utilizar o Limarka.
-
-
-
-### Análise do experimento ###
-
-percentual que já utilizaram antes
-
+<!--
 - Facilidade de utilização de ferramenta?
 - Desafios da ferramenta?
 - O produto final do documento?
@@ -1428,13 +1443,178 @@ percentual que já utilizaram antes
 - Figuras e tabelas
 - Análise de conformidade com as normas
 - Benefícios do sistema
+-->
 
-### Discussão ###
+
+Nesta seção é realizado as análises dos resultados e a discussão baseado em cada ponto avaliado:
+
+a. instalação
+
+    O processo de instalação da ferramenta será considerado fácil por usuários com afinidade com informática, que estão habituados a instalar programas e dependências.
+
+a. ambiente de utilização
+
+    O ambiente de utilização será considerado confortável por usuários de informática, que poderão utilizar os mesmos editores que utilizam para programar ou editar arquivos somente texto como o Sublime, Emacs, Vim ou Notepad++, conforme um dos voluntários relatou que "estava no paraíso".
+
+    Um empecilho é a utilização de leitores de PDF que realizam *lock* no arquivo, isto impede a geração de novos PDFs.
+	
+	Alguns usuários terão dificuldades de utilizar o modelo de TCC, pois o Windows não faz distinção visual entre a abertura de um arquivo Zip e uma pasta.
+	
+a. Configuração
+
+    O processo de configuração adotado no Limarka através de formulário PDF é *muito fácil e autoexplicativo*, que pode ser percebido na fala "Errar não tinha como".
+	
+	As configurações avançadas que não estivem implementadas no formulário podem ser realizadas diretamente no *template* Latex do TCC.
+	
+	Por exemplo, na configuração desta dissertação foram incluídos comandos Latex para possibilitar múltiplas imagens (ver \autopageref{fig:problemas:formatacao}) e prevenir hifenização de algumas palavras. Os recursos considerados úteis serão implementados no formulário posteriormente.
+	
+a. Execução
+
+    A execução da ferramenta é fácil, mesmo para usuários que não possuem afinidade com informática, que podem utilizar o menu interativo. Uma melhoria (\autoref{melhorias}) foi implementada após os experimentos que pode tornar a execução ainda mais fácil, pois a compilação pode ser invocada automaticamente após perceber que o usuário salvou as alterações do arquivo.
+
+a. Capa, Folha de Rosto e Resumo
+
+    A elaboração da capa, folha de rosto e resumo é bastante simples, mesmo comparando com o Latex, como foi descrito nesse trecho:  "*Comparando com o Latex aqui foi mais rápido. Lá precisava modificar pouca coisa, mas precisava procurar o que precisava configurar*. E tinha algumas paradas obscuras em Latex, e aqui eu não precisava me preocupar com isso".
+
+a. Citações
+
+    As citações utilizam os mesmos mecanismos do Latex. Mas o Limarka realiza um pré-processamento das referências, realizando correções para o que é esperado pelo abnTeX.
+
+a. Figuras e Tabelas
+
+    As figuras e tabelas eram inseridas apenas com código Latex o que ocasionou erros pelos usuários que já estavam habituados com Latex, pois copiaram códigos de outros locais que não estavam em conformidade com as Normas da ABNT. Se seguir as instruções do Wiki, conseguirão criar esses elementos.
+	
+	As tabelas exigem uma curva de aprendizado pois requerem edição utilizando o código Latex.
+	
+	Melhorias foram implementadas após os experimentos (\autore{melhorias}) que permite a utilização das sintaxes de Markdown para figura e tabela. Isto tornará esses itens mais fáceis de serem utilizados.
+
+a. Utilização de Markdown
+
+    Os estudantes que já utilizam Markdown no seu dia a dia ou R Markdown para elaboração de pesquisas com reprodutibilidade irão preferir utilizar o Limarka em seus TCCs do que Latex, pois a curva de aprendizado será mínima.
+	
+
+### Verificação dos requisitos	
+
+A \autoref{tab:requisitos} apresenta o cumprimento dos requisitos para elaboração de TCCs em conformidade com as Normas da ABNT utilizando uma linguagem de marcação simples.
+
+: Verificação do requisitos\label{tab:requisitos}
+
+| Requisito| Tipo |  |
+|:------------------------------------------------------|:--------------:|:---:|
+| Configuração da capa. | Funcional | \checkmark |
+| Configuração dos pré-textuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract* | Funcional | \checkmark |
+| Criação de Sumário automático | Funcional | \checkmark |
+| Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais | Funcional | \checkmark |.
+| Configuração de estilos de capítulos, seções e texto | Funcional | \checkmark |
+| Inclusão de Ilustrações e Tabelas com título, fonte e possibilidade de referenciação no texto. | Funcional | \checkmark |
+| Elaboração da seção de Referências (com formatação diferenciada) | Funcional | \checkmark|
+| Elaboração de apêndices e anexos | Funcional | \checkmark |
+| Escrita dos principais elementos do trabalho através de uma linguagem de marcação leve | Funcional | \checkmark |
+| Ser de *fácil utilização* | Não funcional | \checkmark |
+| Ser *confiável* em relação as mudanças das Normas | Não funcional | \checkmark |
+
+Fonte: Autor
+
+Muitos requisitos são cumpridos devido a utilização do modelo do abnTeX2 e a possibilidade de configurá-los utilizando códigos Latex.
+
+Os diversos relatos sobre como foi fácil utilizar o Limarka é um indício de que o requisito não funcional "Ser de fácil utilização" foi atendido.
+
+A *confiabilidade* da ferramenta também é percebida pelo usuário através de sua participação no *chat* de suporte da ferramenta, onde ele poderá receber repostas confiáveis para suas dúvidas.
+
+<!--
+O último depoimento do voluntário 10 demonstra a importância que o suporte possui para utilização da ferramenta. Apesar de utilizar apenas o Word, ele pretendia utilizar o Limarka por precisar se preocupar com as Normas da ABNT e o provável suporte do irmão de Computação.
+-->
+
+### Melhorias implementadas após os experimentos {#melhorias}
+
+Esta seção são descritas as melhorias que foram implementadas no Limarka após os experimentos, portanto elas estão disponíveis nas novas versões da ferramenta mas os experimentos foram realizados sem elas.
+
+A ferramenta Pandoc \cite{pandoc} permite a utilização de filtros para modificar a sintaxe da linguagem.
+
+O filtro pandoc_abnt \cite{pandoc_abnt} foi elaborado com as seguintes funcionalidades:
+
+a. estender a linguagem Markdown para possibilitar a especificação de fonte de imagens e tabelas sem necessitar criá-los com código Latex.
+
+    A \autoref{figura-sintaxe} apresenta a documentação da nova sintaxe de figuras permitindo a especificação de sua fonte. A tabela utiliza a mesma sintaxe.
+   
+b. correção automática de pontuação de listas e alíneas (ver \autoref{alineas});
+
+    Todos os itens das listas e alíneas teriam sua pontuação final corrigida para terminar com ponto e vírgula (";"), menos o último item que seria finalizado com ponto (".").
+
+![Apresentação da sintaxe de Figura com fonte na Documentação do Limarka](imagens/figura-sintaxe-com-fonte.png){#figura-sintaxe width=70%}
+	
+Fonte: \cite{limarka}
 
 
-# Considerações finais
+Também foi adicionado um recurso para *compilação automática ao salvar alterações do texto*. Atualmente é possível iniciar um serviço que monitora as alterações dos arquivos e inicia a compilação do PDF quando as alterações forem salvas.
 
-# Recomendações
+### Melhorias futuras {#melhorias-futuras}
+
+a. Substituir a *engine de templates* do Pandoc
+
+    A *engine* de *templates* do Pandoc \cite{pandoc} é bastante limitada, sua sintaxe de configuração permite apenas comparar o valor de uma variável, da seguinte forma: `SE ($var) ENTÃO (...) SENÃO (...) FIM`. Ela não permite a configuração dos *templates* baseados em comparações com expressões contendo valores, como a seguir: `SE ($var==valor) ENTÃO (...)`. Essa limitação dificulta a elaboração de *templates*, sua substituição por outra *engine* \cite{liquid} possibilitaria a elaboração de *templates* mais sofisticados.
+
+a. Utilização de formulário HTML
+
+    Embora o formulário PDF seja simples de ser utilizado, uma página WEB permite mais interatividade que um documento PDF. Seria possível adicionar validações com mensagens específicas.
+
+a. Editor de referências *on-line* embutido
+
+    O abnTeX precisou criar campos personalizados nas entradas no formato BibTex para contemplar as Normas da ABNT. Este editor iria ofertar uma interface amigável para edição das referências neste formato.
+
+a. Geração de Resumos
+
+    A geração do resumo baseado em marcações específicas em trechos do texto. 
+	
+	Em \cite{hermida} é apresentado o problema vivenciado, pelo curso de Pedagogia na distância da UFPB em 2012, para orientar os alunos de educação a distância na elaboração dos resumos. Esta solução permitia que os alunos marcasse no texto os trechos que irão compor o resumo, tais como "objetivo", "metodologia", "resultado" etc.
+	
+	
+
+### A escolha da linguagem Markdown
+
+A escolha da linguagem Markdown para escrita de TCCs foi apropriada? A \autoref{popularidade} mostra a comparação de consultas, nos últimos 5 anos, realizadas no Google pelas linguagens de marcações indicadas. A linguagem Markdown é apresentada no topo, com o interesse crescente.
+
+![Comparação das consultas de linguagens de marcação](imagens/comparacao-popularidade-de-linguagens.png){#popularidade width=100%}
+
+Fonte: Google *trends*.
+
+Portanto, há indícios de que escolha de Markdown para escritas de TCCs será uma solução com boa aceitação.
+
+<!--Para referenciar a figura acima no texto utilize: Figura \ref{fig:comparacao-popularidade-de-linguagens} 
+-->
+
+
+# Conclusão
+
+Esse trabalho pesquisou a possibilidade de utilização de uma linguagem de marcação de texto leve para produção de trabalhos de conclusão de curso em conformidade com as Normas da ABNT.
+
+Ele apresentou as tentativas e os meios para o desenvolvimento de uma solução capaz de utilizar uma linguagem de marcação de texto para produção de TCCs.
+
+A pesquisa tem os seguintes resultados:
+
+a. Um TCC não deve ser produzido por ferramentas que utilizem o formato DocBook como intermediário.
+a. A comunidade abnTeX oferta a melhor alternativa em Latex para produzir TCCs nacionais em conformidade com as Normas da ABNT.
+a. A utilização de um *template* baseado no modelo de TCC do abnTeX e a geração de códigos Latex a partir de Markdown possibilita a geração de trabalhos em conformidade com as Normas da ABNT. 
+a. Para configuração do *template*, a utilização de um formulário PDF, em vez de código YAML, torna o processo de configuração mais fácil.
+a. A solução com escrita em Markdown apresenta equivalência de expressividade ao Latex, pois permite a inserção de seus códigos.
+a. Existe indícios de que os usuários acharam mais fácil aprender e utilizar Markdown do que Latex, para escrita de TCCs.
+
+**Conclusão**: É possível utilizar uma linguagem de marcação leve (Markdown) para escrita de TCCs nacionais em conformidade com as Normas da ABNT. E sua utilização pode ser incentiva pois há indícios de que seja mais simples e fácil do que Latex, e expressivamente equivalente ele.
+
+
+<!-- conferência para submissão: https://www.computer.org/web/tlt/author -->
+<!--
+Considerações finais
+
+As instituições de ensino superior, em especial as que ofertam cursos a distância, poderão se beneficiar de uma solução mais simples para elaboração de TCCs que diminuam os esforços de formatação e de orientação.
+-->
+
+
+
+<!--
+Recomendações
+
+Precisamos convencer as instituições a aceitarem o modelo do Limarka.
 
 a. Recomendações para relaxamento das Normas da ABNT para facilitar adoção de Markdown
 
@@ -1442,20 +1622,24 @@ a. Recomendações para relaxamento das Normas da ABNT para facilitar adoção d
     * Possibilitar que as indicações de fonte das Ilustrações e tabelas possam ser apresentadas como Notas de Rodapé, mesmo quando utilizando o Sistema de Referências Numérico. (NBR 6023:2002, item 9.2 Sistema numérico, ABNT NBR 14724:2011, item 5.8 Ilustrações);
 	* Somente no caso em que se estiver utilizando Referências Numéricas através de notas de rodapé, as notas de fontes adotariam o sequenciamento alfabético para distingui-las das referências.
 
-<!-- 
+ 
 Adicionar às recomendações:
 
 - O modelo da instituição não rodava no Overleaf
--->
+
 
 a. Recomendações para instituições
 
     - Tornar opcional a especificação de Fontes para Ilustrações e Tabelas.
 
-## Sugestões para trabalhos futuros
+-->
+
+<!--
+Sugestões para trabalhos futuros
 
 - Utilização para produção de artigos do SBC
 - Utilização para produção de trabalhos escolares
+-->
 
 <!-- 
 - Avaliação do software
@@ -1465,11 +1649,3 @@ https://www.software.ac.uk/sites/default/files/SSI-SoftwareEvaluationTutorial.pd
 
 <!-- pdftk A=xxx-Dissertacao.pdf B=configuracao.pdf cat A1-47 B A68-END output trabalho-final-eduardo.pdf
 -->
-# Conclusão
-
-- Logotipo da instituição;
-- Curso ou Programa de Pós-Graduação;
-- Departamento.
-
-
-<!-- conferência para submissão: https://www.computer.org/web/tlt/author -->

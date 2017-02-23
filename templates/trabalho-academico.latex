@@ -237,6 +237,8 @@ $endif$}%% fim do preambulo
 %
 \hyphenation{ Asciidoc }
 
+\usepackage{amsfonts}
+
 % ----
 % Início do documento
 % ----
