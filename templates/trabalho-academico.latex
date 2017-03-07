@@ -50,7 +50,7 @@
 % ---
 % Pacotes básicos 
 % ---
-\usepackage[noabbrev]{cleveref}
+\usepackage[noabbrev,capitalize]{cleveref}
 \usepackage{lmodern}			% Usa a fonte Latin Modern			
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
@@ -214,6 +214,10 @@ $endif$}%% fim do preambulo
 %\usepackage{floatrow}
 %\floatsetup[figure]{capposition=top}
 
+% para uso do Cref: % removido pq estava com problemas na capa.
+%\Crefname@preamble{section}{Seção}{Seções}%
+%\crefname{subsection}{subseção}{subseções}%
+
 
 % ---
 % BUG: Imagens e tabelas apareciam no meio da página em branco 
@@ -224,6 +228,62 @@ $endif$}%% fim do preambulo
 \makeatother
 % ---
 
+
+
+% ---
+% Formatação de código-fonte
+% ---
+\usepackage{listings}
+
+% Altera o nome padrão do rótulo usado no comando \autoref{}
+\renewcommand{\lstlistingname}{Código}
+
+% Altera o rótulo a ser usando no elemento pré-textual "Lista de código"
+\renewcommand{\lstlistlistingname}{Lista de códigos}
+
+% Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
+\begingroup\makeatletter
+\let\newcounter\@gobble\let\setcounter\@gobbletwo
+  \globaldefs\@ne \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+  \newlistentry{lstlisting}{lol}{0}
+\endgroup
+
+\renewcommand{\cftlstlistingaftersnum}{\hfill--\hfill}
+
+\let\oldlstlistoflistings\lstlistoflistings
+\renewcommand{\lstlistoflistings}{%
+   \begingroup%
+   \let\oldnumberline\numberline%
+   \renewcommand{\numberline}{\lstlistingname\space\oldnumberline}%
+   \oldlstlistoflistings%
+   \endgroup}
+
+\lstset{% general command to set parameter(s)
+}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=lines,
+  float 
+}
+
+
+
+% Solicitação do orientador para utilizar todos com letra maiúscula.
+\addto\extrasbrazil{%
+\def\chaptername{Capítulo}
+\def\sectionautorefname{Seção}%
+\def\subsectionautorefname{Subseção}%
+\def\subsubsectionname{Subseção}
+}
+
+
+
+\def\sectionautorefname{Unterkapitel}%
+\def\subsectionautorefname{Unterkapitel}%
 
 %%
 %% Esse modelo é responsável pela impressão dos seguintes elementos:
@@ -276,6 +336,8 @@ $endfor$
 % ELEMENTOS TEXTUAIS
 % ----------------------------------------------------------
 \textual
+\pagestyle{simple}
+\aliaspagestyle{chapter}{simple}
 
 $body$
 
