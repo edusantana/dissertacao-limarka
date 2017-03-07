@@ -1486,27 +1486,27 @@ Nesta seção é realizado as análises dos resultados e a discussão baseado em
 
 a. instalação
 
-    O processo de instalação da ferramenta será considerado fácil por usuários com afinidade com informática, que estão habituados a instalar programas e dependências.
+    O processo de instalação da ferramenta foi considerado fácil por usuários com afinidade com informática, que estão habituados a instalar programas e dependências.
 
 a. ambiente de utilização
 
-    O ambiente de utilização será considerado confortável por usuários de informática, que poderão utilizar os mesmos editores que utilizam para programar ou editar arquivos somente texto como o Sublime, Emacs, Vim ou Notepad++, conforme um dos voluntários relatou que "estava no paraíso".
+    O ambiente de utilização foi considerado confortável por usuários de informática, que poderão utilizar os mesmos editores que utilizam para programar ou editar arquivos somente texto como o Sublime, Emacs, Vim ou Notepad++, conforme um dos voluntários relatou que "estava no paraíso".
 
     Um empecilho é a utilização de leitores de PDF que realizam *lock* no arquivo, isto impede a geração de novos PDFs.
 	
-	Alguns usuários terão dificuldades de utilizar o modelo de TCC, pois o Windows não faz distinção visual entre a abertura de um arquivo Zip e uma pasta.
+    Alguns usuários tiveram dificuldades de utilizar o modelo de TCC, pois o Windows não faz distinção visual entre a abertura de um arquivo Zip e uma pasta.
 	
 a. Configuração
 
-    O processo de configuração adotado no Limarka através de formulário PDF é *muito fácil e autoexplicativo*, que pode ser percebido na fala "Errar não tinha como".
+    O processo de configuração adotado no Limarka através de formulário PDF é *muito fácil e autoexplicativo*, isso pode ser percebido na fala "Errar não tinha como".
 	
-	As configurações avançadas que não estivem implementadas no formulário podem ser realizadas diretamente no *template* Latex do TCC.
+	As configurações avançadas que não estiverem implementadas no formulário podem ser realizadas manualmente no *template* Latex do TCC.
 	
-	Por exemplo, na configuração desta dissertação foram incluídos comandos Latex para possibilitar múltiplas imagens (ver \autopageref{fig:problemas:formatacao}) e prevenir hifenização de algumas palavras. Os recursos considerados úteis serão implementados no formulário posteriormente.
+	Por exemplo, na configuração desta dissertação foram incluídos comandos Latex para possibilitar múltiplas imagens (ver \autopageref{fig:problemas:formatacao}) e prevenir hifenização de algumas palavras -- os recursos que demonstrarem ser úteis serão implementados no formulário posteriormente.
 	
 a. Execução
 
-    A execução da ferramenta é fácil, mesmo para usuários que não possuem afinidade com informática, que podem utilizar o menu interativo. Uma melhoria (\autoref{melhorias}) foi implementada após os experimentos que pode tornar a execução ainda mais fácil, pois a compilação pode ser invocada automaticamente após perceber que o usuário salvou as alterações do arquivo.
+    A execução da ferramenta foi considerada fácil, mesmo para usuários que não possuem afinidade com informática, que podem utilizar o menu interativo. Uma melhoria (\autoref{melhorias}) foi implementada após os experimentos que pode tornar a execução ainda mais fácil, pois a compilação pode ser invocada automaticamente após perceber que o usuário salvou as alterações do arquivo.
 
 a. Capa, Folha de Rosto e Resumo
 
@@ -1520,13 +1520,13 @@ a. Figuras e Tabelas
 
     As figuras e tabelas eram inseridas apenas com código Latex o que ocasionou erros pelos usuários que já estavam habituados com Latex, pois copiaram códigos de outros locais que não estavam em conformidade com as Normas da ABNT. Se seguir as instruções do Wiki, conseguirão criar esses elementos.
 	
-	As tabelas exigem uma curva de aprendizado pois requerem edição utilizando o código Latex.
+	As tabelas exigem uma curva de aprendizado maior, em comparação aos demais recursos, pois requerem edição utilizando o código Latex.
 	
 	Melhorias foram implementadas após os experimentos (\autore{melhorias}) que permite a utilização das sintaxes de Markdown para figura e tabela. Isto tornará esses itens mais fáceis de serem utilizados.
 
 a. Utilização de Markdown
 
-    Os estudantes que já utilizam Markdown no seu dia a dia ou R Markdown para elaboração de pesquisas com reprodutibilidade irão preferir utilizar o Limarka em seus TCCs do que Latex, pois a curva de aprendizado será mínima.
+    Os estudantes que já utilizam Markdown no seu dia a dia ou R Markdown para elaboração de pesquisas com reprodutibilidade preferirão utilizar o Limarka em seus TCCs do que Latex, pois a curva de aprendizado será mínima.
 	
 
 ### Verificação dos requisitos	
