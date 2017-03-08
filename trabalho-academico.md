@@ -366,9 +366,9 @@ memorização e utilização. No entanto, ela não possibilita referenciar as im
 ![Título da figura](/caminho/da/imagem.png){#id}
 \end{lstlisting}
 
-O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para elaboração de tabelas, a seguir é apresentado uma delas:
+O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para elaboração de tabelas, o \autoref{tabela:mark} apresenta uma delas. Essa notação não permite configurar alinhamento, e nenhuma das demais notações permite a mesclagem de células.
 
-\begin{lstlisting}[caption={Tabela},label=tabela:mark, float]
+\begin{lstlisting}[caption={Código Markdown para criação de uma Tabela},label=tabela:mark, float]
 : Título da tabela
 
 +---------------+---------------+--------------------+
@@ -381,10 +381,6 @@ O Markdown do Pandoc disponibiliza 4 sintaxes diferentes para elaboração de ta
 |               |               | - cor laranja      |
 +---------------+---------------+--------------------+
 \end{lstlisting}
-
-
-
-Essa notação não permite configurar alinhamento, e nenhuma das demais notações permite a mesclagem de células.
 
 É válido mencionar que a edição de uma tabela, no formato apresentado, através de um editor de texto simples pode ser bastante tediosa. O \autoref{codigo:tabela:editada} apresenta um possível problema de edição, ocorrido na linha 5 ao alterar o texto sobre a cor da banana. Após a alteração percebe-se que tabela não encontra-se alinhada como anteriormente, o usuário precisaria alterar o restante da tabela para mantê-la consistente com essa sintaxe de tabela. O \autoref{codigo:tabela:consistente} apresenta a tabela consistente novamente, *visualmente percebe-se a alteração através do aumento do tamanho da última coluna da tabela*.
 
