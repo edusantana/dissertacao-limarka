@@ -1006,48 +1006,15 @@ Essa foi a solução escolhida para implementação pois possibilitaria produzir
 	
 ## Implementar aplicação que possibilite usuários escrever TCCs nacionais utilizando uma linguagem de marcação leve {#obj-implementacao}
 
-A aplicação Limarka, escrita em Ruby, foi implementada para possibilitara produção de TCCs nacionais utilizando a linguagem de marcação leve Markdown. As especificações apresentadas na seção anterior foram utilizadas em sua implementação.
+Esta seção descreve o processo de produção do *software* Limarka, para possibilitar escrita de TCCs nacionais utilizando Markdown.
 
-### Implementação do formulário
-
-O propósito do formulário é evitar expor as sintaxes de YAML e Latex para os usuários. Além de evitar erros de sintaxe o formulário facilita realizar as configurações mais comuns.
-
-A seguir são apresentados como o formulário foi desenvolvido:
-
-a. Adoção do formato PDF
-
-	Inicialmente foi cogitado a possibilidade de implementação do formulário através de um servidor web embutido. Esta alternativa tem várias vantagens: os usuários estão habituados a preencher formulários através de navegadores; os formulários podem ter interfaces dinâmicas; os campos podem ser validados. 
-	
-	A solução de formulário PDF permitiu o desenvolvimento rápido, através do software LibreOffice.
-
-a. Os campos de preenchimento no formulário utilizam a mesma sintaxe do texto
-
-    Isto permite que o usuário insira palavras estrangeiras com itálico no resumo, utilizando a mesma sintaxe do texto. Sem o formulário o usuário precisaria saber o código Latex para itálico e utilizar os *escapes* apropriados para codificá-lo no arquivo YAML.
-	
-a. Escolhas da configuração são apresentadas seguindo a ordem natural de utilização
-
-    O formulário exibe as escolhas de configurações baseados na ordem esperada de utilização. Por exemplo, o tipo de trabalho (monografia, dissertação ou tese) e as configurações da capa são apresentados inicialmente, enquanto as opções para incluir folha de aprovação e errata são apresentados no final do documento.
-
-### Template customizado baseado no abnTeX2
-
-O *template* foi construído baseado no modelo de trabalho de conclusão de curso mantido pela equipe do abnTeX2.
-
-
-a. Permitir múltiplas configurações
-
-    O *template* foi elaborado para permitir múltiplas configurações. Tais como habilitar ou desabilitar: *abstract* (na qualificação não é necessário); listas de figuras, tabelas e siglas; e utilização de apêndices e anexos.
-	
-<!--
-Melhorias futuras
-
-- Implementar configurações mais utilizadas;
-
-- Possibilitar customizações não previstas nas Normas da ABNT.
--->
 
 ### Implementação do *software* Limarka
 
-O *software* batizado como Limarka \cite{limarka,limarka_paper} foi elaborado para possibilitar a escrita de TCCs nacionais. Sua arquitetura (\autoref{fig:arquitetura}) e funcionalidades são apresentadas a seguir:
+Nesta etapa o *software* batizado como Limarka \cite{limarka,limarka_paper} foi elaborado para possibilitar a escrita de TCCs nacionais. O *software* é mantido no Github (<https://github.com/abntex/limarka>) e foi desenvolvido na linguagem Ruby.
+
+
+Sua arquitetura (ver \autoref{fig:arquitetura}) e funcionalidades são apresentadas a seguir:
 
 ![Arquitetura do Limarka](imagens/arquitetura.png){#fig:arquitetura width=70%}
 
@@ -1099,10 +1066,57 @@ xdg-open /home/eduardo/Downloads/dissertacoes/6116-2013.pdf_unencrypted.pdf
 
 -->
 
+#### Testes automatizados
+
+O *software* Limarka foi desenvolvido utilizando a metodologia BDD (*Behavior Driven Development*), que envolve a produção antecipada de testes automatizados descrevendo os comportamentos desejados para os componentes que serão implementados posteriormente \cite{bdd}. 
+
+A utilização de um servidor de integração contínua foi configurada no projeto para execução dos testes automatizados e garantir o funcionamento correto do Limarka, independente do ambiente de produção. Todos os resultados das execuções dos testes podem ser observados no servidor de integração contínua em <https://travis-ci.org/abntex/limarka/builds>.
+
+A \autoref{teste-bdd} apresenta um trecho do relatório de execução dos testes, onde pode-se observar observar que os testes foram escritos descrevendo o comportamento esperado da execução em diferentes contextos.
+
+![Trecho de testes BDD demonstrando que o comportamento esperado está corretamente implementado](imagens/testes-automatizados-no-travis.png){#teste-bdd largura=75%}
+
+Fonte: Autor.
+
+### Implementação do formulário
+
+O propósito do formulário é evitar expor as sintaxes de YAML e Latex para os usuários. Além de evitar erros de sintaxe o formulário facilita realizar as configurações mais comuns.
+
+A seguir é apresentado como o formulário foi desenvolvido:
+
+a. Adoção do formato PDF
+
+    Inicialmente foi cogitado a possibilidade de implementação do formulário através de um servidor WEB embutido. Esta alternativa tem várias vantagens: os usuários estão habituados a preencher formulários através de navegadores; os formulários podem ter interfaces dinâmicas; os campos podem ser validados.
+
+    A solução de formulário PDF permitiu o desenvolvimento rápido, através do software LibreOffice. Por esta razão foi optado pela utilização do formulário PDF em vez do HTML.
+
+a. Os campos de preenchimento no formulário utilizam a mesma sintaxe do texto
+
+    Isto permite que o usuário insira palavras estrangeiras com itálico no resumo, utilizando a mesma sintaxe do texto. Sem o formulário o usuário precisaria saber o código Latex para itálico e utilizar os *escapes* apropriados para codificá-lo no arquivo YAML.
+
+a. Escolhas da configuração são apresentadas seguindo a ordem natural de utilização
+
+    O formulário exibe as escolhas de configurações baseados na ordem esperada de utilização. Por exemplo, o tipo de trabalho (monografia, dissertação ou tese) e as configurações da capa são apresentados inicialmente, enquanto as opções para incluir folha de aprovação e errata são apresentados no final do documento.
+
+A oferta de alternativas através de um formulário possibilita o usuário implementar comportamentos diferentes no documento facilmente, em comparação ao Latex. Por exemplo, a Folha de aprovação pode ser apresentada normalmente, incluída através de imagem escaneada ou ainda removida por completo. Estas três configurações em Latex exigem códigos bastante diferentes, e esforço do usuário para compreender como configurá-los e utilizá-los. A utilização de um formulário permite uma simples seleção da intenção desejada sem a necessidade de compreensão de códigos.
+
+### Template customizado baseado no abnTeX2
+
+O *template* foi construído baseado no modelo de trabalho de conclusão de curso mantido pela equipe do abnTeX2.
 
 
+a. Permitir múltiplas configurações
 
- 
+    O *template* foi elaborado para permitir múltiplas configurações. Tais como habilitar ou desabilitar: *abstract* (na qualificação não é necessário); listas de figuras, tabelas e siglas; e utilização de apêndices e anexos.
+
+<!--
+Melhorias futuras
+
+- Implementar configurações mais utilizadas;
+
+- Possibilitar customizações não previstas nas Normas da ABNT.
+-->
+
 ## Avaliar o uso de uma linguagem de marcação leve para a escrita de TCCs nacionais por estudantes {#avaliacao}
 
 
@@ -1300,10 +1314,10 @@ Os comentários sobre a execução do Limarka estão na \autoref{tab:execucao}.
 |4| "Legal. Demora na primeira vez". [Utilizou linha de comando.]
 |5| [Sem problemas de execução]
 |6| "Na primeira vez demorou bastante", pensou que havia travado. Mas nas próximas vezes foi fácil. Quando alterava os arquivos Markdown e configuração e executando através de `limarka exec` já aparecia o arquivo formatado. *Gostou de poder utilizar o mesmo editor de texto que ele utiliza no dia a dia, sublime ou notepad++. Se adapta melhor pois já utiliza o mesmo ambiente de trabalho*. Instalou o corretor ortográfico. [Invocou o menu-interatico através da linha de comando]
-|7| "De ininício pareceu um pouco complicado, mas vai se acostumando com a novidade e vai se tornando prático. Mas de início há um pouco de dificuldade porque não é uma coisa que fazemos no dia a dia."
-|8| Fácil. Mas ter que abrir vários arquivos, ter que fechar antes de executar, antes de dá um Enter poderia ter um aviso. [O leitor de PDF utilizado no Windows realiza *lock* no arquivo aberto, para invocar a geração do PDF (o Enter) era necessário fechar o leitor de PDF, o Limarka não exibia nenhuma mensagem informando isso].
-|9| Foi fácil, na primeira execução demorava alguns segundos, mas nas próximas foi de boa. [Preferiu utilizar a linha de comando. Não experimentou o menu interativo].
-|10| "Não conhecia nenhum dos comandos,  mas é fácil de utilizar quando você conhece". [Utilizou o Menu interativo]
+|7| "De início pareceu um pouco complicado, mas vai se acostumando com a novidade e vai se tornando prático. Mas de início há um pouco de dificuldade porque não é uma coisa que fazemos no dia a dia."
+|8| "Fácil. Mas ter que abrir vários arquivos, ter que fechar antes de executar, antes de dá um Enter poderia ter um aviso". [O leitor de PDF utilizado no Windows realiza *lock* no arquivo aberto, para invocar a geração do PDF (o Enter) era necessário fechar o leitor de PDF, o Limarka não exibia nenhuma mensagem informando isso].
+|9| "Foi fácil, na primeira execução demorava alguns segundos, mas nas próximas foi de boa". [Preferiu utilizar a linha de comando. Não experimentou o menu interativo].
+|10| "Não conhecia nenhum dos comandos, mas é fácil de utilizar quando você conhece". [Utilizou o Menu interativo]
 
 Fonte: Autor.
 
@@ -1522,11 +1536,11 @@ a. Figuras e Tabelas
 	
 	As tabelas exigem uma curva de aprendizado maior, em comparação aos demais recursos, pois requerem edição utilizando o código Latex.
 	
-	Melhorias foram implementadas após os experimentos (\autore{melhorias}) que permite a utilização das sintaxes de Markdown para figura e tabela. Isto tornará esses itens mais fáceis de serem utilizados.
+	Melhorias foram implementadas após os experimentos (\autore{melhorias}) que permitem as utilizações das sintaxes de Markdown para figura e tabela. Isto tornará esses itens mais fáceis de serem utilizados.
 
 a. Utilização de Markdown
 
-    Os estudantes que já utilizam Markdown no seu dia a dia ou R Markdown para elaboração de pesquisas com reprodutibilidade preferirão utilizar o Limarka em seus TCCs do que Latex, pois a curva de aprendizado será mínima.
+    Os estudantes acharam fácil utilizar Markdown, porque eles percebem que se preocupariam mais com o conteúdo do que com a formatação. Usuários que já utilizaram Latex acharam mais simples de ser utilizado.
 	
 
 ### Verificação dos requisitos	
@@ -1626,14 +1640,18 @@ Esse trabalho pesquisou a possibilidade de utilização de uma linguagem de marc
 
 Ele apresentou as tentativas e os meios para o desenvolvimento de uma solução capaz de utilizar uma linguagem de marcação de texto para produção de TCCs.
 
-A pesquisa tem os seguintes resultados:
+A pesquisa tem os seguintes conhecimentos como resultados:
 
 a. Um TCC não deve ser produzido por ferramentas que utilizem o formato DocBook como intermediário.
-a. A comunidade abnTeX oferta a melhor alternativa em Latex para produzir TCCs nacionais em conformidade com as Normas da ABNT.
+a. A comunidade abnTeX oferta uma ótima alternativa em Latex para produzir TCCs nacionais em conformidade com as Normas da ABNT.
 a. A utilização de um *template* baseado no modelo de TCC do abnTeX e a geração de códigos Latex a partir de Markdown possibilita a geração de trabalhos em conformidade com as Normas da ABNT. 
 a. Para configuração do *template*, a utilização de um formulário PDF, em vez de código YAML, torna o processo de configuração mais fácil.
-a. A solução com escrita em Markdown apresenta equivalência de expressividade ao Latex, pois permite a inserção de seus códigos.
-a. Existe indícios de que os usuários acharam mais fácil aprender e utilizar Markdown do que Latex, para escrita de TCCs.
+a. A solução com escrita em Markdown apresenta equivalência de expressividade ao Latex, pois também permite a inserção de códigos Latex.
+a. Existe indícios de que para escrita de TCCs os usuários acharão mais fácil aprender e utilizar Markdown do que Latex.
+
+Além dos conhecimentos, a pesquisa tem o seguinte produto como resultado:
+
+- O software Limarka, registrado no INPI (Instituto Nacional da Propriedade Industrial). Disponibilizado gratuitamente, qualquer usuário pode baixar e utilizá-lo para escrita do seu TCC. Com esta solução é possível escrever TCCs em Markdown que atendam as Normas da ABNT.
 
 **Conclusão**: É possível utilizar uma linguagem de marcação leve (Markdown) para escrita de TCCs nacionais em conformidade com as Normas da ABNT. E sua utilização pode ser incentiva pois há indícios de que seja mais simples e fácil do que Latex, e expressivamente equivalente ele.
 
