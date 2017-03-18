@@ -1,0 +1,17 @@
+# ---
+# Informações de dados para CAPA e FOLHA DE ROSTO
+# ---
+titulo: xModelo Canônico de\\ Trabalho Acadêmico com abnt-asciidoc
+autor: Eduardo Santana
+local: xBrasil
+# \data{2015, v<VERSION>}
+orientador: xLauro César Araujo
+coorientador: xEquipe abnTeX
+instituicao: xUniversidade do Brasil -- UBr
+curso: xArquitetura da Informação
+programa: xPrograma de Pós-Graduação
+# tipo_trabalho pode ser: Tese (Doutorado), Dissertação (Mestrado) ou Monografia (Graduação ou Especialização)
+tipo_trabalho: xDissertação
+# O preambulo deve conter o tipo do trabalho, o objetivo, o nome da instituição e a área de concentração
+preambulo: xModelo canônico de trabalho monográfico acadêmico em conformidade com as normas ABNT apresentado à comunidade de usuários \LaTeX.
+

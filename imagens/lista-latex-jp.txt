@@ -1,0 +1,13 @@
+\ベギン{数}
+\定義する\ラベル文字(\アルファ{文字})}
+\タイトリスト
+\項目 o texto que \強調{antecede} as alíneas terninam em dois pontos;
+\項目 as alíneas são iniciadas por letras, seguido do carácter ``)'';
+\項目 o texto da alínea\脚注マーク deve iniciar com letra minúsculo
+e terminar com ponto e vírgula, menos a última alínea que deve terminar
+com ponto.
+\終わり{数}
+
+\脚注テキスト{Subalíneas possuem regras de apresentação diferente.}
+
+

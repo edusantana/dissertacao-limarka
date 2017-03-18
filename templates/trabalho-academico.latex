@@ -297,7 +297,9 @@ $endif$}%% fim do preambulo
 %
 \hyphenation{ Asciidoc }
 
-\usepackage{amsfonts}
+\usepackage{amsfonts} % para inclusão do simbolo checkmark
+
+\usepackage{lineno}
 
 % ----
 % Início do documento
@@ -338,6 +340,8 @@ $endfor$
 \textual
 \pagestyle{simple}
 \aliaspagestyle{chapter}{simple}
+
+\linenumbers
 
 $body$
 

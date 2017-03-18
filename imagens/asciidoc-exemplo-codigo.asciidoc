@@ -1,0 +1,20 @@
+
+=== Escopo de Variáveis 
+
+Quando trabalhamos com programas compostos por várias funções, nos deparamos com questões relativas à _visibilidade_ das variáveis em diferentes partes do programa. Ou seja, se uma variável é visível ou acessível em certas partes de um programa. 
+
+Um programador iniciante poderia escrever o seguinte programa para calcular a média aritmética de três notas:
+
+:srcfile: media_erro.c
+.Código fonte
+{gitrepo}/blob/{edition}/livro/capitulos/code/{cap}/{srcfile}[code/{cap}/{srcfile}]
+
+[source, c, numbered]
+.Cálculo da média usando código incorreto
+----
+include::code/{cap}/{srcfile}[]
+----
+<1> Esta linha contém erros e o programa não será compilado. 
+
+
+

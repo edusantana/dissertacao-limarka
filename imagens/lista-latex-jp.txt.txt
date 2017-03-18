@@ -1,0 +1,14 @@
+\begin{enumerate}
+
+\def\labelenumi(\alph{enumi})}
+\tightlist
+\item o texto que \emph{antecede} as alíneas terninam em dois pontos;
+\item as alíneas são iniciadas por letras, seguido do carácter ``)'';
+\item o texto da alínea\footnotemark deve iniciar com letra minúsculo
+e terminar com ponto e vírgula, menos a última alínea que deve terminar
+com ponto.
+
+\end{enumerate}
+
+\footnotetext{Subalíneas possuem regras de apresentaçãa diferente.}
+

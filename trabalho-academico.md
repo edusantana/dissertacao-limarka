@@ -4,7 +4,7 @@ Durante o período de formação superior no Brasil muitos estudantes necessitam
 
 De modo geral, o público nacional dispõe de duas alternativas para elaboração dos TCCs: utilização de um editor de texto rico (como o Microsoft Word ou Libre Office) ou utilização do Latex. 
 
-A primeira alternativa demanda do usuário conhecimentos de uso avançados do editor para produzir e formatar um documeto de acordo com as normas da ABNT, até mesmo quando utiliza-se um modelo previamente disponibilizado. 
+A primeira alternativa demanda do usuário conhecimentos de uso avançados do editor para produzir e formatar um documento de acordo com as normas da ABNT, até mesmo quando utiliza-se um modelo previamente disponibilizado. 
 
 A elaboração de um trabalho de conclusão de curso em conformidade com as Normas da ABNT em um editor de texto rico (como o Word) requer conhecimentos técnicos de formatação. A \autoref{fig:problemas:formatacao} apresenta trechos de TCCs reais empregando soluções de formatações onerosas e passíveis de erros. Alguns estudantes sem esses conhecimentos técnicos e desconhecendo as Normas são compelidos a contratarem serviços para adequarem seu trabalho às Normas da ABNT.
 
@@ -19,7 +19,7 @@ A elaboração de um trabalho de conclusão de curso em conformidade com as Norm
 \legend{Fonte: Autor.}
 \end{figure}
 
-Embora o Latex possua uma *curva de aprendizado inicial*, editores on-line como o Overleaf \cite{overleaf} ou ShareLatex \cite{sharelatex} oferecem ambientes com interfaces gráficas que possibilitam uma experiência que se assemelham aos editores de texto rico, diminuindo a curva e facilitando a escrita. Esta alternativa em conjunto com a utilização de modelos pré-configurados possibilita seus usuários abstraírem algumas regras de formatação (codificadas nos modelos), por essa razão *o Latex é conhecido por permitir que seus usuários se concentrarem na elaboração do conteúdo do texto*, abstraindo a formatação. 
+Embora o Latex possua uma *curva de aprendizado inicial*, editores *on-line* como o Overleaf \cite{overleaf} ou ShareLatex \cite{sharelatex} oferecem ambientes com interfaces gráficas que possibilitam uma experiência que se assemelham aos editores de texto rico, diminuindo a curva e facilitando a escrita. Esta alternativa em conjunto com a utilização de modelos pré-configurados possibilita seus usuários abstraírem algumas regras de formatação (codificadas nos modelos), por essa razão *o Latex é conhecido por permitir seus usuários se concentrarem na elaboração do conteúdo do texto*, abstraindo a formatação. 
 
 *A utilização de Latex tem um custo: a coexistência de códigos Latex no arquivo fonte do texto, diminuindo a legibilidade do arquivo fonte do texto*. A baixa legibilidade do texto Latex pode ser percebida na \Cref{lista:latex}, com as nomenclaturas dos códigos originadas do inglês, o usuário do Latex deve habituar-se a conviver com esses códigos em seu texto. Como seria uma alternativa sem esse custo?
 
@@ -28,9 +28,9 @@ Embora o Latex possua uma *curva de aprendizado inicial*, editores on-line como 
 \begin{figure}[htbp]
 	\caption{Equivalência entre Latex e uma linguagem de marcação leve\label{fig:latex-vs-markdown}}
 	\centering
-    \subfloat[Fonte do texto escrito em Latex, repleto de códigos e com baixa legibilidade.]{\label{lista:latex}{\includegraphics[width=12cm]{imagens/lista-latex.png} }}%
+    \subfloat[Fonte de texto escrito em Latex, repleto de códigos e com baixa legibilidade.]{\label{lista:latex}{\includegraphics[width=12cm]{imagens/lista-latex.png} }}%
 	\newline
-    \subfloat[Fonte do texto escrito em uma linguagem de marcação, mais limpo e maior legibilidade.]{\label{lista:markdown}{\includegraphics[width=13cm]{imagens/lista-markdown.png} }}%
+    \subfloat[Fonte de texto escrito em uma linguagem de marcação, mais limpo e maior legibilidade.]{\label{lista:markdown}{\includegraphics[width=13cm]{imagens/lista-markdown.png} }}%
 \legend{Fonte: Autor.}
 \end{figure}
 
@@ -53,7 +53,7 @@ Nessa seção são apresentados o objetivo geral e os específicos da pesquisa.
 
 ### Objetivo Geral
 
-O objetivo geral desse trabalho é *avaliar* o uso de uma linguagem de marcação leve para escritas de TCCs em conformidade com as Normas da ABNT.
+O objetivo geral desse trabalho é *avaliar* o uso de uma linguagem de marcação leve para escrita de TCCs em conformidade com as Normas da ABNT.
 
 ### Objetivos Específicos
 
@@ -785,7 +785,7 @@ De forma geral, um sistema para escrita de TCCs nacionais utilizando uma linguag
 - Criação de Sumário automático
 - Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais.
 - Configuração de estilos de capítulos, seções e texto
-- Inclusão de Ilustrações e Tabelas com título, fonte e possibilidade de referenciação no texto.
+- Inclusão de Ilustrações, Quadros e Tabelas com título, fonte e possibilidade de referenciação no texto.
 - Elaboração da seção de Referências (com formatação diferenciada)
 - Elaboração de apêndices e anexos
 - Escrita dos principais elementos do trabalho através de uma linguagem de marcação leve
@@ -855,7 +855,7 @@ a. Utilização do DocBook como intermediário
 
 a. Complexo para customização do PDF
 
-	As configurações para gerar um PDF personalizado consistia em criar transformações XSTL (*eXtensible Stylesheet Language for Transformation*) para transformar o código XML para Latex. Este processo é bastante complexo.
+	As configurações para gerar um PDF personalizado consistia em criar transformações XSLT (*eXtensible Stylesheet Language for Transformation*) para transformar o código XML para Latex. Este processo é bastante complexo.
 
 a. Não é possível utilizar o formato DocBook como intermediário
 	
@@ -893,7 +893,7 @@ A ferramenta asciidoctor-latex \cite{asciidoctor-latex}, criada em 2016 (ainda e
 
 Uma solução foi implementada \cite{abnt_asciidoc} utilizando uma *engine de templates* que criava documentos baseados nos modelos do abnTeX2. Os textos em Asciidoc eram convertidos para Latex e incluídos na geração do documento. 
 
-A solução utiliza uma arquitetura similar a servidores de integração contínua. O usuário criava um repositório no Github com o conteúdo de um modelo de TCC em Asciidoc \cite{trabalho-academico-abnt-asciidoc}. Diversas configurações eram realizadas através da edição de arquivos no formato YAML. Em seguida o usuário configurava um *Webhook* (um serviço) em seu repositório para enviar notificações de alterações (*commits*) para um servidor. A implementação do servidor \cite{abnt-asciidoc-webhook} ao receber a notificação de alteração baixava apenas as novas atualizações e iniciava a geração do código Latex através da ferramenta abnt_asciidoc desenvolvida e iniciava a compilação do PDF. O PDF compilado (junto com o log de compilação e demais arquivos temporários) eram disponibilizados através de uma interface WEB. O sistema foi instalado em uma máquina virtual no Google e testado através de transcrições de monografias reais.
+A solução utiliza uma arquitetura similar a servidores de integração contínua. O usuário criava um repositório no Github com o conteúdo de um modelo de TCC em Asciidoc \cite{trabalho-academico-abnt-asciidoc}. Diversas configurações eram realizadas através da edição de arquivos no formato YAML. Em seguida o usuário configurava um *Webhook* (um serviço) em seu repositório para enviar notificações de alterações (*commits*) para um servidor. A implementação do servidor \cite{abnt-asciidoc-webhook} ao receber a notificação de alteração baixava apenas as novas atualizações e iniciava a geração do código Latex através da ferramenta `abnt_asciidoc` desenvolvida e iniciava a compilação do PDF. O PDF compilado (junto com o log de compilação e demais arquivos temporários) eram disponibilizados através de uma interface WEB. O sistema foi instalado em uma máquina virtual no Google e testado através de transcrições de monografias reais.
 
 Do ponto de vista dos usuários, eles editavam e criavam arquivos através da interface Web do Github, que possui um editor com destaque da sintaxe Asciidoc. Ao salvar as alterações o usuário precisava acessar a página do servidor Web que apresentaria o PDF gerado ou os logs de erro. Esta solução permitia qualquer estudante gerar um documento PDF remotamente sem instalar aplicativos localmente.
 
@@ -901,7 +901,7 @@ Segue a avaliação da utilização da linguagem Asciidoc para produção de TCC
 
 a. Requer conhecimentos da sintaxe de YAML e Latex
 	
-	A utilização de caractéres com significado especial na sintaxe de YAML ou no Latex ("&") causavam erros de *parse* no arquivo de configuração ou comportamento inesperado na compilação do PDF.
+	A utilização de carácteres com significado especial na sintaxe de YAML ou no Latex ("&") causavam erros de *parse* no arquivo de configuração ou comportamento inesperado na compilação do PDF.
 
 a. Exige validação do arquivo fonte com base na sintaxe de Asciidoc
 
@@ -1255,7 +1255,7 @@ Objetivando captar quaisquer sentimentos negativos foi perguntado no início na 
 	
 - Achou interessante, gosta de aprender. Mesmo não compreendendo o que estava sendo pedido pelo experimento, realizou [aluno cursando o segundo período, não fez tudo que foi solicitado]. Nunca viu nada parecido. "Como já utilizava linhas de comando fluiu naturalmente". 
 	
-- Sentiu dificuldades, pois não é algo que está habituado a fazer. Só costuma utilizar o Word e Excel, copiando e colando. E a utilização do limarka foi uma coisa nova porque precisava deixar aberto três Janelas. [Utiliza o Bloco de notas do Windows apenas para limpar formatação antes de colar no Word. Nunca havia editado um arquivo somente texto antes.]
+- Sentiu dificuldades, pois não é algo que está habituado a fazer. Só costuma utilizar o Word e Excel, copiando e colando. E a utilização do Limarka foi uma coisa nova porque precisava deixar aberto três Janelas. [Utiliza o Bloco de notas do Windows apenas para limpar formatação antes de colar no Word. Nunca havia editado um arquivo somente texto antes.]
 	
 - Sentiu-se pressionado devido aos colegas que estavam observando-o durante o experimento. "Acho útil, mas com muitas etapas" [demonstrou preferir um *plugin* no Word para formatar o documento automaticamente].
 	
@@ -1300,7 +1300,7 @@ Existem duas formas de executar o Limarka, através de linha de comando (`limark
 
 Os comentários sobre a execução do Limarka estão na \autoref{tab:execucao}.
 
-: Depoimentos sobre execução do limarka\label{tab:execucao}
+: Depoimentos sobre execução do Limarka\label{tab:execucao}
 
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1333,7 +1333,7 @@ Os depoimentos dos voluntários sobre elaboração desses conteúdos encontram-s
 |4|"Tranquilo, bastava preencher o formulário".
 |5|"Zero problema, muito simples, muito explicativo".
 |6|"Manualmente não saberia fazer sozinho e teria que pesquisar. Rápido, questão de segundos".
-|7|"Foi simples. Com o uso de alguns códigos que a ferramenta já disponibiliza. É gerado o PDF já com essas informações. No Word teria que colocar tudo, na ferramenta já está estruturado, amarrado. [Na monografia, formatou tudo desde o começo]. No limarka se demonstrou bem mais prático, e bem amarrado nas normas da ABNT. Não tem o problema de esquecer algum tópico [elemento]".
+|7|"Foi simples. Com o uso de alguns códigos que a ferramenta já disponibiliza. É gerado o PDF já com essas informações. No Word teria que colocar tudo, na ferramenta já está estruturado, amarrado. [Na monografia, formatou tudo desde o começo]. No Limarka se demonstrou bem mais prático, e bem amarrado nas normas da ABNT. Não tem o problema de esquecer algum tópico [elemento]".
 |8|"Fácil e intuitivo".
 |9|"Foi bem fácil. Não precisava escrever muita coisa, mal precisou digitar. Fácil e intuitivo. [Comparando com o Latex] aqui foi mais rápido. Lá precisava modificar pouca coisa, mas precisava procurar o que precisava configurar. E tinha algumas paradas obscuras em Latex, e aqui eu não precisava me preocupar com isso".
 |10|"Foi simples, foi só trocar os dados".
@@ -1552,7 +1552,7 @@ A \autoref{tab:requisitos} apresenta o cumprimento dos requisitos para elaboraç
 | Criação de Sumário automático | Funcional | \checkmark |
 | Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais | Funcional | \checkmark |.
 | Configuração de estilos de capítulos, seções e texto | Funcional | \checkmark |
-| Inclusão de Ilustrações e Tabelas com título, fonte e possibilidade de referenciação no texto. | Funcional | \checkmark |
+| Inclusão de Ilustrações, Quadros e Tabelas com título, fonte e possibilidade de referenciação no texto. | Funcional | \checkmark |
 | Elaboração da seção de Referências (com formatação diferenciada) | Funcional | \checkmark|
 | Elaboração de apêndices e anexos | Funcional | \checkmark |
 | Escrita dos principais elementos do trabalho através de uma linguagem de marcação leve | Funcional | \checkmark |
@@ -1614,7 +1614,7 @@ a. Geração de Resumos
 	
 	Em \cite{hermida} é apresentado o problema vivenciado, pelo curso de Pedagogia na distância da UFPB em 2012, para orientar os alunos de educação a distância na elaboração dos resumos. Esta solução permitia que os alunos marcasse no texto os trechos que irão compor o resumo, tais como "objetivo", "metodologia", "resultado" etc.
 	
-	
+<!-- Notas. Adição de notas explicativas para figuras e tabelas. Quadros. Distinção entre Quadros e Tabelas -->
 
 ### A escolha da linguagem Markdown
 
