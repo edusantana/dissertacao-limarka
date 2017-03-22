@@ -1,0 +1,15 @@
+
+---
+title:  'Título do trabalho aqui'
+author:
+- name: Nome do autor
+  affiliation: Universidade Federal da Paraíba
+abstract: |
+  Texto do abstract.
+
+  Exemplo de abstract com dois parágrafos.
+toc: true
+...
+
+
+

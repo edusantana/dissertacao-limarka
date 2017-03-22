@@ -47,7 +47,7 @@ header-includes:
 A coexistência de códigos Latex no arquivo fonte do texto diminui a legibilidade do texto.
 
 ### Legibilidade: Latex vs Markdown
-
+g
 ![Texto? em Latex](imagens/lista-latex.png){width=70%}
 
 ![Texto em Markdown](imagens/lista-markdown.png){width=70%}
@@ -482,7 +482,7 @@ Probabilidade e Estatística.
 - Requer conhecimentos da sintaxe de YAML e Latex;
 - Exige validação do arquivo fonte com base na sintaxe de Asciidoc;
 - Exige familiaridade para escrita de termos básico em inglês;
-- Inexiste na linguagem sintaxe para inserir fontes em figuras e tabelas;
+- Inexiste na sintaxe da linguagem para inserir fontes em figuras e tabelas;
 - **Submissão de imagens requer saber utilizar o git**;
 - `asciidoctor-latex` em estágio *alfa*;
 
@@ -496,6 +496,31 @@ Probabilidade e Estatística.
 | **Asciidoc (asciidoctor-latex)**       | **Abortada**|
 
 ### Avaliação de Markdown (Pandoc)
+
+#### Pandoc - Conversor universal
+
+**Formatos suportados**: native Haskell,  JSON version of native AST, plain text, pandoc’s extended Markdown, original unextended Markdown,  PHP Markdown Extra, GitHub-Flavored Markdown, MultiMarkdown,  CommonMark Markdown,  reStructuredText,  XHTML,  HTML5,  LaTeX, LaTeX beamer slide show,  ConTeXt,  groff man,  MediaWiki markup, DokuWiki markup,  ZimWiki markup,  Textile, Emacs Org mode,  GNU Texinfo,  OPML,  DocBook 4,  DocBook 5,  OpenDocument,  OpenOffice text document,  Word docx,  Haddock markup,  rich text format,  EPUB v2 book,  EPUB v3,  FictionBook2 e-book,  AsciiDoc, InDesign ICML,  TEI Simple,  Slidy HTML and JavaScript slide show, Slideous HTML and JavaScript slide show,  DZSlides HTML5 + JavaScript slide show, reveal.js HTML5 + JavaScript slide show,  S5 HTML and JavaScript slide show.
+
+### Configuração em YAML
+
+![Exemplo de configuração em YAML](imagens/markdown-pandoc-yaml-bloco.png)
+
+### Template Latex Padrão
+
+![Template padrão Latex do Pandoc](imagens/markdown-pandoc-default-latex-template.png)
+
+
+### Resumo da avaliação
+
+a. Configuração requer conhecimentos de Estruturas de Dados, sintaxe YAML e Latex 
+
+a. Usuário teria dificuldade em obter suporte do código Latex gerado
+
+a. Os pré-textuais precisariam ser criados em Latex pelo usuário
+
+a. A sintaxe de citação da linguagem suporta um único estilo de chamada de citações
+
+a. Inexiste suporte na sintaxe da linguagem para especificação de fonte de ilustrações e tabelas
 
 # Conclusão
 
