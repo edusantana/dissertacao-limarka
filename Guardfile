@@ -1,6 +1,6 @@
 # More info at https://github.com/guard/guard#readme
 
-guard :shell do
+guard :shell, :stop_signal => "KILL" do
 
   watch(/^(anexos.md|apendices.md|errata.md|trabalho-academico.md|.*\.latex|configuracao.pdf|configuracao.yaml)$/) do |m| 
     

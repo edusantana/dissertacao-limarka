@@ -501,7 +501,7 @@ Probabilidade e Estatística.
 
 **Formatos suportados**: native Haskell,  JSON version of native AST, plain text, pandoc’s extended Markdown, original unextended Markdown,  PHP Markdown Extra, GitHub-Flavored Markdown, MultiMarkdown,  CommonMark Markdown,  reStructuredText,  XHTML,  HTML5,  LaTeX, LaTeX beamer slide show,  ConTeXt,  groff man,  MediaWiki markup, DokuWiki markup,  ZimWiki markup,  Textile, Emacs Org mode,  GNU Texinfo,  OPML,  DocBook 4,  DocBook 5,  OpenDocument,  OpenOffice text document,  Word docx,  Haddock markup,  rich text format,  EPUB v2 book,  EPUB v3,  FictionBook2 e-book,  AsciiDoc, InDesign ICML,  TEI Simple,  Slidy HTML and JavaScript slide show, Slideous HTML and JavaScript slide show,  DZSlides HTML5 + JavaScript slide show, reveal.js HTML5 + JavaScript slide show,  S5 HTML and JavaScript slide show.
 
-### Configuração em YAML
+### Configuração em YAML (substituída por formulário)
 
 ![Exemplo de configuração em YAML](imagens/markdown-pandoc-yaml-bloco.png)
 
@@ -510,7 +510,7 @@ Probabilidade e Estatística.
 ![Template padrão Latex do Pandoc](imagens/markdown-pandoc-default-latex-template.png)
 
 
-### Resumo da avaliação
+### Resumo da Avaliação de Markdown (Pandoc)
 
 a. Configuração requer conhecimentos de Estruturas de Dados, sintaxe YAML e Latex 
 
@@ -522,5 +522,217 @@ a. A sintaxe de citação da linguagem suporta um único estilo de chamada de ci
 
 a. Inexiste suporte na sintaxe da linguagem para especificação de fonte de ilustrações e tabelas
 
-# Conclusão
+### Solução abortada
 
+| Solução                            |  Status |
+|:-----------------------------------|:--------:|
+| Asciidoc (original)                | Abortada |
+| Asciidoc (DocBook com XSL-FO)      | Abortada |
+| Asciidoc (asciidoctor-pdf)         | Abortada |
+| Asciidoc (asciidoctor-latex)       | Abortada|
+| **Markdown (pandoc)**              | **Abortada**|
+
+
+### Avaliação de Markdown (pandoc, *template* abnTeX2 e formulário)
+
+a. Utilização de um *template* customizado baseado no abnTeX2
+
+a. Utilização de formulário em vez de arquivo YAML
+
+a. As figuras, tabelas e quadros precisariam ser inseridas através de código Latex\pause
+
+#### Atualmente
+
+- Markdown foi estendido.
+- Não é mais necessário utilizar a sintaxe de Latex para **inclusão** de Figuras, Tabelas e Quadros.
+
+### Solução escolhida para implementação
+
+| Solução                            |  Status |
+|:-----------------------------------|:--------:|
+| Asciidoc (original)                | Abortada |
+| Asciidoc (DocBook com XSL-FO)      | Abortada |
+| Asciidoc (asciidoctor-pdf)         | Abortada |
+| Asciidoc (asciidoctor-latex)       | Abortada|
+| Markdown (pandoc)                  | Abortada|
+| **Markdown (pandoc, abntex2, formulário)** | **Escolhida**|
+
+
+## Implementação do software Limarka
+
+### Arquitetura do software
+
+![Arquitetura do Limarka](imagens/arquitetura.png){#fig:arquitetura width=70%}
+
+### Suporte do Limarka: Wiki e Chat
+
+![Chat: permite comunicação com Markdown](imagens/forum-suporte-limarka.png){#chat width=85%}
+
+### Implementação de configurações através de formulário
+
+a. Adoção do formato PDF para o formulário;
+
+a. Os campos de preenchimento no formulário utilizam a mesma sintaxe do texto;
+
+a. Oferta de alternativas de configuração;
+
+a. Escolhas das configurações são apresentadas seguindo a ordem natural de utilização.
+
+### Template customizado
+
+- Baseado no *template* de trabalho acadêmico do abnTeX2;\pause
+
+#### Escopo do abnTeX3
+
+- Aposentadoria do abntex2cite;
+- Customização dos modelos do abntex2 para uso do [biblatex-abnt](https://github.com/abntex/biblatex-abnt);
+- Verificação de compatibilidade dos modelos de documentos, referências bibliográficas e citação com as normas vigentes da ABNT;
+- Produção de novos manuais.
+
+### Testes automatizados
+
+![Trecho do relatório dos testes automatizados](imagens/testes-automatizados-no-travis.png){#teste-bdd width=75%}
+
+## Avaliação do uso da linguagem para a escrita de TCCs
+
+
+### Plano do experimento ###
+
+#### Solicitava aos voluntários a elaboração de uma proposta de monografia/dissertação fictícia
+
+Experimentando recursos mínimos da ferramenta:
+
+- Capa, Folha de rosto e Resumo
+- Citações direta e indireta
+- Figura e Tabela
+- Cronograma
+- Referências
+- Apêndices ou Anexos (opcionais).
+
+### Perfis dos usuários ###
+
+|Vol.|Formação acadêmica          |Exp. c/ Latex| Exp. c/ Markdown|
+|:-:|:--------------------:|:------------------:|:----------------:|
+|1  |C. da Computação         |ShareLatex          | Readme/Github|
+|2  |Eng. da Computação      |Viu prof. utilizando|-|
+|3  |Eng. elétrico (ms)|Utiliza para tudo  |-|
+|4  |Eng. da Computação      |3 vezes *on-line*   |-|
+|5  |Eng. da Computação|Mictex no Windows|-|
+|6  |C. da Computação|Viu prof. utilizando|-|
+|7  |Eng. Florestal (ms)|-|-|
+|8  |Eng. de Produção|-|-|
+|9  |Eng. da Computação|Overleaf|Readme/Github|
+|10 |Eng. Ambiental|-|-|
+
+### Instalação e ambiente de utilização
+
+#### Instalação
+
+- O processo de instalação da ferramenta foi considerado fácil por usuários com afinidade com informática, que estão habituados a instalar programas e dependências.
+
+#### Ambiente de utilização
+
+- Gedit, Sublime, Emacs, Vim ou Notepad++ -- "estava no paraíso".
+
+- Problema: Leitores de PDF que realizam *lock* no arquivo.
+
+- Dificuldades no Windows (arquivo Zip).
+
+
+### Configuração (Utilização do formulário) ###
+
+> "Foi bem fácil, já estava tudo bem explicado. Errar não tinha como. É aqui que você faz isso, e já tinha um exemplo preenchido."
+
+#### Configurações avançadas
+
+- Realizadas manualmente no *template* Latex.
+- Nessa dissertação: evitar hifenização; numeração de linhas.
+
+### Execução ###
+
+> "Simples com o menu e linha direta"
+>
+> "Na primeira vez demorou bastante"
+>
+> "De início pareceu um pouco complicado, mas vai se acostumando com a novidade e vai se tornando prático. (...) não é uma coisa que fazemos no dia a dia."
+
+#### Melhoria
+
+- Geração automática do PDF quando o arquivo é salvo.
+
+### Capa, Folha de Rosto e Resumo ###
+
+> "Zero problema, muito simples, muito explicativo."
+>
+>"No Word teria que colocar tudo, na ferramenta já está estruturado, amarrado."
+>
+> "[Comparando com o Latex] aqui foi mais rápido. Lá precisava modificar pouca coisa, mas precisava procurar o que precisava configurar. E tinha algumas paradas obscuras em Latex, e aqui eu não precisava me preocupar com isso".
+
+### Citações ###
+
+- Idêntico ao Latex, mas com pré-processamento das referências.
+
+> Teve dificuldade porque não sabia o que era e como fazer.
+>
+> "Foi mediano. Não foi muito fácil, nem difícil"
+>
+> "A parte mais complicada era em Latex para fazer as referências. Mas já tem pronto [referindo-se aos exemplos disponibilizados no Wiki], mas na hora de usar era bem fácil".
+
+### Tabelas ###
+
+> Não tinha entendido a marcação inicialmente.
+>
+> Colou uma tabela já utilizada proveniente de outro lugar, faltando fonte.
+>
+> "Foi um pouco mais trabalhoso que a figura, porque precisa saber de acordo com o código qual o número de colunas que vai utilizar e de seções". [Habitualmente faz as tabelas no Excel e cola no Word].
+
+- Curva de aprendizado maior (código Latex).
+
+### Utilização de Markdown para elaboração de TCCs ###
+
+> "Quem não tem contato com programação se assustaria um pouco". Intuitivo e legal.
+>
+> "Tive dificuldades na escrita do conteúdo"
+>
+> "É muito bom de utilizar porque se preocupa [mais] com o conteúdo"
+>
+> "Não tem o trabalho de formatar no Word e não precisaria dos códigos Latex que são gigantes"
+>
+> "Bem mais simples que Latex"
+
+### Qual software pretende utilizar para escrita do seu TCC?
+
+- Se a coordenação do curso aceitasse o modelo produzido pelo Limarka, preferia utilizar ele do que o ShareLatex, mesmo tendo que instalar e utilizar as ferramentas localmente.
+- Pretende utilizar o Limarka.
+- Tem dúvidas se utilizaria o Limarka, para evitar o problema em ter que configurar o Latex novamente [utilizou o editor Overleaf *on-line* na qualificação]
+- Passaria a utilizar o Limarka. Fica mais fácil de utilizar e não precisa lidar com as regras do Latex.
+- Pretende utilizar o Limarka.
+- Planeja convencer colega para utilizar o Limarka e obter o *feedback* dele.
+- Utilizaria o Word.
+- Utilizaria o Word, pois tem mais contato no cotidiano.
+- Limarka.
+- Limarka. Mesmo habituado a fazer no Word, mas esse aqui é mais direto, faz toda a estrutura para mim. No Word eu teria que fazer tudo, passo a passo, todas as coisas.
+
+
+### Resumo da Experiência de utilização do Limarka ###
+
+- Complicado mas prático.
+- É complicado no início, mas vale a pena.
+- Experiencia inovadora, mas não muito usual. 
+- O Limarka para mim tornou-se uma experiência inovadora para escrita de TCC.
+- Com a ferramenta Limarka, você consome mais tempo se preocupando com o conteúdo do seu trabalho do que com a formatação.
+- O que era difícil ficou fácil.
+- É simples de utilizar.
+- Simples, compacta e cômoda.
+- Rápido e intuitivo.
+- Agilidade e bem estar no uso da ferramenta.
+
+### Melhorias futuras
+
+- Geração de resumos
+- Substituir a *engine de templates* do Pandoc
+- Utilização de formulário HTML
+- Editor de referências *WEB* embutido
+- Gestor de siglas
+
+# Conclusão

@@ -974,21 +974,21 @@ Esta solução foi abortada.
 
 Esta solução seria uma evolução da anterior (que utilizava o *template* padrão do Pandoc) e tem as seguintes características:
 
+a. Utilização de um *template* customizado baseado no abnTeX2
+
+    A elaboração de um *template* customizado possibilita esconder do usuário os códigos Latex necessários para geração dos pré-textuais. A apresentação dos pré-textuais seriam configuradas através do formulário.
+
 a. Utilização de formulário em vez de arquivo YAML
 
     A complexidade de configuração do YAML seria substituída por um formulário. A partir dos dados preenchidos um arquivo YAML intermediário seria gerado com sintaxe apropriada para utilização com o Pandoc.
 	
 	Através do formulário seria possível escolher as principais configurações utilizadas pelas instituições nacionais.
 
-a. Utilização de um *template* customizado baseado no abnTeX2
-
-    A elaboração de um template customizado possibilita esconder do usuário os códigos Latex necessários para geração dos pré-textuais. A apresentação dos pré-textuais seriam configuradas através do formulário.
-
 a. O processamento do formulário requer um software extra
 
     Um software precisaria ser desenvolvido para processar o formulário e gerar o PDF.
 
-a. As figuras e tabelas precisariam ser inseridas através de código Latex
+a. As figuras, tabelas e quadros precisariam ser inseridas através de código Latex
 
     Como a linguagem Markdown (do Pandoc) não tem sintaxe para inserir fontes de figuras e tabelas, estes recursos precisariam ser escritos em Latex pelo usuário.
 	
@@ -1037,7 +1037,7 @@ O Limarka contém um conversor que exige uma estrutura de arquivos fixa, para po
 
 O Limarka foi inserido como um projeto de *software* livre dentro da comunidade do abnTeX, responsável pela produção e manutenção de modelos de documentos baseados nas Normas da ABNT. O usuário pode ter confiança de que ao serem lançadas novas versões das Normas, esta comunidade irá coordenar as atualizações dos modelos Latex utilizados nacionalmente, incluindo os do Limarka.
 
-Para que os usuários aprenderem a utilizar o *software*, foi necessário criar o suporte da ferramenta contendo:
+Para os usuários aprenderem a utilizar o *software*, foi necessário criar o suporte da ferramenta contendo:
 
 - Documentação no formato Wiki explicando como utilizar o Limarka (<https://github.com/abntex/limarka/wiki>);
 - *Chat* para suporte -- possibilita utilizar sintaxe de Markdown para comunicação entre os usuários (ver \autoref{chat} <https://gitter.im/abntex/limarka>).
@@ -1090,7 +1090,7 @@ a. Os campos de preenchimento no formulário utilizam a mesma sintaxe do texto
 
     Isto permite que o usuário insira palavras estrangeiras com itálico no resumo, utilizando a mesma sintaxe do texto. Sem o formulário o usuário precisaria saber o código Latex para itálico e utilizar os *escapes* apropriados para codificá-lo no arquivo YAML.
 
-a. Escolhas da configuração são apresentadas seguindo a ordem natural de utilização
+a. Escolhas das configurações são apresentadas seguindo a ordem natural de utilização
 
     O formulário exibe as escolhas de configurações baseados na ordem esperada de utilização. Por exemplo, o tipo de trabalho (monografia, dissertação ou tese) e as configurações da capa são apresentados inicialmente, enquanto as opções para incluir folha de aprovação e errata são apresentados no final do documento.
 
@@ -1098,7 +1098,7 @@ A oferta de alternativas através de um formulário possibilita o usuário imple
 
 ### Template customizado baseado no abnTeX2
 
-O *template* foi construído baseado no modelo de trabalho de conclusão de curso mantido pela equipe do abnTeX2.
+O *template* foi construído baseado no modelo de trabalho de conclusão de curso mantido pela equipe do abnTeX, para:
 
 
 a. Permitir múltiplas configurações
@@ -1191,7 +1191,7 @@ Quadro perfil: Perfil dos voluntários do experimento
 |1  |Ciência da Computação         |ShareLatex          | Readme/Github|
 |2  |Engenharia da Computação      |Viu prof. utilizando|-|
 |3  |Engenheiro elétrico (mestrando)|Utiliza para tudo  |-|
-|4  |Engenharia da computação      |3 vezes *on-line*   |-|
+|4  |Engenharia da Computação      |3 vezes *on-line*   |-|
 |5  |Engenharia da Computação|Mictex no Windows|-|
 |6  |Ciência da Computação|Viu prof. utilizando|-|
 |7  |Engenheiro Florestal (mestrando)|-|-|
@@ -1360,7 +1360,7 @@ Quadro q:citacoes: Depoimentos sobre as realizações de citações
 |6| Fez citação direta com mais de três linhas corretamente. [Solicitou ajuda de colega para configurar o arquivo de referências].
 |7| "A primeira citação foi um pouco complicada. Mas seguindo o manual do Limarka, a gente consegue facilitar a introdução dessas citações. [...] Foi um pouco diferente, pra gente que já trabalha no Word. Mas ao final, fica algo bem bacana, porque ao citar no texto, com um clique a gente vai nas referências e localiza a referência e vice e versa, nas referências clicamos e volta para a citação no texto através do número da página. Deixando mais fácil a localização e o não esquecimento de uma dessas citações quando citadas nos textos e nas referências, que é o que ocorre muito em monografias e dissertações.
 |8| "Foi mediano. Não foi muito fácil, nem difícil".
-|9| "Foi bem fácil, a parte mais complicada era [seria] em Latex para fazer as referências. Mas já tem pronto [referindo-se aos exemplos disponibilizados no Wiki], mas na hora de usar era bem fácil".
+|9| "Foi bem fácil, a parte mais complicada era em Latex para fazer as referências. Mas já tem pronto [referindo-se aos exemplos disponibilizados no Wiki], mas na hora de usar era bem fácil".
 |10| "Foi um pouquinho difícil, mas consegui fazer depois" [Só fez citações uma vez na disciplina e acha que fez incorreto. Não chegou a ler a documentação para realizar corretamente].
 
 Fonte: Autor.
@@ -1380,7 +1380,7 @@ Quadro q:figuras: Depoimentos sobre inclusão de figuras (com código Latex) no 
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
 |1| "São inseridas como Latex. Só precisou colocar na pasta específica" Como já tinha conhecimento, utilizou os comandos de um arquivo que já tinha salvo [Como ele percebeu que as imagens eram incluídas em Latex, preferiu utilizou um código de outro arquivo que possuía (e que já havia testado), mas não percebeu que o código copiado era incompatível com as Normas da ABNT, pois não especificava a fonte da imagem].
-|2| "Segue o mesmo modelo, pega [altera] a origem da figura e a legenda que ela vai ter. Seria interessante colocar em um outro arquivo, gosto da ideia de abstrair a codificação" [Ele considerou que quando estava inserindo o código Latex referente a imagem estava descaracterizando o arquivo como texto. Preferia uma solução em que o código referente aos detalhes da imagem estivessem separados, como foi no caso das referências, e depois apenas invocar a inclusão da imagem. Após o encerramento da entrevista, não disponível no áudio, ao ser apresentado à sintaxe original de Markdown para inclusão de imagens (ver \autoref{inclusao-imagens-e-tabelas}) não identificou como problemático em deixá-la no texto].
+|2| "Segue o mesmo modelo, pega [e altera] a origem da figura e a legenda que ela vai ter. Seria interessante colocar em um outro arquivo, gosto da ideia de abstrair a codificação" [Ele considerou que quando estava inserindo o código Latex referente a imagem estava descaracterizando o arquivo como texto. Preferia uma solução em que o código referente aos detalhes da imagem estivessem separados, como foi no caso das referências, e depois apenas invocar a inclusão da imagem. Após o encerramento da entrevista, não disponível no áudio, ao ser apresentado à sintaxe original de Markdown para inclusão de imagens (ver \autoref{inclusao-imagens-e-tabelas}) não identificou como problemático em deixá-la no texto].
 |3| Simples [também utilizou um código Latex que já havia utilizado, incompatível com as Normas da ABNT].
 |4| Adicionou figura através do menu interativo.
 |5| Teve problema ao copiar o código do Github. Adicionava a imagem mas teve problema na renderização do PDF. Depois funcionou.
@@ -1406,12 +1406,12 @@ Quadro q:tabelas: Depoimentos sobre utilização de tabelas Latex
 |2| Não tinha entendido a marcação inicialmente. Depois entendeu.
 |3| Colou uma tabela já utilizada proveniente de outro lugar, faltando fonte. [Sente-se confortável com tabelas em Latex, edita sem ajuda de interfaces].
 |4| Adicionou tabela através do menu interativo e editou manualmente. "Quando descobre a sintaxe fica fácil".
-|5| Adicinou tabela sem editá-la [mas editaria sem problemas].
+|5| Adicionou tabela sem editá-la [mas editaria sem problemas].
 |6| Não utilizou.
-|7| "Foi um pouco mais trabalhoso que a figura, porque precisa saber de acordo com o código qual o número de colunas que vai utilizar e de seções". [Habitualmente faz as tabelas no excel] bem prático de fazer, e para colocar no Word é só copiar e colar. E no Word faz a formatação da tabela.
+|7| "Foi um pouco mais trabalhoso que a figura, porque precisa saber de acordo com o código qual o número de colunas que vai utilizar e de seções". [Habitualmente faz as tabelas no Excel] bem prático de fazer, e para colocar no Word é só copiar e colar. E no Word faz a formatação da tabela.
 |8| Não utilizou.
 |9| "Precisava daquele comandozinho em Latex, mas já tinha um exemplo pronto, só ia ter as mesmas dificuldades para procurar no código aonde está" [Não ficou claro a qual dificuldade ou local referia-se]. Olhou aonde deveria modificar a tabela, mas não fez. Não teria dificuldade em editar a tabela.
-|10| "Foi só copiar e colar e depois modificar e acordo com necessitar". Conseguiria fazer novas tabelas.
+|10| "Foi só copiar e colar e depois modificar de acordo com o que necessitar". Conseguiria fazer novas tabelas.
 
 Fonte: Autor.
 
@@ -1460,20 +1460,20 @@ Quadro q:depoimentos: Depoimentos sobre a experiência de utilização de Markdo
 | | **Recomenda**: Para os alunos de engenharia [da computação].
 | | ***Software* que pretende utilizar no TCC:** Passaria a utilizar o Limarka. Fica mais fácil de utilizar e não precisa lidar com as regras do Latex.
 |5| **Resumo**: Simples, compacta e cômoda.
-| | ***Software* que pretende utilizar no TCC:** Pretente utilizar o Limarka.
+| | ***Software* que pretende utilizar no TCC:** Pretende utilizar o Limarka.
 |6| **Resumo**: O Limarka para mim tornou-se uma experiência inovadora para escrita de TCC.
 | | **Recomenda**: Recomendaria para os colegas da turma [Ciência da Computação].
-| | ***Software* que pretende utilizar no TCC:** Pretende aprender um pouco mais do markdown. "Agrada o nosso perfil que gosta de invocar comandos". [Planeja convencer colega para utilizar o Limarka e obter o *feedback* dele].
+| | ***Software* que pretende utilizar no TCC:** Pretende aprender um pouco mais do Markdown. "Agrada o nosso perfil que gosta de invocar comandos". [Planeja convencer colega para utilizar o Limarka e obter o *feedback* dele].
 |7| **Resumo**: Complicado mas prático. 
 | | ***Software* que pretende utilizar no TCC:** Utilizaria o Word.
 |8| **Resumo**: Experiencia inovadora, mas não muito usual. 
-| | **Recomenda**: Recomendaria para acadêmicos que precisam gerar esses trabalhos. Poderia ser extendido para artigos também.
+| | **Recomenda**: Recomendaria para acadêmicos que precisam gerar esses trabalhos. Poderia ser estendido para artigos também.
 | | ***Software* que pretende utilizar no TCC:** Utilizaria o Word, pois tem mais contato no cotidiano. "Mas talvez Limarka, após alguns aprimoramentos".
 |9| **Resumo**: Rápido e intuitivo.
 | | **Recomenda**: "Recomendaria para alunos de computação, dá para outros aprenderem mas é que tem gente que não gosta de ficar digitando código. Aonde esse povo faz os trabalhos? No Word? É muito ruim de manter a formatação no Word. Dá trabalho, iria demorar mais um 'pouquinho'."
 | | ***Software* que pretende utilizar no TCC:** Limarka.
 |10| **Resumo**: É complicado no início, mas vale a pena.
-| | **Recomenda**: "Recomendaria para pessoas de computação, porque tem que mecher com essa tela preta e linha de código. Para quem faz computação deve ser mais fácil, porque vocês estão mais acostumado com esse jeito de fazer as coisas".
+| | **Recomenda**: "Recomendaria para pessoas de computação, porque tem que mexer com essa tela preta e linha de código. Para quem faz computação deve ser mais fácil, porque vocês estão mais acostumado com esse jeito de fazer as coisas".
 | | ***Software* que pretende utilizar no TCC:** "Limarka. Mesmo habituado a fazer no Word, mas esse aqui é mais direto, faz toda a estrutura para mim. No Word eu teria que fazer tudo, passo a passo, todas as coisas. E teria que tomar muito tempo vendo as normas da ABNT, esse aqui é mais direto depois que você aprende a utilizar". [Esse experimento ocorreu no final da tarde. O irmão dele, de Engenharia de computação, havia sido entrevistado pela manhã. Os dois moram juntos.] Quando questionado se utilizaria devido ao provável suporte do irmão: "Com certeza, eu confio mais na computação dele do que o meu [conhecimento] nas normas da ABNT".
 
 Fonte: Autor.
@@ -1510,9 +1510,9 @@ a. Configuração
 
     O processo de configuração adotado no Limarka através de formulário PDF é *muito fácil e autoexplicativo*, isso pode ser percebido na fala "Errar não tinha como".
 	
-	As configurações avançadas que não estiverem implementadas no formulário podem ser realizadas manualmente no *template* Latex do TCC.
+    As configurações avançadas que não estiverem implementadas no formulário podem ser realizadas manualmente no *template* Latex do TCC.
 	
-	Por exemplo, na configuração desta dissertação foram incluídos comandos Latex para possibilitar múltiplas imagens (ver \autopageref{fig:problemas:formatacao}) e prevenir hifenização de algumas palavras -- os recursos que demonstrarem ser úteis serão implementados no formulário posteriormente.
+  	Por exemplo, na configuração desta dissertação foram incluídos comandos Latex para possibilitar múltiplas imagens (ver \autopageref{fig:problemas:formatacao}) e prevenir hifenização de algumas palavras -- os recursos que demonstrarem ser úteis serão implementados no formulário posteriormente.
 	
 a. Execução
 
@@ -1596,6 +1596,8 @@ Também foi adicionado um recurso para *compilação automática ao salvar alter
 
 ### Melhorias futuras {#melhorias-futuras}
 
+As seguintes melhorias estão planejadas para a ferramenta:
+
 a. Substituir a *engine de templates* do Pandoc
 
     A *engine* de *templates* do Pandoc \cite{pandoc} é bastante limitada, sua sintaxe de configuração permite apenas comparar o valor de uma variável, da seguinte forma: `SE ($var) ENTÃO (...) SENÃO (...) FIM`. Ela não permite a configuração dos *templates* baseados em comparações com expressões contendo valores, como a seguir: `SE ($var==valor) ENTÃO (...)`. Essa limitação dificulta a elaboração de *templates*, sua substituição por outra *engine* \cite{liquid} possibilitaria a elaboração de *templates* mais sofisticados.
@@ -1612,7 +1614,7 @@ a. Geração de Resumos
 
     A geração do resumo baseado em marcações específicas em trechos do texto. 
 	
-	Em \cite{hermida} é apresentado o problema vivenciado, pelo curso de Pedagogia na distância da UFPB em 2012, para orientar os alunos de educação a distância na elaboração dos resumos. Esta solução permitia que os alunos marcasse no texto os trechos que irão compor o resumo, tais como "objetivo", "metodologia", "resultado" etc.
+    Em \cite{hermida} é apresentado o problema vivenciado, pelo curso de Pedagogia na distância da UFPB em 2012, para orientar os alunos de educação a distância na elaboração dos resumos. Esta solução permitia que os alunos marcasse no texto os trechos que irão compor o resumo, tais como "objetivo", "metodologia", "resultado" etc.
 	
 <!-- Notas. Adição de notas explicativas para figuras e tabelas. Quadros. Distinção entre Quadros e Tabelas -->
 
