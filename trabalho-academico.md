@@ -1179,12 +1179,12 @@ b. individual
 
 #### Perfis dos usuários ####
 
-Os perfis dos voluntários estão apresentados na \autoref{q:perfil}. A maioria dos voluntários de Computação já utilizou Latex ou foi incentivado a utilizar por seus professores. Os estudantes de Engenharia de Computação informaram ter um uma disciplina no segundo período em que o professor exige que os trabalhos sejam entregues em Latex. 
+Os perfis dos voluntários estão apresentados no \autoref{perfil}. A maioria dos voluntários de Computação já utilizou Latex ou foi incentivado a utilizar por seus professores. Os estudantes de Engenharia de Computação informaram ter um uma disciplina no segundo período em que o professor exige que os trabalhos sejam entregues em Latex. 
 
 E no quarto período, existe outro professor na instituição que exige que os trabalhos utilizem o `git`, o sistema de controle de versão utilizado no Github. A criação de projetos no Github (e Gitlab) exige a criação de um arquivo README. Este arquivo, geralmente escrito em Markdown, costuma ser consultado pelos alunos de computação por conter as documentações dos *software* ou projetos que estão disponibilizados no Github. Esta foram as razões pelas as quais os alunos de computação relataram ter tido contato com Markdown.
 
 
-: Perfil dos voluntários do experimento\label{q:perfil}
+Quadro perfil: Perfil dos voluntários do experimento
 
 |Vol.|Formação acadêmica           |Experiência c/ Latex| Expeiência c/ Markdown|
 |:-:|:----------------------------:|:------------------:|:--------------------:|
@@ -1267,9 +1267,9 @@ Objetivando captar quaisquer sentimentos negativos foi perguntado no início na 
 
 #### Configuração ####
 
-A configuração do Limarka é realizada em um formulário PDF (em vez de um arquivo YAML como no Pandoc), os comentários sobre a realização da configuração utilizando esse formulário estão apresentados na \autoref{tab:configuracao}.
+A configuração do Limarka é realizada em um formulário PDF (em vez de um arquivo YAML como no Pandoc), os comentários sobre a realização da configuração utilizando esse formulário estão apresentados no \autoref{q:configuracao}.
 
-: Depoimentos sobre configuração através do formulário PDF\label{tab:configuracao}
+Quadro q:configuracao: Depoimentos sobre configuração através do formulário PDF
 
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1298,9 +1298,9 @@ A primeira execução da ferramenta no Windows demora um pouco pois a distribui�
 
 Existem duas formas de executar o Limarka, através de linha de comando (`limarka exec`) ou menu interativo, que pode ser executado diretamente do navegador de arquivos no Windows. O menu interativo fica em *loop* aguardando instruções para execução, a instrução "exec" executar a geração do PDF. 
 
-Os comentários sobre a execução do Limarka estão na \autoref{tab:execucao}.
+Os comentários sobre a execução do Limarka estão no \autoref{q:execucao}.
 
-: Depoimentos sobre execução do Limarka\label{tab:execucao}
+Quadro q:execucao: Depoimentos sobre execução do Limarka\label{tab:execucao}
 
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1321,9 +1321,9 @@ Fonte: Autor.
 
 A Capa, Folho de Rosto e Resumo são configurados no formulário PDF (ver \autoref{apendice:formulariopdf}). Após o preenchimento do formulário o usuário deve invocar a geração do TCC.
 
-Os depoimentos dos voluntários sobre elaboração desses conteúdos encontram-se na \autoref{tab:capa}.
+Os depoimentos dos voluntários sobre elaboração desses conteúdos encontram-se no \autoref{q:capa}.
 
-: Depoimentos sobre execução Capa, Folha de Rosto e Resumo\label{tab:capa}
+Quadro q:capa: Depoimentos sobre Capa, Folha de Rosto e Resumo
  
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1346,9 +1346,9 @@ No Roteiro era solicitado aos voluntários realizassem uma citação indireta, u
 
 As citações utilizam o mesmo comando Latex `\cite` e suas variações \cite{limarka}. No entanto, a citação direta com mais de três linhas requer um recuo no texto, que na sintaxe de Markdown é realizado iniciando uma linha com o carácter ">" (solução inspirada nas respostas de *e-mails*).
 
-Os depoimentos relacionados as citações estão na \autoref{tab:citacoes}.
+Os depoimentos relacionados as citações estão no \autoref{q:citacoes}.
 
-: Depoimentos sobre as realizações de citações\label{tab:citacoes}
+Quadro q:citacoes: Depoimentos sobre as realizações de citações
  
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1373,9 +1373,9 @@ As figuras eram inseridas utilizando códigos Latex disponibilizado no Wiki ou a
 
 Fonte: \cite{limarka}.
 
-Os depoimentos sobre a inclusão de figuras encontra-se na \autoref{tab:figuras}.
+Os depoimentos sobre a inclusão de figuras encontra-se no \autoref{q:figuras}.
 
-: Depoimentos sobre as realizações de citações\label{tab:figuras}
+Quadro q:figuras: Depoimentos sobre inclusão de figuras (com código Latex) no Limarka
  
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1396,9 +1396,9 @@ Fonte: Autor.
 
 As figuras eram inseridas utilizando códigos Latex disponibilizado no Wiki ou através de comando de linha que fornece o mesmo conteúdo (acessível mesmo que o usuário esteja *off-line*). Portanto para o usuário era ofertado duas alternativas: copiar o código da tabela do Wiki ou invocar um comando no terminal para imprimir os códigos de duas tabelas exemplos. Depois de inserido a tabela, esperava-se que o usuário editasse o seu conteúdo (códigos Latex).
 
-Os depoimentos sobre as tabelas encontram-se na \autoref{tab:tabelas}.
+Os depoimentos sobre as tabelas encontram-se no \autoref{q:tabelas}.
 
-: Depoimentos sobre utilização de tabelas Latex\label{tab:tabelas}
+Quadro q:tabelas: Depoimentos sobre utilização de tabelas Latex
  
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1420,9 +1420,9 @@ Fonte: Autor.
 
 Como foi para você a utilização de Markdown para elaboração de um TCC?
 
-Foi perguntado como era para eles a utilização de Markdown para elaboração de um TCC. Suas repostas encontram-se na \autoref{tab:markdown:depoimentos}.
+Foi perguntado como era para eles a utilização de Markdown para elaboração de um TCC. Suas repostas encontram-se no \autoref{q:markdown:depoimentos}.
 
-: Depoimentos sobre uso de Markdown para elaboração de um TCC\label{tab:markdown:depoimentos}
+Quadro q:markdown:depoimentos: Depoimentos sobre uso de Markdown para elaboração de um TCC
  
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1441,9 +1441,9 @@ Fonte: Autor.
 
 #### Resumo, utilização e recomendação ####
 
-Ao final da entrevista era perguntado a quem eles recomendariam a utilização do Limarka, se eles pretendiam utilizá-lo na elaboração do seu TCC e um resumo da experiência de utilização do Limarka. Segues os depoimentos:
+Ao final da entrevista era perguntado a quem eles recomendariam a utilização do Limarka, se eles pretendiam utilizá-lo na elaboração do seu TCC e um resumo da experiência de utilização do Limarka. Os depoimentos encontram-se no \autoref{q:depoimentos}
 
-: Depoimentos sobre a experiência de utilização de Markdown\labe{tab:depoimentos}
+Quadro q:depoimentos: Depoimentos sobre a experiência de utilização de Markdown
 
 |Vol.| Depoimento
 |:-:|:------------------------------------------------------------------|
@@ -1541,9 +1541,9 @@ a. Utilização de Markdown
 
 ### Verificação dos requisitos	
 
-A \autoref{tab:requisitos} apresenta o cumprimento dos requisitos para elaboração de TCCs em conformidade com as Normas da ABNT utilizando uma linguagem de marcação simples.
+O \autoref{q:requisitos} apresenta o cumprimento dos requisitos para elaboração de TCCs em conformidade com as Normas da ABNT utilizando uma linguagem de marcação simples.
 
-: Verificação do requisitos\label{tab:requisitos}
+Quadro q:requisitos: Verificação do requisitos
 
 | Requisito| Tipo |  |
 |:------------------------------------------------------|:--------------:|:---:|
