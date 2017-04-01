@@ -175,14 +175,14 @@ g) ano de depósito.\pause
 
 - Guias ou manuais conflitantes com as Normas da ABNT
 
-### Desafio para implementação com linguagens de marcação
+### Desafio para linguagens de marcação leve
 
 #### Suporte para:
 
 - Fonte de ilustrações e tabelas;
 - Notas explicativas;
 - Diferenciação entre Tabela e Quadro;
-- Pré-textuais (Ficha catalográfica).
+- Pré-textuais (Ficha catalográfica, Folha de aprovação).
 
 ### Alíneas {#alineas}
 
@@ -323,15 +323,18 @@ c) 7
 
 - Normas da ABNT
 - Normas e modelos de Instituições
+
+<!--
 - Manuais do abnTeX
 - Solicitações de usuários
+-->
 
 ### Requisitos Funcionais para o sistema
 
 - Configuração da capa;
 - Configuração dos pré-textuais obrigatórios: folha de rosto, folha de aprovação, resumo e *abstract*;
 - Criação de Sumário automático;
-- Configuração de estilos diferentes para entradas do sumário para os títulos dos textuais e pré-textuais;
+- Configuração de estilos diferentes para entradas do sumário, para os títulos dos textuais e pré-textuais;
 - Configuração de estilos de capítulos, seções e texto;
 - Inclusão de Ilustrações, **Quadros** e Tabelas com título, fonte e possibilidade de referenciação no texto;
 - Elaboração da seção de Referências (com formatação diferenciada);
@@ -428,7 +431,7 @@ Probabilidade e Estatística.
 | Solução                            |  Status |
 |:-----------------------------------|:--------:|
 | Asciidoc (original)                | Abortada |
-| Asciidoc (DocBook com XSL-FO)      | Abortada |
+| **Asciidoc (DocBook com XSL-FO)**      | **Abortada** |
 
 ### Avaliação de Asciidoc (asciidoctor-pdf)
 
@@ -446,14 +449,11 @@ Probabilidade e Estatística.
 
 ### Solução abortada
 
-- Seria necessário implementar todas as regras da ABNT através de XSL-FO;
-- Incertezas devido a nunca ter sido utilizado antes com este propósito.
-
 | Solução                            |  Status |
 |:-----------------------------------|:--------:|
 | Asciidoc (original)                | Abortada |
 | Asciidoc (DocBook com XSL-FO)      | Abortada |
-| Asciidoc (asciidoctor-pdf)         | Abortada |
+| **Asciidoc (asciidoctor-pdf)**         | **Abortada** |
 
 
 ### Avaliação de Asciidoc (asciidoctor-latex)
@@ -702,16 +702,12 @@ Experimentando recursos mínimos da ferramenta:
 
 ### Qual software pretende utilizar para escrita do seu TCC?
 
-- Se a coordenação do curso aceitasse o modelo produzido pelo Limarka, preferia utilizar ele do que o ShareLatex, mesmo tendo que instalar e utilizar as ferramentas localmente.
-- Pretende utilizar o Limarka.
-- Tem dúvidas se utilizaria o Limarka, para evitar o problema em ter que configurar o Latex novamente [utilizou o editor Overleaf *on-line* na qualificação]
-- Passaria a utilizar o Limarka. Fica mais fácil de utilizar e não precisa lidar com as regras do Latex.
-- Pretende utilizar o Limarka.
-- Planeja convencer colega para utilizar o Limarka e obter o *feedback* dele.
-- Utilizaria o Word.
 - Utilizaria o Word, pois tem mais contato no cotidiano.
-- Limarka.
+- Tem dúvidas se utilizaria o Limarka, para evitar o problema em ter que configurar o Latex novamente [utilizou o editor Overleaf *on-line* na qualificação]
+- Se a coordenação do curso aceitasse o modelo produzido pelo Limarka, preferia utilizar ele do que o ShareLatex, mesmo tendo que instalar e utilizar as ferramentas localmente.
 - Limarka. Mesmo habituado a fazer no Word, mas esse aqui é mais direto, faz toda a estrutura para mim. No Word eu teria que fazer tudo, passo a passo, todas as coisas.
+- Passaria a utilizar o Limarka. Fica mais fácil de utilizar e não precisa lidar com as regras do Latex.
+- Planeja convencer colega para utilizar o Limarka e obter o *feedback* dele.
 
 
 ### Resumo da Experiência de utilização do Limarka ###
@@ -719,20 +715,22 @@ Experimentando recursos mínimos da ferramenta:
 - Complicado mas prático.
 - É complicado no início, mas vale a pena.
 - Experiencia inovadora, mas não muito usual. 
-- O Limarka para mim tornou-se uma experiência inovadora para escrita de TCC.
 - Com a ferramenta Limarka, você consome mais tempo se preocupando com o conteúdo do seu trabalho do que com a formatação.
 - O que era difícil ficou fácil.
 - É simples de utilizar.
 - Simples, compacta e cômoda.
 - Rápido e intuitivo.
-- Agilidade e bem estar no uso da ferramenta.
-
-### Melhorias futuras
-
-- Geração de resumos
-- Substituir a *engine de templates* do Pandoc
-- Utilização de formulário HTML
-- Editor de referências *WEB* embutido
-- Gestor de siglas
+- **Agilidade e bem estar no uso da ferramenta**.
 
 # Conclusão
+
+## Conclusão
+
+### Conclusão
+
+- É possível utilizar uma linguagem de marcação leve (Markdown) para escrita de TCCs nacionais em conformidade com as Normas da ABNT. 
+- Solução alternativa aos Offices e Latex.
+- Expressivamente equivalente a Latex.
+- Possibilita melhorias não presentes no Word e Latex (ex: alíneas).
+- Sua utilização pode ser incentiva pois há indícios de que seja mais simples e fácil do que Latex.
+
