@@ -1,10 +1,10 @@
-# Roteiro do experimento do limarka {#experimento:roteiro}
+# Roteiro do experimento do Limarka {#experimento:roteiro}
 
-O roteiro de experimento do limarka foi disponibilizado *on-line* através do Wiki do projeto. A seguir é apresentado uma versão impressa do roteiro que também foi utilizada com alguns usuários.
+O roteiro de experimento do Limarka foi disponibilizado *on-line* através do Wiki do projeto. A seguir é apresentado uma versão impressa do roteiro que também foi utilizada com alguns usuários.
 
 \includepdf[pages=-]{imagens/roteiro-experimento.pdf}
 
-# Roteiro das entrevistas do experimento do limarka {#experimento:entrevista}
+# Roteiro das entrevistas do experimento do Limarka {#experimento:entrevista}
 
 As entrevistas com os voluntários foram semiestruturadas, uma lista de tópicos (ver Figura \ref{fig:entrevista-experimento-topicos}) era utilizada para guiar as entrevistas, que eram conduzidas no formato de conversas. A gravação e transcrição das entrevistas estão disponíveis em \cite{limarka_entrevitas}.
 
@@ -20,9 +20,9 @@ As entrevistas com os voluntários foram semiestruturadas, uma lista de tópicos
 <!--Para referenciar a figura acima no texto utilize: Figura \ref{fig:entrevista-experimento-topicos} 
 -->
 
-# Roteiro das entrevistas com usuários do limarka {#usuario:entrevista}
+# Roteiro das entrevistas com usuários do Limarka {#usuario:entrevista}
 
-Nesta seção é apresentado o roteiro das entrevistas realizadas com usuários que estão utilizando o Limarka a produção de seus TCCs. As perguntas foram dividias em três seções.
+Nesta seção é apresentado o roteiro das entrevistas realizadas com usuários que estão utilizando o Limarka para a produção de seus TCCs. As perguntas foram divididas em três seções.
 
 ## Background e perfil do usuário
 
@@ -33,12 +33,12 @@ Nesta seção é apresentado o roteiro das entrevistas realizadas com usuários 
 - Como você se relaciona com Informática e tecnologias?
 - Qual sua afinidade para executar comandos de linha e instalar programas?
 - Quais editores de arquivo somente texto já utilizou? Quais são de sua preferência?
-- Você utilizar alguma IDE no seu trabalho/estudo?
-- Descreve sua(s) experiência(s) prévia(s) com Latex.
-- Descreve sua(s) experiência(s) prévia(s) com Markdown e/ou outras linguagens de marcação leve. Você sabe decorado quais sintaxes?
-- Descreve sua(s) experiência(s) prévia(s) com Github.
+- Você utiliza alguma IDE no seu trabalho/estudo?
+- Descreva sua(s) experiência(s) prévia(s) com Latex.
+- Descreva sua(s) experiência(s) prévia(s) com Markdown e/ou outras linguagens de marcação leve. Você sabe decorado quais sintaxes?
+- Descreva sua(s) experiência(s) prévia(s) com Github.
 
-* Você sabe o que as normas da ABNT *fala* sobre os seguintes itens?
+* Você sabe o que as normas da ABNT *falam* sobre os seguintes itens?
     * Palavras em estrangeiro
     * Citação indireta/direta
     * Citação com mais/menos de três linhas
@@ -47,13 +47,13 @@ Nesta seção é apresentado o roteiro das entrevistas realizadas com usuários 
     * Tabela/Quadro
     * Apêndices/Anexos
 
-## Sobre utilização do limarka na elaboração do TCC
+## Sobre utilização do Limarka na elaboração do TCC
 
 * Qual a temática do seu TCC?
-* Como você encontrou o limarka? 
-* O que despertou o seu interesse pelo limarka?
+* Como você encontrou o Limarka? 
+* O que despertou o seu interesse pelo Limarka?
 * Qual ambiente utilizado? Sistema operacional, Editor de texto, Leitor de PDF e Editor de Referência.
-* Como você se sentiu ao utilizar a limarka para elaboração do seu trabalho?
+* Como você se sentiu ao utilizar o Limarka para elaboração do seu trabalho?
 * Como foi para você a utilização de formulário PDF para configurar o trabalho?
 * Como foi para você execução da ferramenta? 
 * Prefere executar através de linha de comando ou menu interativo?
@@ -71,7 +71,7 @@ Nesta seção é apresentado o roteiro das entrevistas realizadas com usuários 
     * Ficha catalográfica
     * Errata
     * Código/Algoritmo
-    * Códigos latex customizados
+    * Códigos Latex customizados
 
 ## Sobre Markdown
 
@@ -91,9 +91,7 @@ Nesta seção é apresentado o roteiro das entrevistas realizadas com usuários 
 
 # Formulário de configuração PDF {#apendice:formulariopdf} 
 
-O limarka utiliza um formulário no formato PDF para configurar diversos aspectos da geração do trabalho acadêmico.
-
-A seguir é apresentado esse arquivo configurado para geração deste trabalho.
+O Limarka utiliza um formulário no formato PDF para configurar diversos aspectos da geração do trabalho acadêmico. A seguir é apresentamos esse arquivo configurado para geração deste trabalho.
 
 \includepdf[pages={-}]{configuracao.pdf}
 
