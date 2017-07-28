@@ -8,7 +8,7 @@ $if(incluir_folha_de_aprovacao)$
 \begin{folhadeaprovacao}
 \includepdf{imagens/folha-de-aprovacao-escaneada.pdf}
 \end{folhadeaprovacao}
-$endif$
+$else$
 
 $if(folha_de_aprovacao)$
 % ---
@@ -64,5 +64,5 @@ $else$
 % Sem Folha de aprovação
 % ---
 $endif$
-% ---
+$endif$
 
